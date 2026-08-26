@@ -24,8 +24,8 @@ echo -e "\n${BLUE}[1/7] Aktualizacja listy pakietów i systemu...${NC}"
 apt update && apt upgrade -y
 
 # 3. Instalacja oficjalnych sterowników NVIDIA
-echo -e "\n${BLUE}[2/7] Wykrywanie i instalacja rekomendowanych sterowników NVIDIA...${NC}"
-ubuntu-drivers install
+#echo -e "\n${BLUE}[2/7] Wykrywanie i instalacja rekomendowanych sterowników NVIDIA...${NC}"
+#ubuntu-drivers install
 
 # 4. Instalacja serwera X11, menedżera logowania oraz zależności
 echo -e "\n${BLUE}[3/7] Instalacja serwera graficznego X11, LightDM oraz bibliotek...${NC}"
@@ -42,7 +42,7 @@ snap install astral-uv --classic
 
 # Instalacja Qtile w kontekście użytkownika za pomocą zainstalowanego astral-uv
 sudo -u "$REAL_USER" bash << EOF
-  astral-uv tool install --with qtile-extras qtile
+  uv tool install --with qtile-extras qtile
 EOF
 
 # 7. Utworzenie sesji XSession dla LightDM przy użyciu polecenia 'tee'
@@ -60,8 +60,8 @@ Keywords=wm;tiling;
 EOF
 
 # 8. Ustawienie profilu graficznego Hybrid (NVIDIA On-Demand)
-echo -e "\n${BLUE}[7/7] Konfiguracja grafiki hybrydowej Intel + NVIDIA (On-Demand)...${NC}"
-prime-select on-demand
+#echo -e "\n${BLUE}[7/7] Konfiguracja grafiki hybrydowej Intel + NVIDIA (On-Demand)...${NC}"
+#prime-select on-demand
 
 echo -e "\n${GREEN}[SUKCES] Instalacja i konfiguracja zakończona pomyślnie!${NC}"
 echo -e "${BLUE}[WAŻNE] Aby zastosować sterowniki NVIDIA i uruchomić środowisko graficzne, zrestartuj komputer komendą: sudo reboot${NC}"
