@@ -41,7 +41,7 @@ apt install -y \
 
 # 5. Instalacja aplikacji okienkowych
 echo -e "\n${BLUE}[4/7] Instalacja Kitty, Rofi i Picom...${NC}"
-apt install -y kitty picom rofi
+apt install -y kitty picom rofi papirus-icon-theme
 
 # 6. Instalacja uv oraz Qtile w środowisku użytkownika
 echo -e "\n${BLUE}[5/7] Instalacja Astral-UV oraz Qtile dla użytkownika $REAL_USER...${NC}"
@@ -74,6 +74,12 @@ if [ -d "$SCRIPT_DIR/config/qtile" ]; then
   sudo -u "$REAL_USER" cp -r "$SCRIPT_DIR/config/qtile/"* "$REAL_HOME/.config/qtile/"
   chmod +x "$REAL_HOME/.config/qtile/autostart.sh" 2>/dev/null || true
   echo -e "${GREEN}[OK] Skopiowano pliki konfiguracyjne do $REAL_HOME/.config/qtile/${NC}"
+fi
+
+if [ -d "$SCRIPT_DIR/config/rofi" ]; then
+  sudo -u "$REAL_USER" mkdir -p "$REAL_HOME/.config/rofi"
+  sudo -u "$REAL_USER" cp -r "$SCRIPT_DIR/config/rofi/"* "$REAL_HOME/.config/rofi/"
+  echo -e "${GREEN}[OK] Skopiowano pliki konfiguracyjne do $REAL_HOME/.config/rofi/${NC}"
 fi
 
 echo -e "\n${GREEN}[SUKCES] Instalacja zakończona! Zrestartuj system i zaloguj się do Qtile.${NC}"
