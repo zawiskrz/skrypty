@@ -73,13 +73,17 @@ if [ -d "$SCRIPT_DIR/config/qtile" ]; then
   sudo -u "$REAL_USER" mkdir -p "$REAL_HOME/.config/qtile"
   sudo -u "$REAL_USER" cp -r "$SCRIPT_DIR/config/qtile/"* "$REAL_HOME/.config/qtile/"
   chmod +x "$REAL_HOME/.config/qtile/autostart.sh" 2>/dev/null || true
-  echo -e "${GREEN}[OK] Skopiowano pliki konfiguracyjne do $REAL_HOME/.config/qtile/${NC}"
+  echo -e "${GREEN}[OK] Skopiowano pliki katalagu qtile do $REAL_HOME/.config/qtile/${NC}"
 fi
 
 if [ -d "$SCRIPT_DIR/config/rofi" ]; then
   sudo -u "$REAL_USER" mkdir -p "$REAL_HOME/.config/rofi"
   sudo -u "$REAL_USER" cp -r "$SCRIPT_DIR/config/rofi/"* "$REAL_HOME/.config/rofi/"
-  echo -e "${GREEN}[OK] Skopiowano pliki konfiguracyjne do $REAL_HOME/.config/rofi/${NC}"
+  echo -e "${GREEN}[OK] Skopiowano pliki katalagu rofi do $REAL_HOME/.config/rofi/${NC}"
 fi
-
+if [ -d "$SCRIPT_DIR/config/tapeta" ]; then
+  sudo -u "$REAL_USER" mkdir -p "$REAL_HOME/.config/tapety"
+  sudo -u "$REAL_USER" cp -r "$SCRIPT_DIR/config/tapety/"* "$REAL_HOME/.config/tapety/"
+  echo -e "${GREEN}[OK] Skopiowano tapete do $REAL_HOME/.config/tapety/${NC}"
+fi
 echo -e "\n${GREEN}[SUKCES] Instalacja zakończona! Zrestartuj system i zaloguj się do Qtile.${NC}"
