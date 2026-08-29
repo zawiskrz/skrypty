@@ -11,6 +11,13 @@ from libqtile.utils import guess_terminal
 mod = "mod4"
 terminal = "kitty"
 
+# --- FUNKCJE POMOCNICZE ---
+@lazy.function
+def toggle_show_desktop(qtile):
+    has_visible = any(not win.minimized for win in qtile.current_group.windows)
+    for win in qtile.current_group.windows:
+        if win.minimized != has_visible:
+            win.toggle_minimize()
 keys = [
     # Switch between windows (Focus)
     Key([mod], "Left", lazy.layout.left(), desc="Move focus to left"),
@@ -53,7 +60,8 @@ keys = [
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     
     # Application launcher (Rofi menu)
-    Key([mod], "d", lazy.spawn("rofi -show drun"), desc="Launch Rofi menu"),
+    Key([mod], "m", lazy.spawn("rofi -show drun"), desc="Launch Rofi menu"),
+    Key([mod, "control"], "d", toggle_show_desktop, desc="Pokaż/Ukryj pulpit"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
 ]
 
