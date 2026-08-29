@@ -81,9 +81,5 @@ if [ -d "$SCRIPT_DIR/config/rofi" ]; then
   sudo -u "$REAL_USER" cp -r "$SCRIPT_DIR/config/rofi/"* "$REAL_HOME/.config/rofi/"
   echo -e "${GREEN}[OK] Skopiowano pliki katalagu rofi do $REAL_HOME/.config/rofi/${NC}"
 fi
-if [ -d "$SCRIPT_DIR/config/tapeta" ]; then
-  sudo -u "$REAL_USER" mkdir -p "$REAL_HOME/.config/tapety"
-  sudo -u "$REAL_USER" cp -r "$SCRIPT_DIR/config/tapety/"* "$REAL_HOME/.config/tapety/"
-  echo -e "${GREEN}[OK] Skopiowano tapete do $REAL_HOME/.config/tapety/${NC}"
-fi
+
 echo -e "\n${GREEN}[SUKCES] Instalacja zakończona! Zrestartuj system i zaloguj się do Qtile.${NC}"
