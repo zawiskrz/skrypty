@@ -32,18 +32,24 @@ apt install -y \
   libpango1.0-dev libpangocairo-1.0-0 \
   python3-pip python3-full python3-venv python3-neovim
 
-# 4. Instalacja pakietów Python z historii (Jupyter, Data Science)
+# 4. Instalacja LibreWolf (Lekka przeglądarka z uBlock Origin)
+echo -e "\n${BLUE}[3/10] Instalacja przeglądarki LibreWolf...${NC}"
+apt install -y extrepo
+extrepo enable librewolf
+apt update && apt install -y librewolf
+
+# 5. Instalacja pakietów Python z historii (Jupyter, Data Science)
 echo -e "\n${BLUE}[3/7] Instalacja pakietów naukowych Python (Apt)...${NC}"
 apt install -y \
   python3-ipython python3-ipykernel \
   python3-jupyterlab python3-jupyterlab-widgets python3-jupyterlab-git \
   python3-pandas python3-matplotlib python3-scipy
 
-# 5. Instalacja aplikacji okienkowych
+# 6. Instalacja aplikacji okienkowych
 echo -e "\n${BLUE}[4/7] Instalacja Kitty, Rofi i Picom...${NC}"
 apt install -y kitty picom rofi papirus-icon-theme
 
-# 6. Instalacja uv oraz Qtile w środowisku użytkownika
+# 7. Instalacja uv oraz Qtile w środowisku użytkownika
 echo -e "\n${BLUE}[5/7] Instalacja Astral-UV oraz Qtile dla użytkownika $REAL_USER...${NC}"
 sudo -u "$REAL_USER" bash << EOF
   curl -LsSf https://astral.sh/uv/install.sh | sh
@@ -54,7 +60,7 @@ EOF
 # Dowiązanie symboliczne, aby LightDM widział qtile globalnie
 ln -sf "$REAL_HOME/.local/bin/qtile" /usr/local/bin/qtile
 
-# 7. Utworzenie wpisu sesji w LightDM
+# 8. Utworzenie wpisu sesji w LightDM
 echo -e "\n${BLUE}[6/7] Rejestracja Qtile w LightDM...${NC}"
 mkdir -p /usr/share/xsessions
 
@@ -67,7 +73,7 @@ Type=Application
 Keywords=wm;tiling;
 EOF
 
-# 8. Kopiowanie konfiguracji z repozytorium do ~/.config/qtile/
+# 9. Kopiowanie konfiguracji z repozytorium do ~/.config/qtile/
 echo -e "\n${BLUE}[7/7] Kopiowanie plików konfiguracyjnych...${NC}"
 if [ -d "$SCRIPT_DIR/config/qtile" ]; then
   sudo -u "$REAL_USER" mkdir -p "$REAL_HOME/.config/qtile"
@@ -88,3 +94,4 @@ if [ -d "$SCRIPT_DIR/config/kitty" ]; then
   echo -e "${GREEN}[OK] Skopiowano pliki katalagu kitty do $REAL_HOME/.config/kitty/${NC}"
 fi
 echo -e "\n${GREEN}[SUKCES] Instalacja zakończona! Zrestartuj system i zaloguj się do Qtile.${NC}"
+
