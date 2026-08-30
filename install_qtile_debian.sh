@@ -37,6 +37,12 @@ echo -e "\n${BLUE}[3/10] Instalacja przeglądarki LibreWolf...${NC}"
 apt install -y extrepo
 extrepo enable librewolf
 apt update && apt install -y librewolf
+# Odblokowanie możliwości logowania do Konta Firefox (Firefox Sync)
+mkdir -p /etc/librewolf
+cat <<EOF >> /etc/librewolf/librewolf.overrides.cfg
+// Odblokowanie synchronizacji z serwerami Firefox (Firefox Sync)
+pref("identity.fxaccounts.enabled", true);
+EOF
 
 # 5. Instalacja pakietów Python z historii (Jupyter, Data Science)
 echo -e "\n${BLUE}[3/7] Instalacja pakietów naukowych Python (Apt)...${NC}"
