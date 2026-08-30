@@ -82,4 +82,9 @@ if [ -d "$SCRIPT_DIR/config/rofi" ]; then
   echo -e "${GREEN}[OK] Skopiowano pliki katalagu rofi do $REAL_HOME/.config/rofi/${NC}"
 fi
 
+if [ -d "$SCRIPT_DIR/config/kitty" ]; then
+  sudo -u "$REAL_USER" mkdir -p "$REAL_HOME/.config/kitty"
+  sudo -u "$REAL_USER" cp -r "$SCRIPT_DIR/config/kitty/"* "$REAL_HOME/.config/kitty/"
+  echo -e "${GREEN}[OK] Skopiowano pliki katalagu kitty do $REAL_HOME/.config/kitty/${NC}"
+fi
 echo -e "\n${GREEN}[SUKCES] Instalacja zakończona! Zrestartuj system i zaloguj się do Qtile.${NC}"
