@@ -32,11 +32,11 @@ apt install -y \
   libpango1.0-dev libpangocairo-1.0-0 \
   python3-pip python3-full python3-venv python3-neovim
 
-# 4. Instalacja LibreWolf (Lekka przeglądarka z uBlock Origin)
+# 4. Instalacja LibreWolf (Lekka przeglądarka z uBlock Origin) oraz thunderbird
 echo -e "\n${BLUE}[3/10] Instalacja przeglądarki LibreWolf...${NC}"
 apt install -y extrepo
 extrepo enable librewolf
-apt update && apt install -y librewolf
+apt update && apt install -y librewolf thunderbird thunderbird-l10n-pl
 # Odblokowanie możliwości logowania do Konta Firefox (Firefox Sync)
 mkdir -p /etc/librewolf
 cat <<EOF >> /etc/librewolf/librewolf.overrides.cfg
