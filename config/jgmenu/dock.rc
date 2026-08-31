@@ -1,0 +1,6 @@
+osition_mode = fixed
+menu_anchor = top_left
+menu_valign = top
+menu_margin_x = 0
+menu_margin_y = 30
+stay_alive = 0
