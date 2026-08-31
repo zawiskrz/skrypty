@@ -100,6 +100,12 @@ if [ -d "$SCRIPT_DIR/config/qtile" ]; then
   chmod +x "$REAL_HOME/.config/qtile/autostart.sh" 2>/dev/null || true
   echo -e "${GREEN}[OK] Skopiowano pliki katalagu qtile do $REAL_HOME/.config/qtile/${NC}"
 fi
+echo -e "\n${BLUE}[7/7] Kopiowanie plików konfiguracyjnych jgmenu...${NC}"
+if [ -d "$SCRIPT_DIR/config/jgmenu" ]; then
+  sudo -u "$REAL_USER" mkdir -p "$REAL_HOME/.config/jgmenu"
+  sudo -u "$REAL_USER" cp -r "$SCRIPT_DIR/config/jgmenu/"* "$REAL_HOME/.config/jgmenu/"
+  echo -e "${GREEN}[OK] Skopiowano pliki katalagu jgmenu do $REAL_HOME/.config/jgmenu/${NC}"
+fi
 
 if [ -d "$SCRIPT_DIR/config/kitty" ]; then
   sudo -u "$REAL_USER" mkdir -p "$REAL_HOME/.config/kitty"
