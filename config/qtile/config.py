@@ -112,6 +112,22 @@ screens = [
     Screen(
         bottom=bar.Bar(
             [
+		widget.TextBox(
+	   	   text="󰈹", 
+		   font="JetBrainsMono Nerd Font",
+		   fontsize=20,
+		   foreground="#5865F2",
+		   mouse_callbacks={'Button1': lazy.spawn('librewolf')},
+		   padding=6,
+		),
+		widget.TextBox(
+		   text="󰉋", 
+		   font="JetBrainsMono Nerd Font",
+		   fontsize=20,
+		   foreground="#F1FA8C",
+		   mouse_callbacks={'Button1': lazy.spawn('thunar')},
+		   padding=6,
+		),
                 widget.CurrentLayout(),
                 widget.GroupBox(),
                 widget.Prompt(),
@@ -181,3 +197,4 @@ def autostart():
     home = os.path.expanduser('~/.config/qtile/autostart.sh')
     if os.path.exists(home):
         subprocess.Popen([home])
+        
