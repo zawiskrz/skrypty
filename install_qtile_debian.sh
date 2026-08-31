@@ -65,8 +65,8 @@ apt install -y \
   python3-pandas python3-matplotlib python3-scipy
 
 # 6. Instalacja aplikacji okienkowych
-echo -e "\n${BLUE}[4/7] Instalacja Kitty, Rofi i Picom...${NC}"
-apt install -y kitty picom rofi papirus-icon-theme
+echo -e "\n${BLUE}[4/7] Instalacja Kitty, jqmenu i Picom...${NC}"
+apt install -y kitty picom jqmenu papirus-icon-theme
 
 # 7. Instalacja uv oraz Qtile w środowisku użytkownika
 echo -e "\n${BLUE}[5/7] Instalacja Astral-UV oraz Qtile dla użytkownika $REAL_USER...${NC}"
@@ -99,12 +99,6 @@ if [ -d "$SCRIPT_DIR/config/qtile" ]; then
   sudo -u "$REAL_USER" cp -r "$SCRIPT_DIR/config/qtile/"* "$REAL_HOME/.config/qtile/"
   chmod +x "$REAL_HOME/.config/qtile/autostart.sh" 2>/dev/null || true
   echo -e "${GREEN}[OK] Skopiowano pliki katalagu qtile do $REAL_HOME/.config/qtile/${NC}"
-fi
-
-if [ -d "$SCRIPT_DIR/config/rofi" ]; then
-  sudo -u "$REAL_USER" mkdir -p "$REAL_HOME/.config/rofi"
-  sudo -u "$REAL_USER" cp -r "$SCRIPT_DIR/config/rofi/"* "$REAL_HOME/.config/rofi/"
-  echo -e "${GREEN}[OK] Skopiowano pliki katalagu rofi do $REAL_HOME/.config/rofi/${NC}"
 fi
 
 if [ -d "$SCRIPT_DIR/config/kitty" ]; then
