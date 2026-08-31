@@ -58,9 +58,9 @@ keys = [
     Key([mod], "t", lazy.window.toggle_floating(), desc="Toggle floating on the focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    
+    Key([mod], "m", lazy.spawn("jgmenu_run"), desc="Otwórz menu XFCE"),
     # Application launcher (Rofi menu)
-    Key([mod], "m", lazy.spawn("rofi -show drun"), desc="Launch Rofi menu"),
+    #Key([mod], "m", lazy.spawn("rofi -show drun"), desc="Launch Rofi menu"),
     Key([mod, "control"], "d", toggle_show_desktop, desc="Pokaż/Ukryj pulpit"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
 ]
@@ -114,7 +114,7 @@ screens = [
         top=bar.Bar(
             [
                 # Układ okien (np. columns)
-                widget.CurrentLayout(foreground="#89b4fa"),
+                #widget.CurrentLayout(foreground="#89b4fa"),
                 widget.Spacer(length=10),
 
                 # --- IKONY SZYBKIEGO URUCHAMIANIA ---
@@ -161,12 +161,11 @@ screens = [
                 
                 widget.Clock(format="%Y-%m-%d %a %H:%M", foreground="#a6e3a1"),
                 widget.Spacer(length=10),
-		        widget.QuickExit(
-		   			default_text='[ 󰐥 Wyłącz ]',
-		   			countdown_format='[ Wyłączanie za {}s ]',
-		   			command='systemctl poweroff',  # Komenda wyłączająca komputer
-		   			foreground="#f38ba8",
-				),
+		widget.QuickExit(
+		   default_text='󰐥',
+		   command='systemctl poweroff',  # Komenda wyłączająca komputer
+		   foreground="#f38ba8",
+		),
             ],
             30,  # Wysokość paska
             background="#1e1e2e",  # Ciemnogranatowe tło
@@ -184,6 +183,7 @@ mouse = [
     Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
     Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
     Click([mod], "Button2", lazy.window.bring_to_front()),
+    Click([], "Button3", lazy.spawn("sh -c 'jgmenu --at-pointer'")),
 ]
 
 dgroups_key_binder = None
@@ -222,3 +222,4 @@ def autostart():
     home = os.path.expanduser('~/.config/qtile/autostart.sh')
     if os.path.exists(home):
         subprocess.Popen([home])
+		
