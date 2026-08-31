@@ -75,7 +75,7 @@ for vt in range(1, 8):
         )
     )
 
-groups = [Group(i) for i in "123456789"]
+groups = [Group(i) for i in "1234"]
 
 for i in groups:
     keys.extend(
@@ -108,43 +108,68 @@ widget_defaults = dict(
 extension_defaults = widget_defaults.copy()
 
 logo = os.path.join(os.path.dirname(__file__), "wallpapers", "miedzyzdroje.jpg")
+
 screens = [
     Screen(
-        bottom=bar.Bar(
+        top=bar.Bar(
             [
-		widget.TextBox(
-	   	   text="󰈹", 
-		   font="JetBrainsMono Nerd Font",
-		   fontsize=20,
-		   foreground="#5865F2",
-		   mouse_callbacks={'Button1': lazy.spawn('librewolf')},
-		   padding=6,
-		),
-		widget.TextBox(
-		   text="󰉋", 
-		   font="JetBrainsMono Nerd Font",
-		   fontsize=20,
-		   foreground="#F1FA8C",
-		   mouse_callbacks={'Button1': lazy.spawn('thunar')},
-		   padding=6,
-		),
-                widget.CurrentLayout(),
-                widget.GroupBox(),
-                widget.Prompt(),
-                widget.WindowName(),
-                widget.Chord(
-                    chords_colors={
-                        "launch": ("#ff0000", "#ffffff"),
-                    },
-                    name_transform=lambda name: name.upper(),
+                # Układ okien (np. columns)
+                widget.CurrentLayout(foreground="#89b4fa"),
+                widget.Spacer(length=10),
+
+                # --- IKONY SZYBKIEGO URUCHAMIANIA ---
+                widget.TextBox(
+                    text="󰈹", 
+                    font="JetBrainsMono Nerd Font",
+                    fontsize=20,
+                    foreground="#5865F2",
+                    mouse_callbacks={'Button1': lazy.spawn('librewolf')},
+                    padding=6,
                 ),
-                widget.TextBox("default config", name="default"),
-                widget.TextBox("Press <M-r> to spawn", foreground="#d75f5f"),
-                widget.Systray(),
-                widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
-                widget.QuickExit(),
+                widget.TextBox(
+                    text="󰉋", 
+                    font="JetBrainsMono Nerd Font",
+                    fontsize=20,
+                    foreground="#F1FA8C",
+                    mouse_callbacks={'Button1': lazy.spawn('thunar')},
+                    padding=6,
+                ),
+                # -----------------------------------
+
+                widget.Sep(linewidth=1, padding=10, foreground="#45475a"),
+
+                # Pulpity (1-9) z ładnym podświetleniem
+                widget.GroupBox(
+                    highlight_method='line',
+                    active='#cdd6f4',
+                    inactive='#6c7086',
+                    highlight_color=['#1e1e2e', '#313244'],
+                    this_current_screen_border='#89b4fa',
+                    margin_x=0,
+                    padding_x=6,
+                ),
+
+                widget.Sep(linewidth=1, padding=10, foreground="#45475a"),
+                widget.Prompt(),
+
+                # Tytuł aktywnego okna
+                widget.WindowName(foreground="#cdd6f4"),
+
+                # Prawa strona paska
+                widget.Systray(padding=5),
+                widget.Sep(linewidth=1, padding=10, foreground="#45475a"),
+                
+                widget.Clock(format="%Y-%m-%d %a %H:%M", foreground="#a6e3a1"),
+                widget.Spacer(length=10),
+		        widget.QuickExit(
+		   			default_text='[ 󰐥 Wyłącz ]',
+		   			countdown_format='[ Wyłączanie za {}s ]',
+		   			command='systemctl poweroff',  # Komenda wyłączająca komputer
+		   			foreground="#f38ba8",
+				),
             ],
-            24,
+            30,  # Wysokość paska
+            background="#1e1e2e",  # Ciemnogranatowe tło
         ),
         background="#000000",
         wallpaper=logo,
@@ -197,4 +222,3 @@ def autostart():
     home = os.path.expanduser('~/.config/qtile/autostart.sh')
     if os.path.exists(home):
         subprocess.Popen([home])
-        
