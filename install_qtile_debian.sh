@@ -28,7 +28,7 @@ echo -e "\n${BLUE}[2/7] Instalacja serwera X11, LightDM i narzędzi systemowych.
 apt install -y \
   xserver-xorg xinit lightdm lightdm-gtk-greeter \
   x11-xserver-utils spice-vdagent qemu-guest-agent \
-  build-essential curl wget git mc htop micro \
+  build-essential curl wget git mc htop thunar \
   libpango1.0-dev libpangocairo-1.0-0 \
   python3-pip python3-full python3-venv python3-neovim
 
