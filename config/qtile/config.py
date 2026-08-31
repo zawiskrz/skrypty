@@ -58,7 +58,7 @@ keys = [
     Key([mod], "t", lazy.window.toggle_floating(), desc="Toggle floating on the focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "m", lazy.spawn("jgmenu_run"), desc="Otwórz menu XFCE"),
+    Key([mod], "m", lazy.spawn('jgmenu --config-file=' + os.path.expanduser('~/.config/jgmenu/dock.rc')), desc="Otwórz menu XFCE"),
     # Application launcher (Rofi menu)
     #Key([mod], "m", lazy.spawn("rofi -show drun"), desc="Launch Rofi menu"),
     Key([mod, "control"], "d", toggle_show_desktop, desc="Pokaż/Ukryj pulpit"),
@@ -115,7 +115,18 @@ screens = [
             [
                 # Układ okien (np. columns)
                 #widget.CurrentLayout(foreground="#89b4fa"),
-                widget.Spacer(length=10),
+		# --- PRZYCISK MENU (JGMENU) ---
+		widget.TextBox(
+		   text="󰍜 Menu", 
+		   font="JetBrainsMono Nerd Font",
+		   fontsize=16,
+		   foreground="#89b4fa",
+		   mouse_callbacks={'Button1': lazy.spawn('jgmenu --config-file=' + os.path.expanduser('~/.config/jgmenu/dock.rc'))},
+		   padding=8,
+		),
+		widget.Sep(linewidth=1, padding=8, foreground="#45475a"),
+
+		widget.Spacer(length=10),
 
                 # --- IKONY SZYBKIEGO URUCHAMIANIA ---
                 widget.TextBox(
@@ -183,7 +194,7 @@ mouse = [
     Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
     Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
     Click([mod], "Button2", lazy.window.bring_to_front()),
-    Click([], "Button3", lazy.spawn("sh -c 'jgmenu --at-pointer'")),
+    Click([], "Button3", lazy.spawn('jgmenu')),
 ]
 
 dgroups_key_binder = None
@@ -222,4 +233,3 @@ def autostart():
     home = os.path.expanduser('~/.config/qtile/autostart.sh')
     if os.path.exists(home):
         subprocess.Popen([home])
-		
