@@ -36,14 +36,25 @@ apt install -y \
 echo -e "\n${BLUE}[3/10] Instalacja przeglądarki LibreWolf...${NC}"
 apt install -y extrepo
 extrepo enable librewolf
-apt update && apt install -y librewolf thunderbird thunderbird-l10n-pl
+apt update && apt install -y librewolf
 # Odblokowanie możliwości logowania do Konta Firefox (Firefox Sync)
 mkdir -p /etc/librewolf
 cat <<EOF >> /etc/librewolf/librewolf.overrides.cfg
 // Odblokowanie synchronizacji z serwerami Firefox (Firefox Sync)
 pref("identity.fxaccounts.enabled", true);
 EOF
+apt update && apt install -y --no-install-recommends thunderbird thunderbird-l10n-pl
 
+# Ustawienie LibreWolfa jako domyślnej przeglądarki (w systemie i dla użytkownika)
+echo -e "\n${BLUE}[Ustawienia] Ustawianie LibreWolf jako domyślnej przeglądarki...${NC}"
+update-alternatives --install /usr/bin/x-www-browser x-www-browser /usr/bin/librewolf 200
+update-alternatives --set x-www-browser /usr/bin/librewolf
+
+sudo -u "$REAL_USER" bash << EOF
+  xdg-mime default librewolf.desktop x-scheme-handler/http
+  xdg-mime default librewolf.desktop x-scheme-handler/https
+  xdg-mime default librewolf.desktop text/html
+EOF
 # 5. Instalacja pakietów Python z historii (Jupyter, Data Science)
 echo -e "\n${BLUE}[3/7] Instalacja pakietów naukowych Python (Apt)...${NC}"
 apt install -y \
