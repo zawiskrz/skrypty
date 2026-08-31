@@ -50,11 +50,13 @@ echo -e "\n${BLUE}[Ustawienia] Ustawianie LibreWolf jako domyślnej przeglądark
 update-alternatives --install /usr/bin/x-www-browser x-www-browser /usr/bin/librewolf 200
 update-alternatives --set x-www-browser /usr/bin/librewolf
 
+# Ustawienie dla użytkownika z podaniem pełnej ścieżki do xdg-mime
 sudo -u "$REAL_USER" bash << EOF
-  xdg-mime default librewolf.desktop x-scheme-handler/http
-  xdg-mime default librewolf.desktop x-scheme-handler/https
-  xdg-mime default librewolf.desktop text/html
+  /usr/bin/xdg-mime default librewolf.desktop x-scheme-handler/http
+  /usr/bin/xdg-mime default librewolf.desktop x-scheme-handler/https
+  /usr/bin/xdg-mime default librewolf.desktop text/html
 EOF
+
 # 5. Instalacja pakietów Python z historii (Jupyter, Data Science)
 echo -e "\n${BLUE}[3/7] Instalacja pakietów naukowych Python (Apt)...${NC}"
 apt install -y \
