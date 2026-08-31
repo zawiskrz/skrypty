@@ -137,6 +137,15 @@ screens = [
                     mouse_callbacks={'Button1': lazy.spawn('librewolf')},
                     padding=6,
                 ),
+				# --- DODAJE THUNDERBIRD ---
+                widget.TextBox(
+                    text="󰇮", 
+                    font="JetBrainsMono Nerd Font",
+                    fontsize=20,
+                    foreground="#35BFDE",  # Błękitny kolor ikony Thunderbird
+                    mouse_callbacks={'Button1': lazy.spawn('thunderbird')},
+                    padding=6,
+                ),				
                 widget.TextBox(
                     text="󰉋", 
                     font="JetBrainsMono Nerd Font",
