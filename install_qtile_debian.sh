@@ -36,7 +36,7 @@ apt install -y \
 echo -e "\n${BLUE}[3/10] Instalacja przeglądarki LibreWolf...${NC}"
 apt install -y extrepo
 extrepo enable librewolf
-apt update && apt install -y librewolf
+apt update && apt install -y librewolf xdg-utils
 # Odblokowanie możliwości logowania do Konta Firefox (Firefox Sync)
 mkdir -p /etc/librewolf
 cat <<EOF >> /etc/librewolf/librewolf.overrides.cfg
