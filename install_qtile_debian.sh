@@ -48,7 +48,7 @@ EOF
 echo -e "\n${BLUE}[3/7] Instalacja pakietów naukowych Python (Apt)...${NC}"
 apt install -y \
   python3-ipython python3-ipykernel \
-  python3-jupyterlab python3-jupyterlab-widgets python3-jupyterlab-git \
+  python3-jupyterlab python3-jupyterlab-widgets \
   python3-pandas python3-matplotlib python3-scipy
 
 # 6. Instalacja aplikacji okienkowych
