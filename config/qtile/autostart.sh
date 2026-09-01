@@ -30,4 +30,4 @@ xfce4-power-manager &
 dunst &
 
 # Agent autoryzacji Polkit (wymagany do okien z prośbą o hasło root/sudo)
-/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+lxpolkit &
