@@ -118,7 +118,7 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                # --- LEWA STRONA PASKA ---
+                # --- PRZYCISK MENU (JGMENU) ---
                 widget.TextBox(
                     text="󰍜 Menu", 
                     font="JetBrainsMono Nerd Font",
@@ -128,17 +128,30 @@ screens = [
                     padding=8,
                 ),
                 widget.Sep(linewidth=1, padding=8, foreground="#45475a"),
-                widget.Spacer(length=10),
+                widget.Spacer(length=6),
 
                 # --- IKONY SZYBKIEGO URUCHAMIANIA ---
-                widget.TextBox(text="󰈹", font="JetBrainsMono Nerd Font", fontsize=20, foreground="#5865F2", mouse_callbacks={'Button1': lazy.spawn('librewolf')}, padding=6),
-                widget.TextBox(text="󰇮", font="JetBrainsMono Nerd Font", fontsize=20, foreground="#35BFDE", mouse_callbacks={'Button1': lazy.spawn('thunderbird')}, padding=6),
-                widget.TextBox(text="󰉋", font="JetBrainsMono Nerd Font", fontsize=20, foreground="#F1FA8C", mouse_callbacks={'Button1': lazy.spawn('thunar')}, padding=6),
-                widget.TextBox(text="󰨞", font="JetBrainsMono Nerd Font", fontsize=20, foreground="#007ACC", mouse_callbacks={'Button1': lazy.spawn('code')}, padding=6),
-                widget.TextBox(text="󰏆", font="JetBrainsMono Nerd Font", fontsize=20, foreground="#18A303", mouse_callbacks={'Button1': lazy.spawn('libreoffice')}, padding=6),
-                widget.TextBox(text="󰕼", font="JetBrainsMono Nerd Font", fontsize=20, foreground="#FF8800", mouse_callbacks={'Button1': lazy.spawn('vlc')}, padding=6),
+                # Przeglądarka / Poczta / Menedżer plików / VS Code / LibreOffice / VLC
+                widget.TextBox(text="󰈹", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#5865F2", mouse_callbacks={'Button1': lazy.spawn('librewolf')}, padding=4),
+                widget.TextBox(text="󰇮", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#35BFDE", mouse_callbacks={'Button1': lazy.spawn('thunderbird')}, padding=4),
+                widget.TextBox(text="󰉋", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#F1FA8C", mouse_callbacks={'Button1': lazy.spawn('thunar')}, padding=4),
+                widget.TextBox(text="󰨞", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#007ACC", mouse_callbacks={'Button1': lazy.spawn('code')}, padding=4),
+                widget.TextBox(text="󰏆", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#18A303", mouse_callbacks={'Button1': lazy.spawn('libreoffice')}, padding=4),
+                widget.TextBox(text="󰕼", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#FF8800", mouse_callbacks={'Button1': lazy.spawn('vlc')}, padding=4),
 
-                widget.Sep(linewidth=1, padding=10, foreground="#45475a"),
+                # --- NOWE IKONY ---
+                # Calibre (Książka)
+                widget.TextBox(text="󰂿", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#A6E3A1", mouse_callbacks={'Button1': lazy.spawn('calibre')}, padding=4),
+                # Shotwell (Zdjęcia/Galeria)
+                widget.TextBox(text="󰄄", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#FAB387", mouse_callbacks={'Button1': lazy.spawn('shotwell')}, padding=4),
+                # Teams for Linux (Flatpak)
+                widget.TextBox(text="󰊻", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#74C7EC", mouse_callbacks={'Button1': lazy.spawn('flatpak run com.github.IsmaelMartinez.teams_for_linux')}, padding=4),
+                # Watsie / WhatsApp (Flatpak)
+                widget.TextBox(text="󰖣", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#A6E3A1", mouse_callbacks={'Button1': lazy.spawn('flatpak run com.ktechpit.watsie')}, padding=4),
+                # Rhythmbox (Muzyka)
+                widget.TextBox(text="󰎈", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#F38BA8", mouse_callbacks={'Button1': lazy.spawn('rhythmbox')}, padding=4),
+
+                widget.Sep(linewidth=1, padding=8, foreground="#45475a"),
 
                 # --- PULPITY (1-4) ---
                 widget.GroupBox(
@@ -148,10 +161,10 @@ screens = [
                     highlight_color=['#1e1e2e', '#313244'],
                     this_current_screen_border='#89b4fa',
                     margin_x=0,
-                    padding_x=6,
+                    padding_x=5,
                 ),
 
-                widget.Sep(linewidth=1, padding=10, foreground="#45475a"),
+                widget.Sep(linewidth=1, padding=8, foreground="#45475a"),
                 widget.Prompt(),
 
                 # --- ODSTĘP DO ŚRODKA ---
@@ -165,11 +178,11 @@ screens = [
 
                 # --- PRAWA STRONA PASKA ---
                 widget.KeyboardLayout(configured_keyboards=['pl'], foreground="#89b4fa"),
-                widget.Sep(linewidth=1, padding=10, foreground="#45475a"),
+                widget.Sep(linewidth=1, padding=8, foreground="#45475a"),
 
                 # Zasobnik dla apletów (sieć, dźwięk, bluetooth)
-                widget.Systray(padding=6, icon_size=18),
-                widget.Sep(linewidth=1, padding=10, foreground="#45475a"),
+                widget.Systray(padding=4, icon_size=18),
+                widget.Sep(linewidth=1, padding=8, foreground="#45475a"),
 
                 # Ikona menedżera zasilania
                 widget.TextBox(
@@ -178,9 +191,9 @@ screens = [
                     fontsize=18,
                     foreground="#a6e3a1",
                     mouse_callbacks={'Button1': lazy.spawn('xfce4-power-manager-settings')},
-                    padding=6,
+                    padding=4,
                 ),
-                widget.Sep(linewidth=1, padding=10, foreground="#45475a"),
+                widget.Sep(linewidth=1, padding=8, foreground="#45475a"),
                 
                 # Przycisk wyłączenia
                 widget.QuickExit(
