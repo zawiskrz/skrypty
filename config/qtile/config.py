@@ -209,7 +209,7 @@ generate_screens: Callable[[list[Output]], list[Screen]] | None = None
 mouse = [
     Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
     Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
-    Click([], "Button3", show_jgmenu_on_desktop),
+    Click([mod], "Button3", show_jgmenu_on_desktop),
     Click([mod], "Button2", lazy.window.bring_to_front()),
 ]
 
@@ -249,4 +249,3 @@ def autostart():
     home = os.path.expanduser('~/.config/qtile/autostart.sh')
     if os.path.exists(home):
         subprocess.Popen([home])
-		
