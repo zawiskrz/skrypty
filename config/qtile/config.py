@@ -19,12 +19,6 @@ def toggle_show_desktop(qtile):
         if win.minimized != has_visible:
             win.toggle_minimize()
 
-@lazy.function
-def show_jgmenu_on_desktop(qtile):
-    # Jeśli kliknięto w puste miejsce (brak aktywnego okna pod kursorem)
-    if qtile.current_window is None:
-        qtile.spawn("jgmenu_run")
-
 keys = [
     # Switch between windows (Focus)
     Key([mod], "Left", lazy.layout.left(), desc="Move focus to left"),
@@ -66,10 +60,13 @@ keys = [
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "m", lazy.spawn('jgmenu --config-file=' + os.path.expanduser('~/.config/jgmenu/dock.rc')), desc="Otwórz menu XFCE"),
-    # Application launcher (Rofi menu)
-    #Key([mod], "m", lazy.spawn("rofi -show drun"), desc="Launch Rofi menu"),
     Key([mod, "control"], "d", toggle_show_desktop, desc="Pokaż/Ukryj pulpit"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+
+    # Skróty klawiszowe dla nowych aplikacji
+    Key([mod, "shift"], "c", lazy.spawn("code"), desc="Uruchom VS Code"),
+    Key([mod, "shift"], "o", lazy.spawn("libreoffice"), desc="Uruchom LibreOffice"),
+    Key([mod, "shift"], "v", lazy.spawn("vlc"), desc="Uruchom VLC"),
 ]
 
 for vt in range(1, 8):
@@ -120,20 +117,17 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                # Układ okien (np. columns)
-                #widget.CurrentLayout(foreground="#89b4fa"),
-		# --- PRZYCISK MENU (JGMENU) ---
-		widget.TextBox(
-		   text="󰍜 Menu", 
-		   font="JetBrainsMono Nerd Font",
-		   fontsize=16,
-		   foreground="#89b4fa",
-		   mouse_callbacks={'Button1': lazy.spawn('jgmenu --config-file=' + os.path.expanduser('~/.config/jgmenu/dock.rc'))},
-		   padding=8,
-		),
-		widget.Sep(linewidth=1, padding=8, foreground="#45475a"),
-
-		widget.Spacer(length=10),
+                # --- PRZYCISK MENU (JGMENU) ---
+                widget.TextBox(
+                    text="󰍜 Menu", 
+                    font="JetBrainsMono Nerd Font",
+                    fontsize=16,
+                    foreground="#89b4fa",
+                    mouse_callbacks={'Button1': lazy.spawn('jgmenu --config-file=' + os.path.expanduser('~/.config/jgmenu/dock.rc'))},
+                    padding=8,
+                ),
+                widget.Sep(linewidth=1, padding=8, foreground="#45475a"),
+                widget.Spacer(length=10),
 
                 # --- IKONY SZYBKIEGO URUCHAMIANIA ---
                 widget.TextBox(
@@ -144,12 +138,11 @@ screens = [
                     mouse_callbacks={'Button1': lazy.spawn('librewolf')},
                     padding=6,
                 ),
-		# --- DODAJE THUNDERBIRD ---
                 widget.TextBox(
                     text="󰇮", 
                     font="JetBrainsMono Nerd Font",
                     fontsize=20,
-                    foreground="#35BFDE",  # Błękitny kolor ikony Thunderbird
+                    foreground="#35BFDE",
                     mouse_callbacks={'Button1': lazy.spawn('thunderbird')},
                     padding=6,
                 ),
@@ -161,11 +154,34 @@ screens = [
                     mouse_callbacks={'Button1': lazy.spawn('thunar')},
                     padding=6,
                 ),
-                # -----------------------------------
+                widget.TextBox(
+                    text="󰨞", 
+                    font="JetBrainsMono Nerd Font",
+                    fontsize=20,
+                    foreground="#007ACC",
+                    mouse_callbacks={'Button1': lazy.spawn('code')},
+                    padding=6,
+                ),
+                widget.TextBox(
+                    text="󰏆", 
+                    font="JetBrainsMono Nerd Font",
+                    fontsize=20,
+                    foreground="#18A303",
+                    mouse_callbacks={'Button1': lazy.spawn('libreoffice')},
+                    padding=6,
+                ),
+                widget.TextBox(
+                    text="󰕼", 
+                    font="JetBrainsMono Nerd Font",
+                    fontsize=20,
+                    foreground="#FF8800",
+                    mouse_callbacks={'Button1': lazy.spawn('vlc')},
+                    padding=6,
+                ),
 
                 widget.Sep(linewidth=1, padding=10, foreground="#45475a"),
 
-                # Pulpity (1-9) z ładnym podświetleniem
+                # --- PULPITY ---
                 widget.GroupBox(
                     highlight_method='line',
                     active='#cdd6f4',
@@ -179,23 +195,23 @@ screens = [
                 widget.Sep(linewidth=1, padding=10, foreground="#45475a"),
                 widget.Prompt(),
 
-                # Tytuł aktywnego okna
+                # --- TYTUŁ AKTYWNEGO OKNA ---
                 widget.WindowName(foreground="#cdd6f4"),
 
-                # Prawa strona paska
+                # --- PRAWA STRONA PASKA ---
                 widget.Systray(padding=5),
                 widget.Sep(linewidth=1, padding=10, foreground="#45475a"),
                 
                 widget.Clock(format="%Y-%m-%d %a %H:%M", foreground="#a6e3a1"),
                 widget.Spacer(length=10),
-		widget.QuickExit(
-		   default_text='󰐥',
-		   command='systemctl poweroff',  # Komenda wyłączająca komputer
-		   foreground="#f38ba8",
-		),
+                widget.QuickExit(
+                    default_text='󰐥',
+                    command='systemctl poweroff',
+                    foreground="#f38ba8",
+                ),
             ],
-            30,  # Wysokość paska
-            background="#1e1e2e",  # Ciemnogranatowe tło
+            30,
+            background="#1e1e2e",
         ),
         background="#000000",
         wallpaper=logo,
@@ -206,10 +222,10 @@ screens = [
 fake_screens: list[Screen] | None = None
 generate_screens: Callable[[list[Output]], list[Screen]] | None = None
 
+# Obsługa myszy (Mod + LewyKlik: przesuwanie, Mod + PrawyKlik: zmiana rozmiaru)
 mouse = [
     Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
     Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
-    Click([mod], "Button3", show_jgmenu_on_desktop),
     Click([mod], "Button2", lazy.window.bring_to_front()),
 ]
 
@@ -249,3 +265,4 @@ def autostart():
     home = os.path.expanduser('~/.config/qtile/autostart.sh')
     if os.path.exists(home):
         subprocess.Popen([home])
+		
