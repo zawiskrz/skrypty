@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# --- EKRAM I SPICE (GNOME Boxes / KVM) ---
-# Ustawienie rozdzielczości ekranu (fallback do HDMI-1)
+# --- EKRAN I SPICE (GNOME Boxes / KVM) ---
+# Ustawienie rozdzielczości ekranu
 xrandr --output Virtual-1 --mode 1920x1080 2>/dev/null || xrandr --output HDMI-1 --mode 1920x1080 2>/dev/null &
 
 # Uruchomienie agenta schowka dla GNOME Boxes / SPICE (kopiowanie/wklejanie z hostem)
@@ -12,17 +12,13 @@ spice-vdagent &
 picom -b &
 
 # --- APLETY DO ZASOBNIKA SYSTEMOWEGO (SYSTRAY) ---
-# Aplet sieci (Wi-Fi / Ethernet)
-nm-tray &
-# Jeśli używasz klasycznego nm-applet, zamień na: nm-applet &
-
-# Aplet sterowania głośnością (PulseAudio / PipeWire)
-pasystray &
+# Aplet sieci (NetworkManager z network-manager-applet)
+nm-applet &
 
 # Aplet do obsługi Bluetooth
 blueman-applet &
 
-# Menedżer zasilania (zarządzanie baterią i wygaszaniem ekranu)
+# Menedżer zasilania XFCE (zarządzanie baterią i wygaszaniem ekranu)
 xfce4-power-manager &
 
 # --- POWIADOMIENIA I AUTORYZACJA ---
