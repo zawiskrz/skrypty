@@ -79,6 +79,7 @@ for vt in range(1, 8):
         )
     )
 
+# PULPITY (ZACHOWANO 1-4)
 groups = [Group(i) for i in "1234"]
 
 for i in groups:
@@ -181,7 +182,7 @@ screens = [
 
                 widget.Sep(linewidth=1, padding=10, foreground="#45475a"),
 
-                # --- PULPITY ---
+                # --- PULPITY (1-4) ---
                 widget.GroupBox(
                     highlight_method='line',
                     active='#cdd6f4',
@@ -199,7 +200,11 @@ screens = [
                 widget.WindowName(foreground="#cdd6f4"),
 
                 # --- PRAWA STRONA PASKA ---
-                widget.Systray(padding=5),
+                widget.KeyboardLayout(configured_keyboards=['pl'], foreground="#89b4fa"),
+                widget.Sep(linewidth=1, padding=10, foreground="#45475a"),
+
+                # Zasobnik dla apletów (sieć, dźwięk, bluetooth, zasilanie)
+                widget.Systray(padding=6, icon_size=18),
                 widget.Sep(linewidth=1, padding=10, foreground="#45475a"),
                 
                 widget.Clock(format="%Y-%m-%d %a %H:%M", foreground="#a6e3a1"),
@@ -265,4 +270,3 @@ def autostart():
     home = os.path.expanduser('~/.config/qtile/autostart.sh')
     if os.path.exists(home):
         subprocess.Popen([home])
-		
