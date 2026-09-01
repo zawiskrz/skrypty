@@ -118,7 +118,7 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                # --- PRZYCISK MENU (JGMENU) ---
+                # --- LEWA STRONA PASKA ---
                 widget.TextBox(
                     text="󰍜 Menu", 
                     font="JetBrainsMono Nerd Font",
@@ -131,54 +131,12 @@ screens = [
                 widget.Spacer(length=10),
 
                 # --- IKONY SZYBKIEGO URUCHAMIANIA ---
-                widget.TextBox(
-                    text="󰈹", 
-                    font="JetBrainsMono Nerd Font",
-                    fontsize=20,
-                    foreground="#5865F2",
-                    mouse_callbacks={'Button1': lazy.spawn('librewolf')},
-                    padding=6,
-                ),
-                widget.TextBox(
-                    text="󰇮", 
-                    font="JetBrainsMono Nerd Font",
-                    fontsize=20,
-                    foreground="#35BFDE",
-                    mouse_callbacks={'Button1': lazy.spawn('thunderbird')},
-                    padding=6,
-                ),
-                widget.TextBox(
-                    text="󰉋", 
-                    font="JetBrainsMono Nerd Font",
-                    fontsize=20,
-                    foreground="#F1FA8C",
-                    mouse_callbacks={'Button1': lazy.spawn('thunar')},
-                    padding=6,
-                ),
-                widget.TextBox(
-                    text="󰨞", 
-                    font="JetBrainsMono Nerd Font",
-                    fontsize=20,
-                    foreground="#007ACC",
-                    mouse_callbacks={'Button1': lazy.spawn('code')},
-                    padding=6,
-                ),
-                widget.TextBox(
-                    text="󰏆", 
-                    font="JetBrainsMono Nerd Font",
-                    fontsize=20,
-                    foreground="#18A303",
-                    mouse_callbacks={'Button1': lazy.spawn('libreoffice')},
-                    padding=6,
-                ),
-                widget.TextBox(
-                    text="󰕼", 
-                    font="JetBrainsMono Nerd Font",
-                    fontsize=20,
-                    foreground="#FF8800",
-                    mouse_callbacks={'Button1': lazy.spawn('vlc')},
-                    padding=6,
-                ),
+                widget.TextBox(text="󰈹", font="JetBrainsMono Nerd Font", fontsize=20, foreground="#5865F2", mouse_callbacks={'Button1': lazy.spawn('librewolf')}, padding=6),
+                widget.TextBox(text="󰇮", font="JetBrainsMono Nerd Font", fontsize=20, foreground="#35BFDE", mouse_callbacks={'Button1': lazy.spawn('thunderbird')}, padding=6),
+                widget.TextBox(text="󰉋", font="JetBrainsMono Nerd Font", fontsize=20, foreground="#F1FA8C", mouse_callbacks={'Button1': lazy.spawn('thunar')}, padding=6),
+                widget.TextBox(text="󰨞", font="JetBrainsMono Nerd Font", fontsize=20, foreground="#007ACC", mouse_callbacks={'Button1': lazy.spawn('code')}, padding=6),
+                widget.TextBox(text="󰏆", font="JetBrainsMono Nerd Font", fontsize=20, foreground="#18A303", mouse_callbacks={'Button1': lazy.spawn('libreoffice')}, padding=6),
+                widget.TextBox(text="󰕼", font="JetBrainsMono Nerd Font", fontsize=20, foreground="#FF8800", mouse_callbacks={'Button1': lazy.spawn('vlc')}, padding=6),
 
                 widget.Sep(linewidth=1, padding=10, foreground="#45475a"),
 
@@ -196,8 +154,14 @@ screens = [
                 widget.Sep(linewidth=1, padding=10, foreground="#45475a"),
                 widget.Prompt(),
 
-                # --- TYTUŁ AKTYWNEGO OKNA ---
-                widget.WindowName(foreground="#cdd6f4"),
+                # --- ODSTĘP DO ŚRODKA ---
+                widget.Spacer(),
+
+                # --- ŚRODEK PASKA (ZEGAR) ---
+                widget.Clock(format="%Y-%m-%d %a %H:%M", foreground="#a6e3a1"),
+
+                # --- ODSTĘP OD ŚRODKA DO PRAWEJ STRONY ---
+                widget.Spacer(),
 
                 # --- PRAWA STRONA PASKA ---
                 widget.KeyboardLayout(configured_keyboards=['pl'], foreground="#89b4fa"),
@@ -207,7 +171,7 @@ screens = [
                 widget.Systray(padding=6, icon_size=18),
                 widget.Sep(linewidth=1, padding=10, foreground="#45475a"),
 
-                # --- IKONA MENEDŻERA ZASILANIA ---
+                # Ikona menedżera zasilania
                 widget.TextBox(
                     text="󰂄",
                     font="JetBrainsMono Nerd Font",
@@ -218,8 +182,7 @@ screens = [
                 ),
                 widget.Sep(linewidth=1, padding=10, foreground="#45475a"),
                 
-                widget.Clock(format="%Y-%m-%d %a %H:%M", foreground="#a6e3a1"),
-                widget.Spacer(length=10),
+                # Przycisk wyłączenia
                 widget.QuickExit(
                     default_text='󰐥',
                     command='systemctl poweroff',
