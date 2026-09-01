@@ -31,6 +31,17 @@ apt install -y \
   build-essential curl wget git mc htop thunar \
   libpango1.0-dev libpangocairo-1.0-0 gpg flatpak \
   python3-pip python3-full python3-venv python3-neovim
+  
+# Instalacja JetBrainsMono Nerd Font
+echo -e "\n${BLUE}Instalacja czcionki JetBrainsMono Nerd Font...${NC}"
+sudo -u "$REAL_USER" bash << EOF
+  mkdir -p "$REAL_HOME/.local/share/fonts"
+  cd /tmp
+  wget -q https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip
+  unzip -o -q JetBrainsMono.zip -d "$REAL_HOME/.local/share/fonts/"
+  rm JetBrainsMono.zip
+  fc-cache -f
+EOF
 
 # Konfiguracja repozytorium Flathub dla Flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
