@@ -18,6 +18,13 @@ def toggle_show_desktop(qtile):
     for win in qtile.current_group.windows:
         if win.minimized != has_visible:
             win.toggle_minimize()
+
+@lazy.function
+def show_jgmenu_on_desktop(qtile):
+    # Jeśli kliknięto w puste miejsce (brak aktywnego okna pod kursorem)
+    if qtile.current_window is None:
+        qtile.spawn("jgmenu_run")
+
 keys = [
     # Switch between windows (Focus)
     Key([mod], "Left", lazy.layout.left(), desc="Move focus to left"),
@@ -137,7 +144,7 @@ screens = [
                     mouse_callbacks={'Button1': lazy.spawn('librewolf')},
                     padding=6,
                 ),
-				# --- DODAJE THUNDERBIRD ---
+		# --- DODAJE THUNDERBIRD ---
                 widget.TextBox(
                     text="󰇮", 
                     font="JetBrainsMono Nerd Font",
@@ -145,7 +152,7 @@ screens = [
                     foreground="#35BFDE",  # Błękitny kolor ikony Thunderbird
                     mouse_callbacks={'Button1': lazy.spawn('thunderbird')},
                     padding=6,
-                ),				
+                ),
                 widget.TextBox(
                     text="󰉋", 
                     font="JetBrainsMono Nerd Font",
@@ -202,8 +209,8 @@ generate_screens: Callable[[list[Output]], list[Screen]] | None = None
 mouse = [
     Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
     Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
+    Click([], "Button3", show_jgmenu_on_desktop),
     Click([mod], "Button2", lazy.window.bring_to_front()),
-    Click([], "Button3", lazy.spawn('jgmenu')),
 ]
 
 dgroups_key_binder = None
@@ -242,3 +249,4 @@ def autostart():
     home = os.path.expanduser('~/.config/qtile/autostart.sh')
     if os.path.exists(home):
         subprocess.Popen([home])
+		
