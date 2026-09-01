@@ -19,19 +19,25 @@ REAL_USER=${SUDO_USER:-$USER}
 REAL_HOME=$(eval echo "~$REAL_USER")
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# 2. Aktualizacja systemu
-echo -e "\n${BLUE}[1/10] Aktualizacja systemu...${NC}"
+# 2. Usuwanie ewentualnych pozostałości po Cinnamonie
+echo -e "\n${BLUE}[1/10] Czyszczenie niechcianych pakietów...${NC}"
+apt purge -y cinnamon-desktop-data cinnamon-session nemo 2>/dev/null || true
+apt autoremove --purge -y
+
+# 3. Aktualizacja systemu
+echo -e "\n${BLUE}[2/10] Aktualizacja systemu...${NC}"
 apt update && apt upgrade -y
 
-# 3. Instalacja pakietów systemowych, X11, LightDM, SPICE, Flatpaka i build-essential
-echo -e "\n${BLUE}[2/10] Instalacja serwera X11, LightDM, Flatpak i narzędzi systemowych...${NC}"
-apt install -y \
+# 4. Instalacja pakietów systemowych, X11, LightDM, SPICE, Flatpaka i build-essential
+echo -e "\n${BLUE}[3/10] Instalacja serwera X11, LightDM, Flatpak i narzędzi systemowych...${NC}"
+apt install -y --no-install-recommends \
   xserver-xorg xinit lightdm lightdm-gtk-greeter \
   x11-xserver-utils spice-vdagent qemu-guest-agent \
   build-essential curl wget git mc htop thunar \
   libpango1.0-dev libpangocairo-1.0-0 gpg flatpak \
-  python3-pip python3-full python3-venv python3-neovim
-  
+  python3-pip python3-full python3-venv python3-neovim \
+  unzip fonts-font-awesome fonts-noto-color-emoji
+
 # Instalacja JetBrainsMono Nerd Font
 echo -e "\n${BLUE}Instalacja czcionki JetBrainsMono Nerd Font...${NC}"
 sudo -u "$REAL_USER" bash << EOF
@@ -46,17 +52,17 @@ EOF
 # Konfiguracja repozytorium Flathub dla Flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-# 4. Instalacja Visual Studio Code
-echo -e "\n${BLUE}[3/10] Dodawanie repozytorium i instalacja Visual Studio Code...${NC}"
+# 5. Instalacja Visual Studio Code
+echo -e "\n${BLUE}[4/10] Dodawanie repozytorium i instalacja Visual Studio Code...${NC}"
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > /etc/apt/trusted.gpg.d/packages.microsoft.gpg
 echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list
 apt update && apt install -y code
 
-# 5. Instalacja LibreWolf oraz Thunderbird
-echo -e "\n${BLUE}[4/10] Instalacja przeglądarki LibreWolf i Thunderbird...${NC}"
-apt install -y extrepo
+# 6. Instalacja LibreWolf oraz Thunderbird
+echo -e "\n${BLUE}[5/10] Instalacja przeglądarki LibreWolf i Thunderbird...${NC}"
+apt install -y --no-install-recommends extrepo
 extrepo enable librewolf
-apt update && apt install -y librewolf xdg-utils --no-install-recommends thunderbird thunderbird-l10n-pl
+apt update && apt install -y --no-install-recommends librewolf xdg-utils thunderbird thunderbird-l10n-pl
 
 # Odblokowanie synchronizacji Firefox Sync w LibreWolf
 mkdir -p /etc/librewolf
@@ -74,9 +80,9 @@ sudo -u "$REAL_USER" bash << EOF
   /usr/bin/xdg-mime default librewolf.desktop text/html
 EOF
 
-# 6. Instalacja LibreOffice, Calibre, Shotwell, Rhythmbox, VLC oraz pakietów Flatpak
-echo -e "\n${BLUE}[5/10] Instalacja aplikacji (Apt + Flatpak)...${NC}"
-apt install -y \
+# 7. Instalacja LibreOffice, Calibre, Shotwell, Rhythmbox, VLC oraz pakietów Flatpak
+echo -e "\n${BLUE}[6/10] Instalacja aplikacji (Apt + Flatpak)...${NC}"
+apt install -y --no-install-recommends \
   libreoffice libreoffice-l10n-pl libreoffice-help-pl hunspell-pl hyphen-pl mythes-pl \
   libreoffice-base libreoffice-java-common default-jre \
   vlc calibre shotwell rhythmbox
@@ -91,16 +97,17 @@ flatpak install -y flathub \
   app/io.missioncenter.MissionCenter/x86_64/stable \
   app/com.playonlinux.PlayOnLinux4/x86_64/stable
 
-# 7. Instalacja pakietów Python (Data Science)
-echo -e "\n${BLUE}[6/10] Instalacja pakietów naukowych Python (Apt)...${NC}"
-apt install -y \
+# 8. Instalacja pakietów Python (Data Science)
+echo -e "\n${BLUE}[7/10] Instalacja pakietów naukowych Python (Apt)...${NC}"
+apt install -y --no-install-recommends \
   python3-ipython python3-ipykernel \
   python3-jupyterlab python3-jupyterlab-widgets \
   python3-pandas python3-matplotlib python3-scipy
 
-# 8. Instalacja aplikacji okienkowych, apletów zasobnika systemowego i narzędzi GTK
-echo -e "\n${BLUE}[7/10] Instalacja Kitty, jgmenu, Picom, apletów systemowych i motywów GTK...${NC}"
-apt install -y kitty picom jgmenu lxappearance \
+# 9. Instalacja aplikacji okienkowych, apletów zasobnika systemowego i narzędzi GTK
+echo -e "\n${BLUE}[8/10] Instalacja Kitty, jgmenu, Picom, apletów systemowych i motywów GTK...${NC}"
+apt install -y --no-install-recommends \
+  kitty picom jgmenu lxappearance \
   papirus-icon-theme hicolor-icon-theme gnome-icon-theme \
   xbindkeys xdotool dunst lxpolkit \
   pasystray pavucontrol network-manager nm-tray blueman xfce4-power-manager
@@ -121,8 +128,8 @@ GEOF
 XEOF
 EOF
 
-# 9. Instalacja uv oraz Qtile w środowisku użytkownika
-echo -e "\n${BLUE}[8/10] Instalacja Astral-UV oraz Qtile...${NC}"
+# 10. Instalacja uv oraz Qtile w środowisku użytkownika
+echo -e "\n${BLUE}[9/10] Instalacja Astral-UV oraz Qtile...${NC}"
 sudo -u "$REAL_USER" bash << EOF
   curl -LsSf https://astral.sh/uv/install.sh | sh
   source "$REAL_HOME/.local/bin/env" 2>/dev/null || export PATH="$REAL_HOME/.local/bin:\$PATH"
@@ -131,8 +138,8 @@ EOF
 
 ln -sf "$REAL_HOME/.local/bin/qtile" /usr/local/bin/qtile
 
-# 10. Rejestracja w LightDM i Kopiowanie konfiguracji
-echo -e "\n${BLUE}[9/10] Rejestracja Qtile w LightDM...${NC}"
+# 11. Rejestracja w LightDM i Kopiowanie konfiguracji
+echo -e "\n${BLUE}[10/10] Rejestracja Qtile w LightDM oraz kopiowanie plików...${NC}"
 mkdir -p /usr/share/xsessions
 cat <<EOF > /usr/share/xsessions/qtile.desktop
 [Desktop Entry]
@@ -143,7 +150,6 @@ Type=Application
 Keywords=wm;tiling;
 EOF
 
-echo -e "\n${BLUE}[10/10] Kopiowanie plików konfiguracyjnych...${NC}"
 if [ -d "$SCRIPT_DIR/config/qtile" ]; then
   sudo -u "$REAL_USER" mkdir -p "$REAL_HOME/.config/qtile"
   sudo -u "$REAL_USER" cp -r "$SCRIPT_DIR/config/qtile/"* "$REAL_HOME/.config/qtile/"
