@@ -130,26 +130,30 @@ screens = [
                 widget.Sep(linewidth=1, padding=8, foreground="#45475a"),
                 widget.Spacer(length=6),
 
-                # --- IKONY SZYBKIEGO URUCHAMIANIA ---
-                # Przeglądarka / Poczta / Menedżer plików / VS Code / LibreOffice / VLC
+                # --- IKONY SZYBKIEGO URUCHAMIANIA (PODSTAWOWE) ---
                 widget.TextBox(text="󰈹", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#5865F2", mouse_callbacks={'Button1': lazy.spawn('librewolf')}, padding=4),
                 widget.TextBox(text="󰇮", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#35BFDE", mouse_callbacks={'Button1': lazy.spawn('thunderbird')}, padding=4),
                 widget.TextBox(text="󰉋", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#F1FA8C", mouse_callbacks={'Button1': lazy.spawn('thunar')}, padding=4),
                 widget.TextBox(text="󰨞", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#007ACC", mouse_callbacks={'Button1': lazy.spawn('code')}, padding=4),
                 widget.TextBox(text="󰏆", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#18A303", mouse_callbacks={'Button1': lazy.spawn('libreoffice')}, padding=4),
                 widget.TextBox(text="󰕼", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#FF8800", mouse_callbacks={'Button1': lazy.spawn('vlc')}, padding=4),
-
-                # --- NOWE IKONY ---
-                # Calibre (Książka)
                 widget.TextBox(text="󰂿", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#A6E3A1", mouse_callbacks={'Button1': lazy.spawn('calibre')}, padding=4),
-                # Shotwell (Zdjęcia/Galeria)
                 widget.TextBox(text="󰄄", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#FAB387", mouse_callbacks={'Button1': lazy.spawn('shotwell')}, padding=4),
-                # Teams for Linux (Flatpak)
-                widget.TextBox(text="󰊻", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#74C7EC", mouse_callbacks={'Button1': lazy.spawn('flatpak run com.github.IsmaelMartinez.teams_for_linux')}, padding=4),
-                # Watsie / WhatsApp (Flatpak)
-                widget.TextBox(text="󰖣", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#A6E3A1", mouse_callbacks={'Button1': lazy.spawn('flatpak run com.ktechpit.watsie')}, padding=4),
-                # Rhythmbox (Muzyka)
                 widget.TextBox(text="󰎈", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#F38BA8", mouse_callbacks={'Button1': lazy.spawn('rhythmbox')}, padding=4),
+
+                widget.Sep(linewidth=1, padding=6, foreground="#45475a"),
+
+                # --- NOWE IKONY FLATPAK ---
+                # Teams for Linux
+                widget.TextBox(text="󰊻", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#74C7EC", mouse_callbacks={'Button1': lazy.spawn('flatpak run com.github.IsmaelMartinez.teams_for_linux')}, padding=4),
+                # Whatsie (WhatsApp)
+                widget.TextBox(text="󰖣", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#A6E3A1", mouse_callbacks={'Button1': lazy.spawn('flatpak run com.ktechpit.whatsie')}, padding=4),
+                # YouTube Music Desktop
+                widget.TextBox(text="󰠃", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#F38BA8", mouse_callbacks={'Button1': lazy.spawn('flatpak run app.ytmdesktop.ytmdesktop')}, padding=4),
+                # Video Downloader
+                widget.TextBox(text="󰕍", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#FAB387", mouse_callbacks={'Button1': lazy.spawn('flatpak run com.github.unrud.VideoDownloader')}, padding=4),
+                # Mousam (Pogoda)
+                widget.TextBox(text="󰖐", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#89B4FA", mouse_callbacks={'Button1': lazy.spawn('flatpak run io.github.amit9838.mousam')}, padding=4),
 
                 widget.Sep(linewidth=1, padding=8, foreground="#45475a"),
 
