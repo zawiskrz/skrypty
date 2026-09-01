@@ -203,8 +203,19 @@ screens = [
                 widget.KeyboardLayout(configured_keyboards=['pl'], foreground="#89b4fa"),
                 widget.Sep(linewidth=1, padding=10, foreground="#45475a"),
 
-                # Zasobnik dla apletów (sieć, dźwięk, bluetooth, zasilanie)
+                # Zasobnik dla apletów (sieć, dźwięk, bluetooth)
                 widget.Systray(padding=6, icon_size=18),
+                widget.Sep(linewidth=1, padding=10, foreground="#45475a"),
+
+                # --- IKONA MENEDŻERA ZASILANIA ---
+                widget.TextBox(
+                    text="󰂄",
+                    font="JetBrainsMono Nerd Font",
+                    fontsize=18,
+                    foreground="#a6e3a1",
+                    mouse_callbacks={'Button1': lazy.spawn('xfce4-power-manager-settings')},
+                    padding=6,
+                ),
                 widget.Sep(linewidth=1, padding=10, foreground="#45475a"),
                 
                 widget.Clock(format="%Y-%m-%d %a %H:%M", foreground="#a6e3a1"),
