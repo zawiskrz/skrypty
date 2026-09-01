@@ -23,14 +23,17 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 echo -e "\n${BLUE}[1/10] Aktualizacja systemu...${NC}"
 apt update && apt upgrade -y
 
-# 3. Instalacja pakietów systemowych, X11, LightDM, SPICE i bibliotek build-essential
-echo -e "\n${BLUE}[2/10] Instalacja serwera X11, LightDM i narzędzi systemowych...${NC}"
+# 3. Instalacja pakietów systemowych, X11, LightDM, SPICE, Flatpaka i build-essential
+echo -e "\n${BLUE}[2/10] Instalacja serwera X11, LightDM, Flatpak i narzędzi systemowych...${NC}"
 apt install -y \
   xserver-xorg xinit lightdm lightdm-gtk-greeter \
   x11-xserver-utils spice-vdagent qemu-guest-agent \
   build-essential curl wget git mc htop thunar \
-  libpango1.0-dev libpangocairo-1.0-0 gpg \
+  libpango1.0-dev libpangocairo-1.0-0 gpg flatpak \
   python3-pip python3-full python3-venv python3-neovim
+
+# Konfiguracja repozytorium Flathub dla Flatpak
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 # 4. Instalacja Visual Studio Code
 echo -e "\n${BLUE}[3/10] Dodawanie repozytorium i instalacja Visual Studio Code...${NC}"
@@ -44,15 +47,13 @@ apt install -y extrepo
 extrepo enable librewolf
 apt update && apt install -y librewolf xdg-utils --no-install-recommends thunderbird thunderbird-l10n-pl
 
-# Odblokowanie możliwości logowania do Konta Firefox (Firefox Sync)
+# Odblokowanie synchronizacji Firefox Sync w LibreWolf
 mkdir -p /etc/librewolf
 cat <<EOF >> /etc/librewolf/librewolf.overrides.cfg
-// Odblokowanie synchronizacji z serwerami Firefox (Firefox Sync)
 pref("identity.fxaccounts.enabled", true);
 EOF
 
 # Ustawienie LibreWolfa jako domyślnej przeglądarki
-echo -e "\n${BLUE}[Ustawienia] Ustawianie LibreWolf jako domyślnej przeglądarki...${NC}"
 update-alternatives --install /usr/bin/x-www-browser x-www-browser /usr/bin/librewolf 200
 update-alternatives --set x-www-browser /usr/bin/librewolf
 
@@ -62,19 +63,17 @@ sudo -u "$REAL_USER" bash << EOF
   /usr/bin/xdg-mime default librewolf.desktop text/html
 EOF
 
-# 6. Instalacja LibreOffice PL (z Base) oraz VLC Player
-echo -e "\n${BLUE}[5/10] Instalacja LibreOffice (PL + Base) oraz VLC...${NC}"
+# 6. Instalacja LibreOffice, Calibre, Shotwell, Rhythmbox oraz VLC
+echo -e "\n${BLUE}[5/10] Instalacja LibreOffice, Calibre, Shotwell, Rhythmbox oraz VLC...${NC}"
 apt install -y \
-  libreoffice \
-  libreoffice-l10n-pl \
-  libreoffice-help-pl \
-  hunspell-pl \
-  hyphen-pl \
-  mythes-pl \
-  libreoffice-base \
-  libreoffice-java-common \
-  default-jre \
-  vlc
+  libreoffice libreoffice-l10n-pl libreoffice-help-pl hunspell-pl hyphen-pl mythes-pl \
+  libreoffice-base libreoffice-java-common default-jre \
+  vlc calibre shotwell rhythmbox
+
+# Instalacja Teams for Linux oraz Watsie (WhatsApp) z Flatpak
+echo -e "\n${BLUE}[Instalacja Flatpak] Instalowanie Teams for Linux i Watsie...${NC}"
+flatpak install -y flathub com.github.IsmaelMartinez.teams_for_linux
+flatpak install -y flathub com.ktechpit.watsie || flatpak install -y flathub io.github.whatsappqt.Watsie || true
 
 # 7. Instalacja pakietów Python (Data Science)
 echo -e "\n${BLUE}[6/10] Instalacja pakietów naukowych Python (Apt)...${NC}"
@@ -101,27 +100,24 @@ gtk-font-name = Sans 10
 GEOF
 
   cat <<'XEOF' > "$REAL_HOME/.xbindkeysrc"
-# Uruchom jgmenu tylko po kliknięciu prawym przyciskiem w puste tło pulpitu
 "sh -c 'if [ \$(xdotool getmouselocation --shell | grep WINDOW | cut -d= -f2) -eq \$(xdotool getactivewindow 2>/dev/null || echo 0) ]; then jgmenu_run; fi'"
   b:3 + Release
 XEOF
 EOF
 
 # 9. Instalacja uv oraz Qtile w środowisku użytkownika
-echo -e "\n${BLUE}[8/10] Instalacja Astral-UV oraz Qtile dla użytkownika $REAL_USER...${NC}"
+echo -e "\n${BLUE}[8/10] Instalacja Astral-UV oraz Qtile...${NC}"
 sudo -u "$REAL_USER" bash << EOF
   curl -LsSf https://astral.sh/uv/install.sh | sh
   source "$REAL_HOME/.local/bin/env" 2>/dev/null || export PATH="$REAL_HOME/.local/bin:\$PATH"
   $REAL_HOME/.local/bin/uv tool install --with qtile-extras qtile
 EOF
 
-# Dowiązanie symboliczne dla LightDM
 ln -sf "$REAL_HOME/.local/bin/qtile" /usr/local/bin/qtile
 
-# 10. Utworzenie wpisu sesji w LightDM
+# 10. Rejestracja w LightDM i Kopiowanie konfiguracji
 echo -e "\n${BLUE}[9/10] Rejestracja Qtile w LightDM...${NC}"
 mkdir -p /usr/share/xsessions
-
 cat <<EOF > /usr/share/xsessions/qtile.desktop
 [Desktop Entry]
 Name=Qtile
@@ -131,25 +127,24 @@ Type=Application
 Keywords=wm;tiling;
 EOF
 
-# 11. Kopiowanie konfiguracji (w tym Twojego autostart.sh)
 echo -e "\n${BLUE}[10/10] Kopiowanie plików konfiguracyjnych...${NC}"
 if [ -d "$SCRIPT_DIR/config/qtile" ]; then
   sudo -u "$REAL_USER" mkdir -p "$REAL_HOME/.config/qtile"
   sudo -u "$REAL_USER" cp -r "$SCRIPT_DIR/config/qtile/"* "$REAL_HOME/.config/qtile/"
   chmod +x "$REAL_HOME/.config/qtile/autostart.sh" 2>/dev/null || true
-  echo -e "${GREEN}[OK] Skopiowano pliki katalogu qtile do $REAL_HOME/.config/qtile/${NC}"
+  echo -e "${GREEN}[OK] Skopiowano pliki qtile.${NC}"
 fi
 
 if [ -d "$SCRIPT_DIR/config/jgmenu" ]; then
   sudo -u "$REAL_USER" mkdir -p "$REAL_HOME/.config/jgmenu"
   sudo -u "$REAL_USER" cp -r "$SCRIPT_DIR/config/jgmenu/"* "$REAL_HOME/.config/jgmenu/"
-  echo -e "${GREEN}[OK] Skopiowano pliki katalogu jgmenu do $REAL_HOME/.config/jgmenu/${NC}"
+  echo -e "${GREEN}[OK] Skopiowano pliki jgmenu.${NC}"
 fi
 
 if [ -d "$SCRIPT_DIR/config/kitty" ]; then
   sudo -u "$REAL_USER" mkdir -p "$REAL_HOME/.config/kitty"
   sudo -u "$REAL_USER" cp -r "$SCRIPT_DIR/config/kitty/"* "$REAL_HOME/.config/kitty/"
-  echo -e "${GREEN}[OK] Skopiowano pliki katalogu kitty do $REAL_HOME/.config/kitty/${NC}"
+  echo -e "${GREEN}[OK] Skopiowano pliki kitty.${NC}"
 fi
 
-echo -e "\n${GREEN}[SUKCES] Instalacja zakończona! Zrestartuj system i zaloguj się do Qtile.${NC}"
+echo -e "\n${GREEN}[SUKCES] Instalacja zakończona! Zrestartuj system.${NC}"
