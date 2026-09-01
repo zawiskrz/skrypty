@@ -89,7 +89,7 @@ echo -e "\n${BLUE}[7/11] Instalacja Kitty, jgmenu, Picom, apletów systemowych i
 apt install -y kitty picom jgmenu lxappearance \
   papirus-icon-theme hicolor-icon-theme gnome-icon-theme \
   xbindkeys xdotool \
-  pasystray pavucontrol network-manager-gnome blueman xfce4-power-manager
+  pasystray pavucontrol network-manager nm-tray blueman xfce4-power-manager
 
 # Konfiguracja domyślnego motywu ikon GTK3, xbindkeys oraz autostartu dla użytkownika
 sudo -u "$REAL_USER" bash << EOF
@@ -119,7 +119,7 @@ picom &
 xbindkeys &
 
 # Aplety paska systemowego (Systray)
-nm-applet &
+nm-tray &
 pasystray &
 blueman-applet &
 xfce4-power-manager &
