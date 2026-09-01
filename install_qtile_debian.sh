@@ -33,7 +33,7 @@ apt install -y \
   python3-pip python3-full python3-venv python3-neovim
 
 # Konfiguracja repozytorium Flathub dla Flatpak
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # 4. Instalacja Visual Studio Code
 echo -e "\n${BLUE}[3/10] Dodawanie repozytorium i instalacja Visual Studio Code...${NC}"
@@ -63,17 +63,22 @@ sudo -u "$REAL_USER" bash << EOF
   /usr/bin/xdg-mime default librewolf.desktop text/html
 EOF
 
-# 6. Instalacja LibreOffice, Calibre, Shotwell, Rhythmbox oraz VLC
-echo -e "\n${BLUE}[5/10] Instalacja LibreOffice, Calibre, Shotwell, Rhythmbox oraz VLC...${NC}"
+# 6. Instalacja LibreOffice, Calibre, Shotwell, Rhythmbox, VLC oraz pakietów Flatpak
+echo -e "\n${BLUE}[5/10] Instalacja aplikacji (Apt + Flatpak)...${NC}"
 apt install -y \
   libreoffice libreoffice-l10n-pl libreoffice-help-pl hunspell-pl hyphen-pl mythes-pl \
   libreoffice-base libreoffice-java-common default-jre \
   vlc calibre shotwell rhythmbox
 
-# Instalacja Teams for Linux oraz Watsie (WhatsApp) z Flatpak
-echo -e "\n${BLUE}[Instalacja Flatpak] Instalowanie Teams for Linux i Watsie...${NC}"
-flatpak install -y flathub com.github.IsmaelMartinez.teams_for_linux
-flatpak install -y flathub com.ktechpit.watsie || flatpak install -y flathub io.github.whatsappqt.Watsie || true
+# Instalacja aplikacji Flatpak
+flatpak install -y flathub \
+  com.github.IsmaelMartinez.teams_for_linux \
+  com.ktechpit.whatsie \
+  app.ytmdesktop.ytmdesktop \
+  com.github.unrud.VideoDownloader \
+  io.github.amit9838.mousam \
+  app/io.missioncenter.MissionCenter/x86_64/stable \
+  app/com.playonlinux.PlayOnLinux4/x86_64/stable
 
 # 7. Instalacja pakietów Python (Data Science)
 echo -e "\n${BLUE}[6/10] Instalacja pakietów naukowych Python (Apt)...${NC}"
