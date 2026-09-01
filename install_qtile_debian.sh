@@ -87,7 +87,7 @@ apt install -y \
 echo -e "\n${BLUE}[7/10] Instalacja Kitty, jgmenu, Picom, apletów systemowych i motywów GTK...${NC}"
 apt install -y kitty picom jgmenu lxappearance \
   papirus-icon-theme hicolor-icon-theme gnome-icon-theme \
-  xbindkeys xdotool dunst policykit-1-gnome \
+  xbindkeys xdotool dunst lxpolkit \
   pasystray pavucontrol network-manager nm-tray blueman xfce4-power-manager
 
 # Konfiguracja domyślnego motywu ikon GTK3 i xbindkeys
