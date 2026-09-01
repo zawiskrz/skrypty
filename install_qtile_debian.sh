@@ -104,13 +104,16 @@ apt install -y --no-install-recommends \
   python3-jupyterlab python3-jupyterlab-widgets \
   python3-pandas python3-matplotlib python3-scipy
 
-# 9. Instalacja aplikacji okienkowych, apletów zasobnika systemowego i narzędzi GTK
-echo -e "\n${BLUE}[8/10] Instalacja Kitty, jgmenu, Picom, apletów systemowych i motywów GTK...${NC}"
+# 9. Instalacja aplikacji okienkowych, apletów zasobnika systemowego i narzędzi XFCE/GTK
+echo -e "\n${BLUE}[8/10] Instalacja Kitty, jgmenu, Picom, apletów XFCE i narzędzi GTK...${NC}"
 apt install -y --no-install-recommends \
   kitty picom jgmenu lxappearance \
   papirus-icon-theme hicolor-icon-theme gnome-icon-theme \
   xbindkeys xdotool dunst lxpolkit \
-  pasystray pavucontrol network-manager nm-tray blueman xfce4-power-manager
+  pavucontrol xfce4-pulseaudio-plugin \
+  network-manager network-manager-applet nm-connection-editor \
+  blueman xfce4-power-manager \
+  arandr xfce4-display-settings
 
 # Konfiguracja domyślnego motywu ikon GTK3 i xbindkeys
 sudo -u "$REAL_USER" bash << EOF
