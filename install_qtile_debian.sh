@@ -84,7 +84,7 @@ EOF
 echo -e "\n${BLUE}[6/10] Instalacja aplikacji (Apt + Flatpak)...${NC}"
 apt install -y --no-install-recommends \
   libreoffice libreoffice-l10n-pl libreoffice-help-pl hunspell-pl hyphen-pl mythes-pl \
-  libreoffice-base libreoffice-java-common default-jre \
+  libreoffice-base libreoffice-java-common default-jre libreoffice-gtk3 \
   vlc calibre shotwell rhythmbox
 
 # Instalacja aplikacji Flatpak
