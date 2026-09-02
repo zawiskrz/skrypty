@@ -52,11 +52,21 @@ EOF
 # Konfiguracja repozytorium Flathub dla Flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-# 5. Instalacja Visual Studio Code
+# 5. Instalacja Visual Studio Code oraz zależności dla keyring
 echo -e "\n${BLUE}[4/10] Dodawanie repozytorium i instalacja Visual Studio Code...${NC}"
-wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > /etc/apt/trusted.gpg.d/packages.microsoft.gpg
-echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list
-apt update && apt install -y code
+
+# Tworzenie katalogu na klucze, jeśli nie istnieje
+install -m 0755 -d /etc/apt/keyrings
+
+# Pobranie klucza Microsoftu do dedykowanego katalogu
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor -o /etc/apt/keyrings/packages.microsoft.gpg
+chmod a+r /etc/apt/keyrings/packages.microsoft.gpg
+
+# Dodanie wpisu do repozytorium z poprawną ścieżką do klucza
+echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list
+
+# Aktualizacja i instalacja VS Code wraz z pakietami integracji haseł
+apt update && apt install -y code libsecret-1-0 gnome-keyring xdg-utils
 
 # 6. Instalacja LibreWolf oraz Thunderbird
 echo -e "\n${BLUE}[5/10] Instalacja przeglądarki LibreWolf i Thunderbird...${NC}"
