@@ -1,0 +1,19 @@
+[Desktop Entry]
+Version=1.0
+Name=Max
+Comment=Aplikacja internetowa
+Exec=google-chrome-stable --app="https://play.max.com/profile-picker" --class=WebApp-Max8994 --name=WebApp-Max8994 --user-data-dir=/home/zawiskrz/.local/share/ice/profiles/Max8994
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=/home/zawiskrz/Obrazy/ikonki/channels4_profile.jpg
+Categories=GTK;AudioVideo;
+MimeType=text/html;text/xml;application/xhtml_xml;
+StartupWMClass=WebApp-Max8994
+StartupNotify=true
+X-WebApp-Browser=Chrome
+X-WebApp-URL=https://play.max.com/profile-picker
+X-WebApp-CustomParameters=
+X-WebApp-Navbar=false
+X-WebApp-PrivateWindow=false
+X-WebApp-Isolated=true

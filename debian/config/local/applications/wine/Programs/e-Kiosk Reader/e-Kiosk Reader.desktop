@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=e-Kiosk Reader
+Exec=env WINEPREFIX="/home/zawiskrz/.wine" wine-stable C:\\\\users\\\\zawiskrz\\\\AppData\\\\Roaming\\\\Microsoft\\\\Windows\\\\Start\\ Menu\\\\Programs\\\\e-Kiosk\\ Reader\\\\e-Kiosk\\ Reader.lnk
+Type=Application
+StartupNotify=true
+Path=/home/zawiskrz/.wine/dosdevices/c:/Program Files/e-Kiosk Reader/Moje e-wydania
+Icon=8692_eGazeta.0
+StartupWMClass=egazeta.exe

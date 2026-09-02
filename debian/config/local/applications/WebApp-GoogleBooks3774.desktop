@@ -1,0 +1,19 @@
+[Desktop Entry]
+Version=1.0
+Name=Google Books
+Comment=Aplikacja internetowa
+Exec=google-chrome-stable --app="https://play.google.com/books" --class=WebApp-GoogleBooks3774 --name=WebApp-GoogleBooks3774 --user-data-dir=/home/zawiskrz/.local/share/ice/profiles/GoogleBooks3774
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=/home/zawiskrz/.local/share/ice/icons/GoogleBooks.png
+Categories=GTK;Office;
+MimeType=text/html;text/xml;application/xhtml_xml;
+StartupWMClass=WebApp-GoogleBooks3774
+StartupNotify=true
+X-WebApp-Browser=Chrome
+X-WebApp-URL=https://play.google.com/books
+X-WebApp-CustomParameters=
+X-WebApp-Navbar=false
+X-WebApp-PrivateWindow=false
+X-WebApp-Isolated=true

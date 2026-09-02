@@ -1,0 +1,2148 @@
+<?xml version="1.0" standalone="yes"?>
+<rhythmdb version="2.0">
+  <entry type="iradio">
+    <title>Kink - No Alternative</title>
+    <genre>Alternative</genre>
+    <artist></artist>
+    <album></album>
+    <location>http://playerservices.streamtheworld.com/api/livestream-redirect/KINK.mp3</location>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="iradio">
+    <title>Studio Brussel, Belgium</title>
+    <genre>Alternative</genre>
+    <artist></artist>
+    <album></album>
+    <location>http://icecast.vrtcdn.be/stubru-high.mp3</location>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="iradio">
+    <title>StartFM - 94.2MHz, Vilnius University, Lithuania</title>
+    <genre>Underground</genre>
+    <artist></artist>
+    <album></album>
+    <location>http://eteris.startfm.lt/startfm.ogg</location>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="iradio">
+    <title>HBR1.com - Tronic Lounge</title>
+    <genre>House</genre>
+    <artist></artist>
+    <album></album>
+    <location>http://ubuntu.hbr1.com:19800/tronic.ogg</location>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="iradio">
+    <title>Radio Paradise (High Quality)</title>
+    <genre>Eclectic</genre>
+    <artist></artist>
+    <album></album>
+    <location>http://stream-dc1.radioparadise.com/rp_192m.ogg</location>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="iradio">
+    <title>HBR1.com - Dream Factory</title>
+    <genre>Ambient</genre>
+    <artist></artist>
+    <album></album>
+    <location>http://ubuntu.hbr1.com:19800/ambient.ogg</location>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="iradio">
+    <title>Polskie Radio S.A. -- Program 2 </title>
+    <genre>Radia PL</genre>
+    <artist></artist>
+    <album></album>
+    <location>http://stream3.polskieradio.pl:8952/</location>
+    <play-count>1</play-count>
+    <last-played>1735502699</last-played>
+    <bitrate>123</bitrate>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="iradio">
+    <title>Polskie Radio S.A. -- Program 1</title>
+    <genre>Radia PL</genre>
+    <artist></artist>
+    <album></album>
+    <location>http://stream3.polskieradio.pl:8950/</location>
+    <play-count>1</play-count>
+    <last-played>1735502645</last-played>
+    <bitrate>127</bitrate>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="iradio">
+    <title>Radio Warszawa</title>
+    <genre>Radia PL</genre>
+    <artist></artist>
+    <album></album>
+    <location>http://stream2.technologicznie.net:80/radio_warszawa.mp3</location>
+    <play-count>2</play-count>
+    <last-played>1735502283</last-played>
+    <bitrate>255</bitrate>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="iradio">
+    <title>Radio Eska Szczecin</title>
+    <genre>Radia PL</genre>
+    <artist></artist>
+    <album></album>
+    <location>http://ic1.smcdn.pl/2260-1.aac</location>
+    <play-count>6</play-count>
+    <last-played>1756535034</last-played>
+    <bitrate>62</bitrate>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="iradio">
+    <title>Radio Victoria Miedzy Lodzia a Warszawa</title>
+    <genre>Radia PL</genre>
+    <artist></artist>
+    <album></album>
+    <location>http://stream.v4.radiovictoria.pl:8176/;</location>
+    <play-count>2</play-count>
+    <last-played>1735501650</last-played>
+    <bitrate>256</bitrate>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="iradio">
+    <title>Polskie Radio RDC</title>
+    <genre>Radia PL</genre>
+    <artist></artist>
+    <album></album>
+    <location>http://stream4.nadaje.com:14002/ostroleka</location>
+    <play-count>3</play-count>
+    <last-played>1735501911</last-played>
+    <bitrate>128</bitrate>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="iradio">
+    <title>Radio Kolor 103 FM (AAC)</title>
+    <genre>Radia PL</genre>
+    <artist></artist>
+    <album></album>
+    <location>http://n06a-eu.rcs.revma.com:80/zbq79057xd3vv</location>
+    <play-count>2</play-count>
+    <last-played>1735835978</last-played>
+    <bitrate>144</bitrate>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="iradio">
+    <title>MeloRadio</title>
+    <genre>Radia PL</genre>
+    <artist></artist>
+    <album></album>
+    <location>http://redir.atmcdn.pl/sc/o2/Eurozet/live/meloradio.livx</location>
+    <play-count>3</play-count>
+    <last-played>1735836030</last-played>
+    <bitrate>98</bitrate>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="iradio">
+    <title>Polskie Radio S.A. -- Program 3 </title>
+    <genre>Radia PL</genre>
+    <artist></artist>
+    <album></album>
+    <location>http://stream3.polskieradio.pl:8954/</location>
+    <play-count>1</play-count>
+    <last-played>1735502756</last-played>
+    <bitrate>117</bitrate>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="iradio">
+    <title>Chilli Zet</title>
+    <genre>Radia PL</genre>
+    <artist></artist>
+    <album></album>
+    <location>http://redir.atmcdn.pl/sc/o2/Eurozet/live/chillizet.livx</location>
+    <play-count>3</play-count>
+    <last-played>1745170420</last-played>
+    <bitrate>108</bitrate>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="iradio">
+    <title>Radio RSC FM Skierniewice</title>
+    <genre>Radia PL</genre>
+    <artist></artist>
+    <album></album>
+    <location>http://n06a-eu.rcs.revma.com:80/94fud6a6z72vv</location>
+    <play-count>2</play-count>
+    <last-played>1735502449</last-played>
+    <bitrate>127</bitrate>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="iradio">
+    <title>RMF MAXX Szczecin</title>
+    <genre>Radia PL</genre>
+    <artist></artist>
+    <album></album>
+    <location>http://31.192.216.4/rmf_maxxx_szc</location>
+    <play-count>2</play-count>
+    <last-played>1735501112</last-played>
+    <bitrate>128</bitrate>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="iradio">
+    <title>Polskie Radio S.A. -- PolskieRadio24 </title>
+    <genre>Radia PL</genre>
+    <artist></artist>
+    <album></album>
+    <location>http://stream3.polskieradio.pl:8080/</location>
+    <play-count>1</play-count>
+    <last-played>1735502599</last-played>
+    <bitrate>191</bitrate>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="iradio">
+    <title>Radio Plus Szczecin</title>
+    <genre>Radia PL</genre>
+    <artist></artist>
+    <album></album>
+    <location>http://ic2.smcdn.pl/4260-1.aac</location>
+    <play-count>20</play-count>
+    <last-played>1745770339</last-played>
+    <bitrate>62</bitrate>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="iradio">
+    <title>RMF FM</title>
+    <genre>Radia PL</genre>
+    <artist></artist>
+    <album></album>
+    <location>http://195.150.20.244/rmf_fm</location>
+    <play-count>4</play-count>
+    <last-played>1735502035</last-played>
+    <bitrate>127</bitrate>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="iradio">
+    <title>Radio Zet</title>
+    <genre>Radia PL</genre>
+    <artist></artist>
+    <album></album>
+    <location>http://redir.atmcdn.pl/sc/o2/Eurozet/live/audio.livx</location>
+    <play-count>2</play-count>
+    <last-played>1735500062</last-played>
+    <bitrate>101</bitrate>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="iradio">
+    <title>Radio Szczecin </title>
+    <genre>Radia PL</genre>
+    <artist></artist>
+    <album></album>
+    <location>http://stream4.nadaje.com:11986/prs.aac</location>
+    <play-count>12</play-count>
+    <last-played>1735977488</last-played>
+    <bitrate>124</bitrate>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="iradio">
+    <title>Radio Poznan</title>
+    <genre>Radia PL</genre>
+    <artist></artist>
+    <album></album>
+    <location>http://stream4.nadaje.com:8578/poznan_aac</location>
+    <play-count>2</play-count>
+    <last-played>1735501999</last-played>
+    <bitrate>129</bitrate>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="iradio">
+    <title>AntyRadio</title>
+    <genre>Radia PL</genre>
+    <artist></artist>
+    <album></album>
+    <location>http://redir.atmcdn.pl/sc/o2/Eurozet/live/antyradio.livx</location>
+    <play-count>3</play-count>
+    <last-played>1735502012</last-played>
+    <bitrate>101</bitrate>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="iradio">
+    <title>Radio VOX Warszawa</title>
+    <genre>Radia PL</genre>
+    <artist></artist>
+    <album></album>
+    <location>http://ic1.smcdn.pl/3990-1.aac</location>
+    <play-count>1</play-count>
+    <last-played>1735501545</last-played>
+    <bitrate>63</bitrate>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="iradio">
+    <title>wbur.org - Boston's NPR news source</title>
+    <genre>News</genre>
+    <artist></artist>
+    <album></album>
+    <location>http://audio.wbur.org/stream/live_ogg.m3u</location>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="iradio">
+    <title>WKNC 88.1 FM (NC State) HD-1</title>
+    <genre>Music</genre>
+    <artist></artist>
+    <album></album>
+    <location>http://sc8.streammystation.com:7430/stream</location>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="iradio">
+    <title>WUVT-FM 90.7 (Virginia Tech)</title>
+    <genre>College Radio</genre>
+    <artist></artist>
+    <album></album>
+    <location>https://stream.wuvt.vt.edu/wuvt.ogg</location>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="iradio">
+    <title>WSUM 91.7 FM (University of Wisconsin)</title>
+    <genre>College Radio</genre>
+    <artist></artist>
+    <album></album>
+    <location>http://stream.studio.wsum.wisc.edu/wsum128</location>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="iradio">
+    <title>HBR1.com - I.D.M. Tranceponder</title>
+    <genre>Trance</genre>
+    <artist></artist>
+    <album></album>
+    <location>http://ubuntu.hbr1.com:19800/trance.ogg</location>
+    <play-count>1</play-count>
+    <last-played>1735501818</last-played>
+    <bitrate>128</bitrate>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000014191.jpg</location>
+    <mtime>1747563808</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/The%20Best%20Of%20Rock%20Ballads%20Ever/Various%20Artists/This%20Is...%201982/08%20Roxy%20Music%20-%20More%20Than%20This.mp3</location>
+    <mtime>1557058515</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000014289.jpg</location>
+    <mtime>1747563812</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Genesis/The%20Platinum%20Collection/Thumbs.db</location>
+    <mtime>1422815292</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/Album%20Artwork/Cloud/C151F2564FC2AAE8/05/07/09/09C45DB7A217E03975-D5ED5960FC0E2204.itc2</location>
+    <mtime>1589698449</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Queen/The%20Platinum%20Collection%20(Greatest%20Hits%20I/Folder.jpg</location>
+    <mtime>1393666036</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000006333.jpg</location>
+    <mtime>1747563761</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/Album%20Artwork/Cloud/C151F2564FC2AAE8/06/12/04/045A204CBC04C3D4C6-7A2102A77B7D9253.itc2</location>
+    <mtime>1589698447</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Czeslaw%20Niemen/Czeslaw%20Niemen_%20Best%20of%20the%20Early%20Years/Thumbs.db</location>
+    <mtime>1428764194</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Czeslaw%20Niemen/Czeslaw%20Niemen_%20Best%20of%20the%20Early%20Years/Folder.jpg</location>
+    <mtime>1393665936</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Perfect/Xxx/AlbumArtSmall.jpg</location>
+    <mtime>1393666018</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Compilations/100%20Movie%20Hits/AlbumArtSmall.jpg</location>
+    <mtime>1393665918</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Maanam/The%20Best%20of%20Kora%20&amp;%20Maanam,%20Vol.%201/AlbumArtSmall.jpg</location>
+    <mtime>1393666006</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000014253.jpg</location>
+    <mtime>1747563810</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Queen/The%20Platinum%20Collection%20(Greatest%20Hits%20I/2-05%20I%20Want%20to%20Break%20Free.m4a</location>
+    <mtime>1369460250</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/Album%20Artwork/Cache/C151F2564FC2AAE8/14/03/06/C151F2564FC2AAE8-F8152EED791FA63E.itc2</location>
+    <mtime>1589698401</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000006508.jpg</location>
+    <mtime>1747563763</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/Album%20Artwork/Cloud/C151F2564FC2AAE8/10/00/02/02345A30AF6463A20A-5AA78FC8D7CC7B65.itc2</location>
+    <mtime>1589698402</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000014272.jpg</location>
+    <mtime>1747563811</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Genesis/The%20Platinum%20Collection/3-02%20Counting%20Out%20Time%20(2004%20Remix).m4a</location>
+    <mtime>1376200024</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/Album%20Artwork/Cache/C151F2564FC2AAE8/15/05/12/C151F2564FC2AAE8-73BB3A6D00847C5F.itc2</location>
+    <mtime>1589698449</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000006322.jpg</location>
+    <mtime>1747563761</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Depeche%20Mode/The%20Best%20of%20Depeche%20Mode,%20Vol.%201/Thumbs.db</location>
+    <mtime>1398595798</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/Album%20Artwork/Cache/C151F2564FC2AAE8/00/13/14/C151F2564FC2AAE8-3A785F0AD0633ED0.itc2</location>
+    <mtime>1589698402</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Maanam/The%20Best%20of%20Kora%20&amp;%20Maanam,%20Vol.%201/Folder.jpg</location>
+    <mtime>1393666006</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Era/The%20Essential/Thumbs.db</location>
+    <mtime>1375165648</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Perfect/Xxx/03%20Nie%20Pytaj.m4a</location>
+    <mtime>1369460080</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000006504.jpg</location>
+    <mtime>1747563763</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/Album%20Artwork/Store/55/56/50/122782.itc2</location>
+    <mtime>1589698310</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Perfect/Xxx/Thumbs.db</location>
+    <mtime>1399236912</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/The%20Best%20Of%20Rock%20Ballads%20Ever/Various%20Artists/Forever%20'80s/2-17%20Warrant%20-%20Heaven.mp3</location>
+    <mtime>1557058515</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Queen/The%20Platinum%20Collection%20(Greatest%20Hits%20I/3-06%20You%20Don't%20Fool%20Me.m4a</location>
+    <mtime>1369460386</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000014288.jpg</location>
+    <mtime>1747563812</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000014242.jpg</location>
+    <mtime>1747563809</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Depeche%20Mode/The%20Best%20of%20Depeche%20Mode,%20Vol.%201/AlbumArtSmall.jpg</location>
+    <mtime>1393665942</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Roxette/A%20Collection%20of%20Roxette%20Hits!%20-%20Their%2020/AlbumArtSmall.jpg</location>
+    <mtime>1393666042</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Era/The%20Essential/Folder.jpg</location>
+    <mtime>1393665962</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Compilations/Running%20Hits/Folder.jpg</location>
+    <mtime>1393665930</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/Album%20Artwork/Store/51/55/54/451594376.itc2</location>
+    <mtime>1589698311</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Mike%20Oldfield/Tubular%20Bells%20II/Thumbs.db</location>
+    <mtime>1404581928</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000014266.jpg</location>
+    <mtime>1747563811</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/Album%20Artwork/Store/51/56/55/129090387.itc2</location>
+    <mtime>1589698310</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Leonard%20Cohen/The%20Essential%20Leonard%20Cohen%203.0/Folder.jpg</location>
+    <mtime>1393666000</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000006332.jpg</location>
+    <mtime>1747563761</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/Album%20Artwork/Cache/C151F2564FC2AAE8/12/08/14/C151F2564FC2AAE8-D08EDD41250F9E8C.itc2</location>
+    <mtime>1589698447</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Genesis/The%20Platinum%20Collection/Folder.jpg</location>
+    <mtime>1393665974</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Bon%20Jovi/Bon%20Jovi%20Greatest%20Hits/Folder.jpg</location>
+    <mtime>1376200952</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Queen/The%20Platinum%20Collection%20(Greatest%20Hits%20I/3-08%20Las%20Palabras%20de%20Amor%20(The%20Words.m4a</location>
+    <mtime>1369460412</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/2.%20PR%2010.03.pdf</location>
+    <mtime>1646823549</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/Album%20Artwork/Store/48/48/54/157069006.itc2</location>
+    <mtime>1589698310</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000006503.jpg</location>
+    <mtime>1747563763</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000014292.jpg</location>
+    <mtime>1747563812</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Compilations/100%20Movie%20Hits/Folder.jpg</location>
+    <mtime>1393665918</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/Album%20Artwork/Cloud/C151F2564FC2AAE8/00/04/14/14A926EC7954C2DE40-B4C31098FA357433.itc2</location>
+    <mtime>1589698401</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Mohicans/Mohicans,%20Chapter%202/11%20Buffalo's%20Plain%20(Reprise).m4a</location>
+    <mtime>1369460032</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000006338.jpg</location>
+    <mtime>1747563762</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000006321.jpg</location>
+    <mtime>1747563761</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Czeslaw%20Niemen/Czeslaw%20Niemen_%20Best%20of%20the%20Early%20Years/AlbumArtSmall.jpg</location>
+    <mtime>1393665936</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000006317.jpg</location>
+    <mtime>1747563761</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000014225.jpg</location>
+    <mtime>1747563808</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000014238.jpg</location>
+    <mtime>1747563809</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000006509.jpg</location>
+    <mtime>1747563763</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000006507.jpg</location>
+    <mtime>1747563763</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Leonard%20Cohen/The%20Essential%20Leonard%20Cohen%203.0/Thumbs.db</location>
+    <mtime>1422815288</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Mohicans/Mohicans,%20Chapter%202/04%20My%20Beautiful%20Hill.m4a</location>
+    <mtime>1369459982</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/Album%20Artwork/Cloud/C151F2564FC2AAE8/02/14/02/0210AA58B3A6ED52E2-3AD48A5DB591BDB8.itc2</location>
+    <mtime>1589698399</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000006502.jpg</location>
+    <mtime>1747563763</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000006334.jpg</location>
+    <mtime>1747563761</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000014290.jpg</location>
+    <mtime>1747563812</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000014259.jpg</location>
+    <mtime>1747563811</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000014244.jpg</location>
+    <mtime>1747563809</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000006316.jpg</location>
+    <mtime>1747563761</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000006337.jpg</location>
+    <mtime>1747563762</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/The%20Best%20Of%20Rock%20Ballads%20Ever/Various%20Artists/True%20Rock/1-08%20J.J.%20Cale%20-%20After%20Midnight.mp3</location>
+    <mtime>1557058516</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/Album%20Artwork/Store/51/55/55/148377.itc2</location>
+    <mtime>1589698310</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Maanam/The%20Best%20of%20Kora%20&amp;%20Maanam,%20Vol.%201/Thumbs.db</location>
+    <mtime>1422993184</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/D%C5%BCem/30%20Urodziny%20(Live)/AlbumArtSmall.jpg</location>
+    <mtime>1393665956</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000014241.jpg</location>
+    <mtime>1747563809</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000014269.jpg</location>
+    <mtime>1747563811</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/Album%20Artwork/Cache/C151F2564FC2AAE8/08/14/11/C151F2564FC2AAE8-475BAFBB9E377BE8.itc2</location>
+    <mtime>1589698399</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/Album%20Artwork/Cache/C151F2564FC2AAE8/12/15/15/C151F2564FC2AAE8-282DB398C4A03FFC.itc2</location>
+    <mtime>1589698447</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/Album%20Artwork/Cloud/C151F2564FC2AAE8/12/03/02/0235CCEC64E1F3123C-2D559B0207E35A2D.itc2</location>
+    <mtime>1589698401</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Mohicans/Mohicans,%20Chapter%202/Folder.jpg</location>
+    <mtime>1393666014</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000014250.jpg</location>
+    <mtime>1747563810</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/Album%20Artwork/Cloud/C151F2564FC2AAE8/09/11/00/0042C8DB07B28B00B9-AB46BF3482075CF0.itc2</location>
+    <mtime>1589698320</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000014190.jpg</location>
+    <mtime>1747563808</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000014245.jpg</location>
+    <mtime>1747563809</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000006501.jpg</location>
+    <mtime>1747563763</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/iTunes%20Library.itl</location>
+    <mtime>1667241627</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/Album%20Artwork/Cloud/C151F2564FC2AAE8/04/02/06/06F3F8B90C731F6624-A813C805C70918F6.itc2</location>
+    <mtime>1589698400</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Mohicans/Mohicans,%20Chapter%202/AlbumArtSmall.jpg</location>
+    <mtime>1393666014</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000006319.jpg</location>
+    <mtime>1747563761</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/Album%20Artwork/Cloud/C151F2564FC2AAE8/13/12/12/1200CF767539A3FCCD-0B0E2627A3E3FFA9.itc2</location>
+    <mtime>1589698447</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Queen/The%20Platinum%20Collection%20(Greatest%20Hits%20I/1-05%20Bicycle%20Race.m4a</location>
+    <mtime>1369460148</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Various%20Artists/Running%20Hits/Digital%20Booklet%20-%20Running%20Hits.pdf</location>
+    <mtime>1372367708</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/Album%20Artwork/Cache/C151F2564FC2AAE8/03/03/02/C151F2564FC2AAE8-7EC01D5D08DA0233.itc2</location>
+    <mtime>1589698400</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000006510.jpg</location>
+    <mtime>1747563763</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/The%20Best%20Of%20Rock%20Ballads%20Ever/Various%20Artists/The%20Singer%20&amp;%20The%20Song/cover.jpg</location>
+    <mtime>1582896433</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000014247.jpg</location>
+    <mtime>1747563810</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000014254.jpg</location>
+    <mtime>1747563810</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000014239.jpg</location>
+    <mtime>1747563809</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/Album%20Artwork/Cloud/C151F2564FC2AAE8/07/04/00/004A497A65615E0047-3854CC6E470748FD.itc2</location>
+    <mtime>1589698401</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/Album%20Artwork/Cache/C151F2564FC2AAE8/01/08/07/C151F2564FC2AAE8-F3246342B9652781.itc2</location>
+    <mtime>1589698402</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Roxette/A%20Collection%20of%20Roxette%20Hits!%20-%20Their%2020/Folder.jpg</location>
+    <mtime>1393666042</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000014267.jpg</location>
+    <mtime>1747563811</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/Album%20Artwork/Cache/C151F2564FC2AAE8/10/11/14/C151F2564FC2AAE8-B1E819563E3CBEBA.itc2</location>
+    <mtime>1589698401</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/Album%20Artwork/Cache/C151F2564FC2AAE8/00/02/01/C151F2564FC2AAE8-D0391BB94DF20120.itc2</location>
+    <mtime>1589698320</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/Album%20Artwork/Cloud/C151F2564FC2AAE8/09/11/09/0966D7356CD03CD9B9-0CB2C3B14111720E.itc2</location>
+    <mtime>1589698400</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/Album%20Artwork/Store/57/54/54/95966.itc2</location>
+    <mtime>1589698311</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000014249.jpg</location>
+    <mtime>1747563810</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Compilations/Running%20Hits/AlbumArtSmall.jpg</location>
+    <mtime>1393665930</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000014171.jpg</location>
+    <mtime>1747563808</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000006500.jpg</location>
+    <mtime>1747563763</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/Album%20Artwork/Store/54/55/55/485677.itc2</location>
+    <mtime>1589698311</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Muzyka%20na%20%C5%9Bniadanie/muzyka_na_sniadanie.xspf</location>
+    <mtime>1649528578</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Lady%20Pank/Lady%20Pank%20Symfonicznie%20(Live)/Folder.jpg</location>
+    <mtime>1393665986</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Compilations/Running%20Hits/Thumbs.db</location>
+    <mtime>1426355356</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/D%C5%BCem/30%20Urodziny%20(Live)/Folder.jpg</location>
+    <mtime>1393665956</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000014258.jpg</location>
+    <mtime>1747563811</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000014268.jpg</location>
+    <mtime>1747563811</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000006505.jpg</location>
+    <mtime>1747563763</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/Album%20Artwork/Store/53/52/51/14102543.itc2</location>
+    <mtime>1589698311</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Bon%20Jovi/Bon%20Jovi%20Greatest%20Hits/Thumbs.db</location>
+    <mtime>1402692320</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Queen/The%20Platinum%20Collection%20(Greatest%20Hits%20I/3-14%20Another%20One%20Bites%20the%20Dust%20(Rem.m4a</location>
+    <mtime>1369460450</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000006318.jpg</location>
+    <mtime>1747563761</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Compilations/100%20Movie%20Hits/Thumbs.db</location>
+    <mtime>1426434778</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Mike%20Oldfield/Tubular%20Bells%20II/AlbumArtSmall.jpg</location>
+    <mtime>1393666010</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Bon%20Jovi/Bon%20Jovi%20Greatest%20Hits/AlbumArtSmall.jpg</location>
+    <mtime>1376200952</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000014274.jpg</location>
+    <mtime>1747563811</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Muzyka%20na%20%C5%9Bniadanie.m3u</location>
+    <mtime>1667241625</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/Album%20Artwork/Cache/C151F2564FC2AAE8/14/08/01/C151F2564FC2AAE8-058D017B9789A18E.itc2</location>
+    <mtime>1589698400</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Queen/The%20Platinum%20Collection%20(Greatest%20Hits%20I/AlbumArtSmall.jpg</location>
+    <mtime>1393666036</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000006335.jpg</location>
+    <mtime>1747563761</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000006336.jpg</location>
+    <mtime>1747563762</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000014170.jpg</location>
+    <mtime>1747563808</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/D%C5%BCem/30%20Urodziny%20(Live)/Thumbs.db</location>
+    <mtime>1404382366</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000014252.jpg</location>
+    <mtime>1747563810</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000014251.jpg</location>
+    <mtime>1747563810</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Lady%20Pank/Lady%20Pank%20Symfonicznie%20(Live)/Thumbs.db</location>
+    <mtime>1422815288</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/Album%20Artwork/Store/55/50/51/417571723.itc2</location>
+    <mtime>1589698311</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/Album%20Artwork/Cache/C151F2564FC2AAE8/08/08/02/C151F2564FC2AAE8-6D1908407EA94288.itc2</location>
+    <mtime>1589698401</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/Album%20Artwork/Cache/C151F2564FC2AAE8/13/00/04/C151F2564FC2AAE8-505190EB1E8D840D.itc2</location>
+    <mtime>1589698399</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Mike%20Oldfield/Tubular%20Bells%20II/Folder.jpg</location>
+    <mtime>1393666010</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Era/The%20Essential/AlbumArtSmall.jpg</location>
+    <mtime>1393665962</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/The%20Best%20Of%20Rock%20Ballads%20Ever/The%20Best%20Of%20Rock%20Ballads%20Ever.xspf</location>
+    <mtime>1557059506</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000014248.jpg</location>
+    <mtime>1747563810</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000014273.jpg</location>
+    <mtime>1747563811</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000014243.jpg</location>
+    <mtime>1747563809</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Genesis/The%20Platinum%20Collection/AlbumArtSmall.jpg</location>
+    <mtime>1393665974</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/The%20Best%20Of%20Rock%20Ballads%20Ever/Various%20Artists/The%20Wild%20One/cover.jpg</location>
+    <mtime>1582896429</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000014246.jpg</location>
+    <mtime>1747563810</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Depeche%20Mode/The%20Best%20of%20Depeche%20Mode,%20Vol.%201/Folder.jpg</location>
+    <mtime>1393665942</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/Album%20Artwork/Cloud/C151F2564FC2AAE8/08/15/07/07C28CEC8F600177F8-7C4B3366F6944BF9.itc2</location>
+    <mtime>1589698396</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Roxette/A%20Collection%20of%20Roxette%20Hits!%20-%20Their%2020/Thumbs.db</location>
+    <mtime>1402749044</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/sentinel</location>
+    <mtime>1667241627</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/Album%20Artwork/Cache/C151F2564FC2AAE8/11/01/11/C151F2564FC2AAE8-3C7E2EDAFEEFCB1B.itc2</location>
+    <mtime>1589698398</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/Album%20Artwork/Cloud/C151F2564FC2AAE8/08/12/15/15E2197008F0401FC8-F7B0CF95504D750B.itc2</location>
+    <mtime>1589698399</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Queen/The%20Platinum%20Collection%20(Greatest%20Hits%20I/3-09%20Driven%20By%20You.m4a</location>
+    <mtime>1369460404</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Lady%20Pank/Lady%20Pank%20Symfonicznie%20(Live)/AlbumArtSmall.jpg</location>
+    <mtime>1393665986</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000006499.jpg</location>
+    <mtime>1747563763</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/Album%20Artwork/Cache/C151F2564FC2AAE8/02/09/15/C151F2564FC2AAE8-EFCDAAF8A4416F92.itc2</location>
+    <mtime>1589698396</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000014227.jpg</location>
+    <mtime>1747563809</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Perfect/Xxx/10%20Nie%20Kreci%20Mnie.m4a</location>
+    <mtime>1369460130</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000006506.jpg</location>
+    <mtime>1747563763</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/Album%20Artwork/Store/48/53/52/71408054.itc2</location>
+    <mtime>1589698310</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/1000014287.jpg</location>
+    <mtime>1747563811</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Leonard%20Cohen/The%20Essential%20Leonard%20Cohen%203.0/AlbumArtSmall.jpg</location>
+    <mtime>1393666000</mtime>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/Mohicans/Mohicans,%20Chapter%202/Thumbs.db</location>
+    <mtime>1387975050</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/Album%20Artwork/Cloud/C151F2564FC2AAE8/14/02/12/12F323A773886C2C2E-7A70A4BA526FE742.itc2</location>
+    <mtime>1589698397</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/Album%20Artwork/Store/50/55/52/4157274.itc2</location>
+    <mtime>1589698310</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+  <entry type="ignore">
+    <title></title>
+    <genre></genre>
+    <artist></artist>
+    <album></album>
+    <location>file:///home/zawiskrz/Muzyka/iTunes/Album%20Artwork/Cloud/C151F2564FC2AAE8/08/03/02/02974A392855F4F238-C59FB2B873BFA637.itc2</location>
+    <mtime>1589698401</mtime>
+    <last-seen>1735481659</last-seen>
+    <date>0</date>
+    <media-type>application/octet-stream</media-type>
+  </entry>
+</rhythmdb>

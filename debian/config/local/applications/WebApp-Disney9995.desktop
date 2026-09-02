@@ -1,0 +1,19 @@
+[Desktop Entry]
+Version=1.0
+Name=Disney
+Comment=Aplikacja internetowa
+Exec=google-chrome-stable --app="https://www.disneyplus.com/pl-pl/home" --class=WebApp-Disney9995 --name=WebApp-Disney9995 --user-data-dir=/home/zawiskrz/.local/share/ice/profiles/Disney9995
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=/home/zawiskrz/.local/share/ice/icons/Disney.png
+Categories=GTK;AudioVideo;
+MimeType=text/html;text/xml;application/xhtml_xml;
+StartupWMClass=WebApp-Disney9995
+StartupNotify=true
+X-WebApp-Browser=Chrome
+X-WebApp-URL=https://www.disneyplus.com/pl-pl/home
+X-WebApp-CustomParameters=
+X-WebApp-Navbar=false
+X-WebApp-PrivateWindow=false
+X-WebApp-Isolated=true

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=Microsoft Excel 2010
+Icon=/home/zawiskrz/.PlayOnLinux/icones/full_size/Microsoft Excel 2010
+Exec=flatpak run com.playonlinux.PlayOnLinux4 --run "EXCEL" %F
+Actions=
+Categories=Office;

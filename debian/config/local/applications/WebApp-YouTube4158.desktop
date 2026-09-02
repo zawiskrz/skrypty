@@ -1,0 +1,19 @@
+[Desktop Entry]
+Version=1.0
+Name=YouTube
+Comment=Aplikacja internetowa
+Exec=google-chrome-stable --app="https://www.youtube.com/" --class=WebApp-YouTube4158 --name=WebApp-YouTube4158 --user-data-dir=/home/zawiskrz/.local/share/ice/profiles/YouTube4158
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=/home/zawiskrz/.local/share/ice/icons/YouTube.png
+Categories=GTK;AudioVideo;
+MimeType=text/html;text/xml;application/xhtml_xml;
+StartupWMClass=WebApp-YouTube4158
+StartupNotify=true
+X-WebApp-Browser=Chrome
+X-WebApp-URL=https://www.youtube.com/
+X-WebApp-CustomParameters=
+X-WebApp-Navbar=false
+X-WebApp-PrivateWindow=false
+X-WebApp-Isolated=true

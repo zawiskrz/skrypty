@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=PlayOnLinux
+Comment=Front-end application for Wine
+Icon=playonlinux
+Exec=/bin/bash -c "source /home/zawiskrz/programy/miniconda3/bin/activate base && env PYTHONPATH=/usr/lib/python3.12/dist-packages:$PYTHONPATH playonlinux"
+Actions=
+Categories=Emulator;Utility;

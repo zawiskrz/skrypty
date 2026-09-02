@@ -1,0 +1,19 @@
+[Desktop Entry]
+Version=1.0
+Name=Apple TV
+Comment=Aplikacja internetowa
+Exec=google-chrome-stable --app="https://tv.apple.com/pl?l=pl" --class=WebApp-AppleTV2200 --name=WebApp-AppleTV2200 --user-data-dir=/home/zawiskrz/.local/share/ice/profiles/AppleTV2200
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=/home/zawiskrz/.local/share/ice/icons/AppleTV.png
+Categories=GTK;AudioVideo;
+MimeType=text/html;text/xml;application/xhtml_xml;
+StartupWMClass=WebApp-AppleTV2200
+StartupNotify=true
+X-WebApp-Browser=Chrome
+X-WebApp-URL=https://tv.apple.com/pl?l=pl
+X-WebApp-CustomParameters=
+X-WebApp-Navbar=false
+X-WebApp-PrivateWindow=false
+X-WebApp-Isolated=true

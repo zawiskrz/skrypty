@@ -1,0 +1,19 @@
+[Desktop Entry]
+Version=1.0
+Name=OneNote
+Comment=Aplikacja internetowa
+Exec=google-chrome-stable --app="https://www.onenote.com/notebooks?auth=1&nf=1&fromAR=1" --class=WebApp-OneNote4635 --name=WebApp-OneNote4635 --user-data-dir=/home/zawiskrz/.local/share/ice/profiles/OneNote4635 --incognito
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=/home/zawiskrz/.local/share/ice/icons/OneNote.png
+Categories=GTK;Office;
+MimeType=text/html;text/xml;application/xhtml_xml;
+StartupWMClass=WebApp-OneNote4635
+StartupNotify=true
+X-WebApp-Browser=Chrome
+X-WebApp-URL=https://www.onenote.com/notebooks?auth=1&nf=1&fromAR=1
+X-WebApp-CustomParameters=
+X-WebApp-Navbar=false
+X-WebApp-PrivateWindow=true
+X-WebApp-Isolated=true

@@ -1,0 +1,20 @@
+[Desktop Entry]
+Version=1.0
+Name=Prime
+Comment=Aplikacja internetowa
+Exec=google-chrome-stable --app="https://www.primevideo.com/ref=av_auth_return_redir?_encoding=UTF8&ie=UTF8&language=pl_PL" --class=WebApp-Prime0885 --name=WebApp-Prime0885 --user-data-dir=/home/zawiskrz/.local/share/ice/profiles/Prime0885
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=/home/zawiskrz/.local/share/ice/icons/Prime.png
+Categories=GTK;AudioVideo;
+MimeType=text/html;text/xml;application/xhtml_xml;
+StartupWMClass=WebApp-Prime0885
+StartupNotify=true
+X-WebApp-Browser=Chrome
+X-WebApp-URL=https://www.primevideo.com/ref=av_auth_return_redir?_encoding=UTF8&ie=UTF8&language=pl_PL
+X-WebApp-CustomParameters=
+X-WebApp-Navbar=false
+X-WebApp-PrivateWindow=false
+X-WebApp-Isolated=true
+

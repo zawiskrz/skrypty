@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<rhythmdb-playlists>
+  <playlist name="Najwy&#x17C;ej oceniane" show-browser="true" browser-position="509" search-type="search-match" type="automatic" sort-key="Rating" sort-direction="1">
+    <conjunction>
+      <equals prop="type">song</equals>
+      <subquery>
+        <conjunction>
+          <greater prop="rating">4,000000</greater>
+        </conjunction>
+      </subquery>
+    </conjunction>
+  </playlist>
+  <playlist name="Ostatnio dodane" show-browser="true" browser-position="489" search-type="search-match" type="automatic" sort-key="FirstSeen" sort-direction="1">
+    <conjunction>
+      <equals prop="type">song</equals>
+      <subquery>
+        <conjunction>
+          <current-time-within prop="first-seen">604800</current-time-within>
+        </conjunction>
+      </subquery>
+    </conjunction>
+  </playlist>
+  <playlist name="Ostatnio odtwarzane" show-browser="true" browser-position="489" search-type="search-match" type="automatic" sort-key="LastPlayed" sort-direction="1">
+    <conjunction>
+      <equals prop="type">song</equals>
+      <subquery>
+        <conjunction>
+          <current-time-within prop="last-played">604800</current-time-within>
+        </conjunction>
+      </subquery>
+    </conjunction>
+  </playlist>
+  <playlist name="Kolejka odtwarzania" show-browser="true" browser-position="247" search-type="search-match" type="queue"/>
+</rhythmdb-playlists>
