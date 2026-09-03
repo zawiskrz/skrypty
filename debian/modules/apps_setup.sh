@@ -5,6 +5,7 @@ install_user_apps() {
 
   sudo apt update
   sudo apt install -y --no-install-recommends \
+    flatpak thunar thunar-archive-plugin file-roller gvfs-backends \
     menulibre vlc calibre rhythmbox shotwell \
     libreoffice libreoffice-l10n-pl libreoffice-help-pl hunspell-pl hyphen-pl mythes-pl \
     libreoffice-base libreoffice-java-common default-jre libreoffice-gtk3 \
