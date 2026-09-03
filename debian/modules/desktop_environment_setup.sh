@@ -13,6 +13,7 @@ configure_desktop_environment() {
     papirus-icon-theme hicolor-icon-theme gnome-icon-theme \
     xbindkeys xdotool dunst lxpolkit \
     network-manager network-manager-applet nm-connection-editor \
+    xfce4-power-manager xfce4-power-manager-plugins \
     arandr 2>&1 | tee -a "$LOGFILE"
 
   REAL_USER="${SUDO_USER:-$(logname)}"
