@@ -1,77 +1,128 @@
-# 🧰 Skrypt instalacyjny XFCE dla Debiana 13 (Trixie)
+# 🧰 Skrypt instalacyjny Qtile dla Debiana 13 (Trixie)
 
-Ten skrypt automatyzuje instalację pełnego środowiska graficznego **XFCE** w systemie Debian 13. Zawiera najważniejsze pakiety, aplikacje użytkowe, konfigurację pulpitu oraz zapory sieciowej.
+Ten skrypt automatyzuje instalację oraz modularną konfigurację zaawansowanego menedżera okien **Qtile** (X11) w systemie Debian 13. Zapewnia interaktywne menu oparte na narzędziu `dialog`, zoptymalizowane pod kątem wydajności, obsługi multimediów, programowania oraz zarządzania systemem.
 
 ---
 
-## 📦 Instalowane pakiety
+## 📦 Instalowane pakiety i moduły
 
-| Pakiet | Przeznaczenie |
-|--------|---------------|
-| `task-xfce-desktop` | Pełne środowisko XFCE z menedżerem logowania LightDM |
-| `openssh-server` | Dostęp SSH do systemu |
-| `ufw` | Zapora sieciowa z prostą konfiguracją |
-| `network-manager-gnome` | Aplet sieci w trayu |
-| `bluez`, `blueman` | Obsługa Bluetooth |
-| `pulseaudio`, `pavucontrol`, `libcanberra-pulse` | System dźwięku i kontrola głośności |
-| `firefox-esr`, `thunderbird`, `vlc`, `calibre`, `rhythmbox`, `shotwell` | Aplikacje użytkowe |
-| `libreoffice`, `libreoffice-l10n-pl`, `libreoffice-help-pl` | Pakiet biurowy z lokalizacją PL |
-| `wxmaxima` | Obliczenia symboliczne |
-| `python3`, `python3-pip`, `python3-venv` | Środowisko Pythona |
-| `mc`, `htop` | Narzędzia terminalowe |
-| `x11-xserver-utils` | Narzędzia X11 |
-| `papirus-icon-theme` | Ikony systemowe |
+| Pakiet / Moduł | Przeznaczenie |
+|----------------|---------------|
+| `qtile`, `python3-qtile` | Menedżer okien Qtile oraz menedżer pakietów Python `uv` |
+| `lightdm`, `lightdm-gtk-greeter` | Menedżer logowania oraz jego interaktywna konfiguracja |
+| `picom`, `rofi`, `kitty`, `dunst` | Kompozytor okien, launcher aplikacji, terminal oraz powiadomienia |
+| `librewolf`, `thunderbird` | Bezpieczna przeglądarka internetowa oraz klient poczty |
+| `code` | Środowisko programistyczne Visual Studio Code |
+| `libreoffice-l10n-pl`, `vlc`, `calibre`, `rhythmbox` | Pakiet biurowy oraz odtwarzacze multimedialne |
+| `webapp-manager`, `flatpak` | Zarządzanie aplikacjami webowymi oraz pakietami Flatpak |
+| `numpy`, `pandas`, `matplotlib`, `jupyter` | Narzędzia Data Science zarządzałe przez `uv` |
+| `ufw` | Zapora sieciowa z regułami dla sieci lokalnej (SSH, SMB, KDE Connect) |
+| `samba`, `docker-ce` | Udostępnianie zasobów w sieci oraz środowisko kontenerazacji |
+| `nvidia-driver`, `cuda-toolkit` | Własnościowe sterowniki graficzne oraz biblioteki CUDA |
+| `intel-media-va-driver` | Akceleracja sprzętowa dla zintegrowanych kart Intel |
+| `plymouth`, `cups`, `bluez`, `pulseaudio` | Wyciszenie rozruchu, obsługa drukarek, Bluetooth oraz dźwięku |
 
 ---
 
 ## 🛠️ Skrypt instalacyjny
 
-Plik: `install_xfce.sh`
+Plik: `install_qtile.sh`
 
 ```bash
 #!/bin/bash
-
-LOGFILE="install_log.txt"
+source "./config.sh"
 
 echo "🔧 Aktualizacja pakietów..." | tee -a "$LOGFILE"
 sudo apt update 2>&1 | tee -a "$LOGFILE"
 
-echo "📦 Instalacja środowiska graficznego XFCE..." | tee -a "$LOGFILE"
-sudo apt install -y \
-task-xfce-desktop \
-openssh-server ufw \
-network-manager-gnome bluez blueman \
-pulseaudio pulseaudio-utils pulseaudio-module-bluetooth pavucontrol libcanberra-pulse \
-firefox-esr thunderbird vlc calibre rhythmbox shotwell \
-libreoffice libreoffice-l10n-pl libreoffice-help-pl \
-wxmaxima python3 python3-pip python3-venv \
-mc htop x11-xserver-utils papirus-icon-theme 2>&1 | tee -a "$LOGFILE"
+echo "📦 Instalacja narzędzi interaktywnych..." | tee -a "$LOGFILE"
+sudo apt install -y dialog 2>&1 | tee -a "$LOGFILE"
 
-echo "🗂️ Kopiowanie konfiguracji użytkownika..." | tee -a "$LOGFILE"
-install -d ~/.config/gtk-3.0 ~/.local/share/rhythmbox ~/tapety
-cp -f config/gtk-3.0/* ~/.config/gtk-3.0/
-cp -f local/rhythmbox/* ~/.local/share/rhythmbox/
-cp -f tapety/* ~/tapety/
+# Interaktywne menu dialogowe
+cmd=(dialog --separate-output --checklist "Wybierz komponenty do instalacji:" 30 76 20)
+options=(
+  1 "[ŚRODOWISKO] X11, LightDM, Fonts, GUI" on
+  2 "[WM] Qtile & UV" on
+  3 "[LOGIN MANAGER] Konfiguracja LightDM dla Qtile" on
+  4 "[PRZEGLĄDARKA] LibreWolf & Thunderbird" on
+  5 "[PROGRAMOWANIE] Visual Studio Code" off
+  6 "[APLIKACJE] LibreOffice, VLC, Flatpak, WebApp" on
+  7 "[PROGRAMOWANIE] Python Data Science" off
+  8 "[SYSTEM] Firewall UFW" on
+  9 "[SYSTEM] Samba (Udostępnianie plików)" off
+  10 "[SYSTEM] Docker" off
+  11 "[SYSTEM] Sterowniki NVIDIA" off
+  12 "[SYSTEM] CUDA Toolkit" off
+  13 "[SYSTEM] Intel GPU (Akceleracja Video)" off
+  14 "[SYSTEM] Silent GRUB & Plymouth" off
+  15 "[SYSTEM] Obsługa pokrywy laptopa" on
+  16 "[SYSTEM] Drukarki (CUPS)" on
+  17 "[SYSTEM] Bluetooth" on
+  18 "[AUDIO] PulseAudio" on
+  19 "Restart usługi LightDM na koniec" off
+)
+choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+clear
 
-echo "🖼️ Ustawianie tapety pulpitu (XFCE)..." | tee -a "$LOGFILE"
-xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/image-path -s ~/tapety/planety.jpg
-xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/image-style -s 3
-
-echo "🛡️ Konfiguracja zapory UFW..." | tee -a "$LOGFILE"
-sudo ufw --force reset
-sudo ufw default deny incoming
-sudo ufw default allow outgoing
-
-for subnet in 192.168.0.0/24 192.168.1.0/24; do
-  for port in 22 139 445 1716; do
-    sudo ufw allow from $subnet to any port $port proto tcp
-  done
+# Zapis konfiguracji użytkownika
+echo "# Konfiguracja instalatora QTile" > "$CONFIG_FILE"
+for choice in $choices; do
+  case $choice in
+    1) echo "DESKTOP_ENV=true" >> "$CONFIG_FILE" ;;
+    2) echo "QTILE=true" >> "$CONFIG_FILE" ;;
+    3) echo "LIGHTDM_CONFIG=true" >> "$CONFIG_FILE" ;;
+    4) echo "LIBREWOLF=true" >> "$CONFIG_FILE" ;;
+    5) echo "VSCODE=true" >> "$CONFIG_FILE" ;;
+    6) echo "USER_APPS=true" >> "$CONFIG_FILE" ;;
+    7) echo "PYTHON=true" >> "$CONFIG_FILE" ;;
+    8) echo "FIREWALL=true" >> "$CONFIG_FILE" ;;
+    9) echo "SAMBA=true" >> "$CONFIG_FILE" ;;
+    10) echo "DOCKER=true" >> "$CONFIG_FILE" ;;
+    11) echo "NVIDIA=true" >> "$CONFIG_FILE" ;;
+    12) echo "CUDA=true" >> "$CONFIG_FILE" ;;
+    13) echo "INTELGPU=true" >> "$CONFIG_FILE" ;;
+    14) echo "GRUB_SILENT=true" >> "$CONFIG_FILE" ;;
+    15) echo "LID_POWER_OFF=true" >> "$CONFIG_FILE" ;;
+    16) echo "PRINTERS=true" >> "$CONFIG_FILE" ;;
+    17) echo "BLUETOOTH=true" >> "$CONFIG_FILE" ;;
+    18) echo "PULSE_AUDIO=true" >> "$CONFIG_FILE" ;;
+    19) echo "RESTART_LIGHTDM=true" >> "$CONFIG_FILE" ;;
+  esac
 done
 
-sudo ufw --force enable
-echo "✅ Zapora UFW aktywna." | tee -a "$LOGFILE"
+# Wczytanie wybranych opcji
+source "$CONFIG_FILE"
 
-echo "🔄 Restart LightDM..." | tee -a "$LOGFILE"
-sudo systemctl restart lightdm
+# Przygotowanie danych dla Samby przed uruchomieniem modułu
+if [[ "$SAMBA" == "true" ]]; then
+  SAMBA_USER="${SUDO_USER:-$(logname)}"
+  read -s -p "🔑 Podaj hasło dla użytkownika Samba ($SAMBA_USER): " SAMBA_PASS
+  echo
+fi
 
-echo "✅ Instalacja zakończona. Środowisko XFCE zostało skonfigurowane." | tee -a "$LOGFILE"
+# Sekwencyjne wykonywanie modułów
+[[ "$DESKTOP_ENV" == "true" ]]     && configure_desktop_environment
+[[ "$QTILE" == "true" ]]           && configure_qtile
+[[ "$LIGHTDM_CONFIG" == "true" ]]  && configure_lightdm
+[[ "$LIBREWOLF" == "true" ]]       && configure_librewolf
+[[ "$VSCODE" == "true" ]]          && configure_vscode
+[[ "$USER_APPS" == "true" ]]       && configure_apps
+[[ "$PYTHON" == "true" ]]          && configure_python
+[[ "$FIREWALL" == "true" ]]        && configure_ufw
+[[ "$SAMBA" == "true" ]]           && configure_smb
+[[ "$DOCKER" == "true" ]]          && configure_docker
+[[ "$NVIDIA" == "true" ]]          && configure_nvidia
+[[ "$CUDA" == "true" ]]            && configure_cuda
+[[ "$INTELGPU" == "true" ]]        && configure_intel_gpu_support
+[[ "$GRUB_SILENT" == "true" ]]     && configure_silent_boot
+[[ "$LID_POWER_OFF" == "true" ]]   && configure_lid_poweroff
+[[ "$PRINTERS" == "true" ]]        && install_printer_support
+[[ "$BLUETOOTH" == "true" ]]       && configure_bluetooth
+[[ "$PULSE_AUDIO" == "true" ]]     && configure_pulseaudio
+
+if [[ "$RESTART_LIGHTDM" == "true" ]]; then
+  echo "🔄 Restart LightDM..." | tee -a "$LOGFILE"
+  sudo systemctl restart lightdm
+fi
+
+echo "✅ Instalacja zakończona pomyślnie!" | tee -a "$LOGFILE"
