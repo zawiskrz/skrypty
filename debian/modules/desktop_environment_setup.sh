@@ -1,21 +1,21 @@
-#!/bin/bash
-
 configure_desktop_environment() {
   echo "🧹 Czyszczenie pozostałości po Cinnamon..." | tee -a "$LOGFILE"
   sudo apt purge -y cinnamon-desktop-data cinnamon-session nemo 2>/dev/null || true
   sudo apt autoremove --purge -y | tee -a "$LOGFILE"
 
-  echo "🖼️ Instalacja X11, LightDM oraz narzędzi GUI dla Qtile..." | tee -a "$LOGFILE"
+  echo "🖼️ Instalacja X11, LightDM, Qtile oraz narzędzi GUI..." | tee -a "$LOGFILE"
   sudo apt install -y --no-install-recommends \
     xserver-xorg xinit lightdm lightdm-gtk-greeter \
     x11-xserver-utils spice-vdagent qemu-guest-agent \
+    qtile python3-psutil \
     kitty picom jgmenu lxappearance \
     papirus-icon-theme hicolor-icon-theme gnome-icon-theme \
     xbindkeys xdotool dunst lxpolkit \
     network-manager network-manager-applet nm-connection-editor \
+    blueman pulseaudio-utils pavucontrol \
     xfce4-power-manager xfce4-power-manager-plugins \
     xfce4-netload-plugin \
-    arandr 2>&1 | tee -a "$LOGFILE"
+    arandr wget unzip 2>&1 | tee -a "$LOGFILE"
 
   REAL_USER="${SUDO_USER:-$(logname)}"
   REAL_HOME=$(eval echo "~$REAL_USER")
