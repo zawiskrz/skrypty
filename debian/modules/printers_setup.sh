@@ -1,17 +1,15 @@
 #!/bin/bash
 
 install_printer_support() {
-    echo "🔧 Instalacja sterowników i usług dla drukarek Wi-Fi..."
+  echo "🔧 Instalacja sterowników i usług CUPS dla drukarek..." | tee -a "$LOGFILE"
 
-    # Instalacja CUPS – system kolejkowania drukowania
-    sudo apt install -y cups hplip avahi-daemon firmware-iwlwifi firmware-realtek printer-driver-all
+  sudo apt install -y cups hplip avahi-daemon firmware-iwlwifi firmware-realtek printer-driver-all 2>&1 | tee -a "$LOGFILE"
 
-    # Dodanie użytkownika do grupy lpadmin (uprawnienia do zarządzania drukarkami)
-    sudo usermod -aG lpadmin "$USER"
+  REAL_USER="${SUDO_USER:-$(logname)}"
+  sudo usermod -aG lpadmin "$REAL_USER"
 
-    # Uruchomienie i włączenie CUPS przy starcie
-    sudo systemctl enable cups
-    sudo systemctl start cups
+  sudo systemctl enable cups
+  sudo systemctl start cups
 
-    echo "✅ Instalacja zakończona. Możesz teraz skonfigurować drukarkę przez http://localhost:631"
+  echo "✅ CUPS zainstalowany. Konfiguracja dostępna pod: http://localhost:631" | tee -a "$LOGFILE"
 }

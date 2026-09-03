@@ -1,23 +1,30 @@
 #!/bin/bash
 
 configure_smb() {
-  echo "📡 Instalacja Samby z autoryzacją..." | tee -a "$LOGFILE"
+  echo "📡 Instalacja i konfiguracja Samby..." | tee -a "$LOGFILE"
 
-  # Instalacja Samby
   sudo apt update
   sudo apt install -y samba smbclient gvfs-backends gvfs-fuse | tee -a "$LOGFILE"
 
-  # Dodanie użytkownika do Samby
+  # Weryfikacja i tworzenie katalogów udostępnianych
+  for folder in Muzyka Obrazy Wideo; do
+    DIR_PATH="/home/$SAMBA_USER/$folder"
+    if [ ! -d "$DIR_PATH" ]; then
+      echo "📁 Tworzenie katalogu: $DIR_PATH" | tee -a "$LOGFILE"
+      mkdir -p "$DIR_PATH"
+    fi
+    chmod 770 "$DIR_PATH"
+    chown "$SAMBA_USER:$SAMBA_USER" "$DIR_PATH"
+  done
+
+  # Rejestracja użytkownika w Sambie
   echo -e "$SAMBA_PASS\n$SAMBA_PASS" | sudo smbpasswd -a "$SAMBA_USER"
   sudo smbpasswd -e "$SAMBA_USER"
 
-#  # Tworzenie katalogów
-#  mkdir -p /home/$SAMBA_USER/Obrazy /home/$SAMBA_USER/Wideo
-#  chmod 770 /home/$SAMBA_USER/Obrazy /home/$SAMBA_USER/Wideo
-#  chown $SAMBA_USER:$SAMBA_USER /home/$SAMBA_USER/Obrazy /home/$SAMBA_USER/Wideo
-
-  # Backup i konfiguracja smb.conf
-  sudo cp /etc/samba/smb.conf /etc/samba/smb.conf.bak
+  # Kopia zapasowa konfiguracji
+  if [ -f /etc/samba/smb.conf ] && [ ! -f /etc/samba/smb.conf.bak ]; then
+    sudo cp /etc/samba/smb.conf /etc/samba/smb.conf.bak
+  fi
 
   cat <<EOF | sudo tee -a /etc/samba/smb.conf
 
@@ -49,6 +56,6 @@ configure_smb() {
    guest ok = no
 EOF
 
-  # Restart usług
   sudo systemctl restart smbd nmbd
+  echo "✅ Samba została skonfigurowana." | tee -a "$LOGFILE"
 }
