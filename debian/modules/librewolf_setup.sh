@@ -13,22 +13,34 @@ configure_librewolf() {
     thunderbird \
     thunderbird-l10n-pl 2>&1 | tee -a "$LOGFILE"
 
-  # Włączenie synchronizacji Firefox Sync
+  REAL_USER="${SUDO_USER:-$(logname)}"
+  REAL_HOME=$(eval echo "~$REAL_USER")
+
+  # 1. Globalne odblokowanie synchronizacji Firefox Sync
   sudo mkdir -p /etc/librewolf
-  cat <<EOF | sudo tee -a /etc/librewolf/librewolf.overrides.cfg > /dev/null
+  cat <<EOF | sudo tee /etc/librewolf/librewolf.overrides.cfg > /dev/null
+defaultPref("identity.fxaccounts.enabled", true);
 pref("identity.fxaccounts.enabled", true);
 EOF
 
-  # Ustawienie LibreWolf jako domyślnej przeglądarki
+  # 2. Odblokowanie synchronizacji w katalogu konfiguracyjnym użytkownika (XDG path)
+  sudo -u "$REAL_USER" bash << EOF
+    mkdir -p "$REAL_HOME/.config/librewolf"
+    cat <<UEOF > "$REAL_HOME/.config/librewolf/librewolf.overrides.cfg"
+defaultPref("identity.fxaccounts.enabled", true);
+pref("identity.fxaccounts.enabled", true);
+UEOF
+EOF
+
+  # 3. Ustawienie LibreWolf jako domyślnej przeglądarki
   sudo update-alternatives --install /usr/bin/x-www-browser x-www-browser /usr/bin/librewolf 200
   sudo update-alternatives --set x-www-browser /usr/bin/librewolf
 
-  REAL_USER="${SUDO_USER:-$(logname)}"
   sudo -u "$REAL_USER" bash << EOF
     /usr/bin/xdg-mime default librewolf.desktop x-scheme-handler/http
     /usr/bin/xdg-mime default librewolf.desktop x-scheme-handler/https
     /usr/bin/xdg-mime default librewolf.desktop text/html
 EOF
 
-  echo "✅ LibreWolf i Thunderbird zostały zainstalowane." | tee -a "$LOGFILE"
+  echo "✅ LibreWolf i Thunderbird zostały zainstalowane (Firefox Sync włączony)." | tee -a "$LOGFILE"
 }
