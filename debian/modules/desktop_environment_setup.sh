@@ -14,6 +14,7 @@ configure_desktop_environment() {
     xbindkeys xdotool dunst lxpolkit \
     network-manager network-manager-applet nm-connection-editor \
     xfce4-power-manager xfce4-power-manager-plugins \
+    xfce4-netload-plugin \
     arandr 2>&1 | tee -a "$LOGFILE"
 
   REAL_USER="${SUDO_USER:-$(logname)}"
