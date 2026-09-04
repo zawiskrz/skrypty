@@ -28,7 +28,8 @@ options=(
   16 "[SYSTEM] Drukarki (CUPS)" on
   17 "[SYSTEM] Bluetooth" on
   18 "[AUDIO] PulseAudio" on
-  19 "Restart usługi LightDM na koniec" off
+  19 "[SYSTEM] zRAM (zram-tools)" off
+  20 "Restart usługi LightDM na koniec" off
 )
 choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
 clear
@@ -55,7 +56,8 @@ for choice in $choices; do
     16) echo "PRINTERS=true" >> "$CONFIG_FILE" ;;
     17) echo "BLUETOOTH=true" >> "$CONFIG_FILE" ;;
     18) echo "PULSE_AUDIO=true" >> "$CONFIG_FILE" ;;
-    19) echo "RESTART_LIGHTDM=true" >> "$CONFIG_FILE" ;;
+    19) echo "ZRAM=true" >> "$CONFIG_FILE" ;;
+    20) echo "RESTART_LIGHTDM=true" >> "$CONFIG_FILE" ;;
   esac
 done
 
@@ -88,6 +90,7 @@ fi
 [[ "$PRINTERS" == "true" ]]        && install_printer_support
 [[ "$BLUETOOTH" == "true" ]]       && configure_bluetooth
 [[ "$PULSE_AUDIO" == "true" ]]     && configure_pulseaudio
+[[ "$ZRAM" == "true" ]]            && configure_zram
 
 if [[ "$RESTART_LIGHTDM" == "true" ]]; then
   echo "🔄 Restart LightDM..." | tee -a "$LOGFILE"
