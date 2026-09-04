@@ -221,14 +221,10 @@ screens = [
     Screen(
         top=create_bar(is_primary=True),
         background="#000000",
-        wallpaper=logo,
-        wallpaper_mode="center",
     ),
     Screen(
         top=create_bar(is_primary=False),
         background="#000000",
-        wallpaper=logo,
-        wallpaper_mode="center",
     ),
 ]
 

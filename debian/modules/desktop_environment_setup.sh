@@ -17,7 +17,7 @@ configure_desktop_environment() {
     xfce4-power-manager xfce4-power-manager-plugins \
     xfce4-netload-plugin \
     pasystray ufw gufw openssh-server openssh-sftp-server \
-    arandr wget unzip \
+    arandr wget unzip feh \
     build-essential python3-dev libffi-dev libpangocairo-1.0-0 2>&1 | tee -a "$LOGFILE"
 
   REAL_USER="${SUDO_USER:-$(logname)}"

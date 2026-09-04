@@ -16,6 +16,8 @@ export SSH_AUTH_SOCK &
 xrandr --output LVDS-1 --primary --mode 1440x900 --pos 0x0 --rotate normal \
        --output VGA-1 --mode 1920x1080 --pos 1440x0 --rotate normal &
 
+# Odczekaj chwilę na zatwierdzenie xrandr, a następnie ustaw tapetę na wszystkich ekranach
+sleep 1 && feh --bg-fill ~/.config/qtile/wallpapers/miedzyzdroje.jpg &
 
 # Uruchomienie agenta schowka dla GNOME Boxes / SPICE (kopiowanie/wklejanie z hostem)
 spice-vdagent &
