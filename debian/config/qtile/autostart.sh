@@ -10,7 +10,12 @@ export SSH_AUTH_SOCK &
 
 # --- EKRAN I SPICE (GNOME Boxes / KVM) ---
 # Ustawienie rozdzielczości ekranu
-xrandr --output Virtual-1 --mode 1920x1080 2>/dev/null || xrandr --output HDMI-1 --mode 1920x1080 2>/dev/null &
+#xrandr --output Virtual-1 --mode 1920x1080 2>/dev/null || xrandr --output HDMI-1 --mode 1920x1080 2>/dev/null &
+# --- EKRAN I MONITORY ---
+# LVDS-1 to ekran główny (1440x900), VGA-1 stoi z jego prawej strony (1920x1080)
+xrandr --output LVDS-1 --primary --mode 1440x900 --pos 0x0 --rotate normal \
+       --output VGA-1 --mode 1920x1080 --pos 1440x0 --rotate normal &
+
 
 # Uruchomienie agenta schowka dla GNOME Boxes / SPICE (kopiowanie/wklejanie z hostem)
 spice-vdagent &

@@ -9,7 +9,7 @@ from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
 mod = "mod4"
-terminal = "xfc4-terminal"
+terminal = "xfce4-terminal"
 
 # --- FUNKCJE POMOCNICZE ---
 @lazy.function
@@ -27,12 +27,20 @@ keys = [
     Key([mod], "Up", lazy.layout.up(), desc="Move focus up"),
     Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
     
+    # Przełączanie fokusu / kursora między monitorami
+    Key([mod], "w", lazy.next_screen(), desc="Przejdź na kolejny monitor"),
+    Key([mod], "e", lazy.prev_screen(), desc="Przejdź na poprzedni monitor"),
+
     # Move windows between left/right columns or move up/down in current stack
     Key([mod, "shift"], "Left", lazy.layout.shuffle_left(), desc="Move window to the left"),
     Key([mod, "shift"], "Right", lazy.layout.shuffle_right(), desc="Move window to the right"),
     Key([mod, "shift"], "Down", lazy.layout.shuffle_down(), desc="Move window down"),
     Key([mod, "shift"], "Up", lazy.layout.shuffle_up(), desc="Move window up"),
-    
+
+    # Przenoszenie okien bezpośrednio na inny monitor
+    Key([mod, "control", "shift"], "Left", lazy.window.toscreen(0), desc="Przenieś okno na 1. monitor (LVDS-1)"),
+    Key([mod, "control", "shift"], "Right", lazy.window.toscreen(1), desc="Przenieś okno na 2. monitor (VGA-1)"),
+
     # Grow windows
     Key([mod, "control"], "Left", lazy.layout.grow_left(), desc="Grow window to the left"),
     Key([mod, "control"], "Right", lazy.layout.grow_right(), desc="Grow window to the right"),
@@ -114,101 +122,110 @@ extension_defaults = widget_defaults.copy()
 
 logo = os.path.join(os.path.dirname(__file__), "wallpapers", "miedzyzdroje.jpg")
 
+# --- GENEROWANIE PASKA DLA POSZCZEGÓLNYCH MONITORÓW ---
+def create_bar(is_primary=True):
+    widgets = [
+        # --- PRZYCISK MENU (JGMENU) ---
+        widget.TextBox(
+            text="󰍜 Menu", 
+            font="JetBrainsMono Nerd Font",
+            fontsize=16,
+            foreground="#89b4fa",
+            mouse_callbacks={'Button1': lazy.spawn('jgmenu --config-file=' + os.path.expanduser('~/.config/jgmenu/dock.rc'))},
+            padding=8,
+        ),
+        widget.Sep(linewidth=1, padding=8, foreground="#45475a"),
+        widget.Spacer(length=6),
+
+        # --- IKONY SZYBKIEGO URUCHAMIANIA (PODSTAWOWE) ---
+        widget.TextBox(text="󰈹", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#5865F2", mouse_callbacks={'Button1': lazy.spawn('librewolf')}, padding=4),
+        widget.TextBox(text="󰇮", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#35BFDE", mouse_callbacks={'Button1': lazy.spawn('thunderbird')}, padding=4),
+        widget.TextBox(text="󰉋", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#F1FA8C", mouse_callbacks={'Button1': lazy.spawn('thunar')}, padding=4),
+        widget.TextBox(text="󰨞", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#007ACC", mouse_callbacks={'Button1': lazy.spawn('code')}, padding=4),
+        widget.TextBox(text="󰏆", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#18A303", mouse_callbacks={'Button1': lazy.spawn('libreoffice')}, padding=4),
+        widget.TextBox(text="󰕼", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#FF8800", mouse_callbacks={'Button1': lazy.spawn('vlc')}, padding=4),
+        widget.TextBox(text="󰂿", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#A6E3A1", mouse_callbacks={'Button1': lazy.spawn('calibre')}, padding=4),
+        widget.TextBox(text="󰄄", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#FAB387", mouse_callbacks={'Button1': lazy.spawn('shotwell')}, padding=4),
+        widget.TextBox(text="󰎈", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#F38BA8", mouse_callbacks={'Button1': lazy.spawn('rhythmbox')}, padding=4),
+
+        widget.Sep(linewidth=1, padding=6, foreground="#45475a"),
+
+        # --- NOWE IKONY FLATPAK ---
+        widget.TextBox(text="󰊻", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#74C7EC", mouse_callbacks={'Button1': lazy.spawn('flatpak run com.github.IsmaelMartinez.teams_for_linux')}, padding=4),
+        widget.TextBox(text="󰖣", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#A6E3A1", mouse_callbacks={'Button1': lazy.spawn('flatpak run com.ktechpit.whatsie')}, padding=4),
+        widget.TextBox(text="󰠃", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#F38BA8", mouse_callbacks={'Button1': lazy.spawn('flatpak run app.ytmdesktop.ytmdesktop')}, padding=4),
+        widget.TextBox(text="󰕍", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#FAB387", mouse_callbacks={'Button1': lazy.spawn('flatpak run com.github.unrud.VideoDownloader')}, padding=4),
+        widget.TextBox(text="󰖐", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#89B4FA", mouse_callbacks={'Button1': lazy.spawn('flatpak run io.github.amit9838.mousam')}, padding=4),
+
+        widget.Sep(linewidth=1, padding=8, foreground="#45475a"),
+
+        # --- PULPITY (1-4) ---
+        widget.GroupBox(
+            highlight_method='line',
+            active='#cdd6f4',
+            inactive='#6c7086',
+            highlight_color=['#1e1e2e', '#313244'],
+            this_current_screen_border='#89b4fa',
+            margin_x=0,
+            padding_x=5,
+        ),
+
+        widget.Sep(linewidth=1, padding=8, foreground="#45475a"),
+        widget.Prompt(),
+
+        # --- ODSTĘP DO ŚRODKA ---
+        widget.Spacer(),
+
+        # --- ŚRODEK PASKA (ZEGAR) ---
+        widget.Clock(format="%Y-%m-%d %a %H:%M", foreground="#a6e3a1"),
+
+        # --- ODSTĘP OD ŚRODKA DO PRAWEJ STRONY ---
+        widget.Spacer(),
+
+        # --- PRAWA STRONA PASKA ---
+        widget.KeyboardLayout(configured_keyboards=['pl'], foreground="#89b4fa"),
+        widget.Sep(linewidth=1, padding=8, foreground="#45475a"),
+    ]
+
+    # Systray może wystąpić tylko JEDEN raz w całym systemie
+    if is_primary:
+        widgets.extend([
+            widget.Systray(padding=4, icon_size=18),
+            widget.Sep(linewidth=1, padding=8, foreground="#45475a"),
+        ])
+
+    widgets.extend([
+        # Ikona menedżera zasilania
+        widget.TextBox(
+            text="󰂄",
+            font="JetBrainsMono Nerd Font",
+            fontsize=18,
+            foreground="#a6e3a1",
+            mouse_callbacks={'Button1': lazy.spawn('xfce4-power-manager-settings')},
+            padding=4,
+        ),
+        widget.Sep(linewidth=1, padding=8, foreground="#45475a"),
+        
+        # Przycisk wyłączenia
+        widget.QuickExit(
+            default_text='󰐥',
+            command='systemctl poweroff',
+            foreground="#f38ba8",
+        ),
+    ])
+
+    return bar.Bar(widgets, 30, background="#1e1e2e")
+
+# Definicja osobnych obiektów Screen dla obu monitorów
 screens = [
     Screen(
-        top=bar.Bar(
-            [
-                # --- PRZYCISK MENU (JGMENU) ---
-                widget.TextBox(
-                    text="󰍜 Menu", 
-                    font="JetBrainsMono Nerd Font",
-                    fontsize=16,
-                    foreground="#89b4fa",
-                    mouse_callbacks={'Button1': lazy.spawn('jgmenu --config-file=' + os.path.expanduser('~/.config/jgmenu/dock.rc'))},
-                    padding=8,
-                ),
-                widget.Sep(linewidth=1, padding=8, foreground="#45475a"),
-                widget.Spacer(length=6),
-
-                # --- IKONY SZYBKIEGO URUCHAMIANIA (PODSTAWOWE) ---
-                widget.TextBox(text="󰈹", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#5865F2", mouse_callbacks={'Button1': lazy.spawn('librewolf')}, padding=4),
-                widget.TextBox(text="󰇮", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#35BFDE", mouse_callbacks={'Button1': lazy.spawn('thunderbird')}, padding=4),
-                widget.TextBox(text="󰉋", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#F1FA8C", mouse_callbacks={'Button1': lazy.spawn('thunar')}, padding=4),
-                widget.TextBox(text="󰨞", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#007ACC", mouse_callbacks={'Button1': lazy.spawn('code')}, padding=4),
-                widget.TextBox(text="󰏆", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#18A303", mouse_callbacks={'Button1': lazy.spawn('libreoffice')}, padding=4),
-                widget.TextBox(text="󰕼", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#FF8800", mouse_callbacks={'Button1': lazy.spawn('vlc')}, padding=4),
-                widget.TextBox(text="󰂿", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#A6E3A1", mouse_callbacks={'Button1': lazy.spawn('calibre')}, padding=4),
-                widget.TextBox(text="󰄄", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#FAB387", mouse_callbacks={'Button1': lazy.spawn('shotwell')}, padding=4),
-                widget.TextBox(text="󰎈", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#F38BA8", mouse_callbacks={'Button1': lazy.spawn('rhythmbox')}, padding=4),
-
-                widget.Sep(linewidth=1, padding=6, foreground="#45475a"),
-
-                # --- NOWE IKONY FLATPAK ---
-                # Teams for Linux
-                widget.TextBox(text="󰊻", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#74C7EC", mouse_callbacks={'Button1': lazy.spawn('flatpak run com.github.IsmaelMartinez.teams_for_linux')}, padding=4),
-                # Whatsie (WhatsApp)
-                widget.TextBox(text="󰖣", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#A6E3A1", mouse_callbacks={'Button1': lazy.spawn('flatpak run com.ktechpit.whatsie')}, padding=4),
-                # YouTube Music Desktop
-                widget.TextBox(text="󰠃", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#F38BA8", mouse_callbacks={'Button1': lazy.spawn('flatpak run app.ytmdesktop.ytmdesktop')}, padding=4),
-                # Video Downloader
-                widget.TextBox(text="󰕍", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#FAB387", mouse_callbacks={'Button1': lazy.spawn('flatpak run com.github.unrud.VideoDownloader')}, padding=4),
-                # Mousam (Pogoda)
-                widget.TextBox(text="󰖐", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#89B4FA", mouse_callbacks={'Button1': lazy.spawn('flatpak run io.github.amit9838.mousam')}, padding=4),
-
-                widget.Sep(linewidth=1, padding=8, foreground="#45475a"),
-
-                # --- PULPITY (1-4) ---
-                widget.GroupBox(
-                    highlight_method='line',
-                    active='#cdd6f4',
-                    inactive='#6c7086',
-                    highlight_color=['#1e1e2e', '#313244'],
-                    this_current_screen_border='#89b4fa',
-                    margin_x=0,
-                    padding_x=5,
-                ),
-
-                widget.Sep(linewidth=1, padding=8, foreground="#45475a"),
-                widget.Prompt(),
-
-                # --- ODSTĘP DO ŚRODKA ---
-                widget.Spacer(),
-
-                # --- ŚRODEK PASKA (ZEGAR) ---
-                widget.Clock(format="%Y-%m-%d %a %H:%M", foreground="#a6e3a1"),
-
-                # --- ODSTĘP OD ŚRODKA DO PRAWEJ STRONY ---
-                widget.Spacer(),
-
-                # --- PRAWA STRONA PASKA ---
-                widget.KeyboardLayout(configured_keyboards=['pl'], foreground="#89b4fa"),
-                widget.Sep(linewidth=1, padding=8, foreground="#45475a"),
-
-                # Zasobnik dla apletów (sieć, dźwięk, bluetooth)
-                widget.Systray(padding=4, icon_size=18),
-                widget.Sep(linewidth=1, padding=8, foreground="#45475a"),
-
-                # Ikona menedżera zasilania
-                widget.TextBox(
-                    text="󰂄",
-                    font="JetBrainsMono Nerd Font",
-                    fontsize=18,
-                    foreground="#a6e3a1",
-                    mouse_callbacks={'Button1': lazy.spawn('xfce4-power-manager-settings')},
-                    padding=4,
-                ),
-                widget.Sep(linewidth=1, padding=8, foreground="#45475a"),
-                
-                # Przycisk wyłączenia
-                widget.QuickExit(
-                    default_text='󰐥',
-                    command='systemctl poweroff',
-                    foreground="#f38ba8",
-                ),
-            ],
-            30,
-            background="#1e1e2e",
-        ),
+        top=create_bar(is_primary=True),
+        background="#000000",
+        wallpaper=logo,
+        wallpaper_mode="center",
+    ),
+    Screen(
+        top=create_bar(is_primary=False),
         background="#000000",
         wallpaper=logo,
         wallpaper_mode="center",
@@ -261,3 +278,4 @@ def autostart():
     home = os.path.expanduser('~/.config/qtile/autostart.sh')
     if os.path.exists(home):
         subprocess.Popen([home])
+
