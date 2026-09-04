@@ -16,6 +16,7 @@ configure_desktop_environment() {
     blueman pulseaudio-utils pavucontrol \
     xfce4-power-manager xfce4-power-manager-plugins \
     xfce4-netload-plugin \
+    pasystray \
     arandr wget unzip \
     build-essential python3-dev libffi-dev libpangocairo-1.0-0 2>&1 | tee -a "$LOGFILE"
 

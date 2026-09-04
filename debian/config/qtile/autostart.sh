@@ -44,3 +44,6 @@ lxpolkit &
 
 # Menedżer schowka zapamiętujący historię kopiowania (opcjonalnie, wymaga: greenclip / xclip)
 # greenclip daemon &
+
+# Program do sterowania głośnością i wyświetlania ikon w zasobniku systemowym (pasystray)
+pasystray &
