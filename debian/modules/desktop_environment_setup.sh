@@ -9,7 +9,7 @@ configure_desktop_environment() {
   sudo apt install -y --no-install-recommends \
     xserver-xorg xinit lightdm lightdm-gtk-greeter \
     x11-xserver-utils spice-vdagent qemu-guest-agent \
-    kitty picom jgmenu lxappearance \
+    xfc4-terminal picom jgmenu lxappearance \
     papirus-icon-theme hicolor-icon-theme gnome-icon-theme \
     xbindkeys xdotool dunst lxpolkit \
     network-manager network-manager-applet nm-connection-editor \

@@ -9,7 +9,7 @@ from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
 mod = "mod4"
-terminal = "kitty"
+terminal = "xfc4-terminal"
 
 # --- FUNKCJE POMOCNICZE ---
 @lazy.function
