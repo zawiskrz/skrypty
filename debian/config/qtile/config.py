@@ -74,6 +74,11 @@ def toggle_theme(qtile):
     try:
         subprocess.Popen(["gsettings", "set", "org.gnome.desktop.interface", "color-scheme", scheme])
         subprocess.Popen(["gsettings", "set", "org.gnome.desktop.interface", "gtk-theme", gtk_theme])
+        
+        # Wymuszenie stałego, żywego zestawu ikon (zapobiega ich blaknięciu przy jasnym motywie)
+        subprocess.Popen(["gsettings", "set", "org.gnome.desktop.interface", "icon-theme", "Adwaita"])
+    except Exception:
+        pass
     except Exception:
         pass
 
