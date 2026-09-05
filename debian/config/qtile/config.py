@@ -79,8 +79,6 @@ def toggle_theme(qtile):
         subprocess.Popen(["gsettings", "set", "org.gnome.desktop.interface", "icon-theme", "Adwaita"])
     except Exception:
         pass
-    except Exception:
-        pass
 
     # 3. Aktualizacja pliku konfiguracyjnego jgmenu (dock.rc)
     jgmenu_conf_path = os.path.expanduser('~/.config/jgmenu/dock.rc')
@@ -357,12 +355,15 @@ def create_bar(is_primary=True):
         ),
         widget.Sep(linewidth=1, padding=8, foreground=current_theme["inactive"], background=current_theme["bg"]),
         
-        # Przycisk wyłączenia
-        widget.QuickExit(
-            default_text='󰐥',
-            command='systemctl poweroff',
-            foreground=current_theme["fg_icon"],
+        # Przycisk wyłączenia / wylogowania
+        widget.TextBox(
+            text="󰐥",
+            font="JetBrainsMono Nerd Font",
+            fontsize=18,
+            foreground=current_theme["accent"],
             background=current_theme["bg"],
+            mouse_callbacks={'Button1': lazy.spawn('systemctl poweroff')},
+            padding=4,
         ),
     ])
 
