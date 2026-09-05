@@ -132,7 +132,12 @@ def toggle_theme(qtile):
                         w.foreground = t["active"]
                     elif w.text in ["󰂄", "󰐥"]:
                         w.foreground = t["fg_icon"]
-                elif isinstance(w, (widget.Clock, widget.Prompt)):
+                elif isinstance(w, widget.Clock):
+                    w.foreground = t["fg"]
+                    # Wymuszenie pełnej rekonfiguracji układu tekstowego
+                    if hasattr(w, "layout") and w.layout:
+                        w.layout.colour = t["fg"]
+                elif isinstance(w, widget.Prompt):
                     w.foreground = t["fg"]
                 elif isinstance(w, (widget.KeyboardLayout, widget.QuickExit)):
                     w.foreground = t["fg_icon"]
