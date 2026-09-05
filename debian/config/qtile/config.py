@@ -7,9 +7,36 @@ from libqtile import bar, layout, qtile, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Output, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
+import colors
 
 mod = "mod4"
 terminal = "xfce4-terminal"
+
+# --- ZARZĄDZANIE STANEM MOTYWU ---
+THEME_FILE = os.path.expanduser("~/.config/qtile/current_theme.txt")
+
+def get_saved_theme_name():
+    if os.path.exists(THEME_FILE):
+        try:
+            with open(THEME_FILE, "r") as f:
+                theme_name = f.read().strip()
+                if theme_name in ["dark", "light"]:
+                    return theme_name
+        except Exception:
+            pass
+    return "dark"
+
+def set_saved_theme_name(theme_name):
+    try:
+        os.makedirs(os.path.dirname(THEME_FILE), exist_ok=True)
+        with open(THEME_FILE, "w") as f:
+            f.write(theme_name)
+    except Exception:
+        pass
+
+# Wczytanie zapisanego motywu przy starcie
+current_theme_name = get_saved_theme_name()
+current_theme = colors.light if current_theme_name == "light" else colors.dark
 
 # --- FUNKCJE POMOCNICZE ---
 @lazy.function
@@ -18,6 +45,109 @@ def toggle_show_desktop(qtile):
     for win in qtile.current_group.windows:
         if win.minimized != has_visible:
             win.toggle_minimize()
+
+# Funkcja przełączająca motywy dwukierunkowo
+def toggle_theme(qtile):
+    global current_theme_name
+    
+    # 1. Określenie docelowych kolorów
+    if current_theme_name == "dark":
+        current_theme_name = "light"
+        t = colors.light
+        scheme = "prefer-light"
+        gtk_theme = "Adwaita"
+        jgmenu_bg = colors.light["bg"]
+        jgmenu_fg = colors.light["fg"]
+        jgmenu_sel_fg = "#ffffff"
+    else:
+        current_theme_name = "dark"
+        t = colors.dark
+        scheme = "prefer-dark"
+        gtk_theme = "Adwaita-dark"
+        jgmenu_bg = colors.dark["bg"]
+        jgmenu_fg = colors.dark["fg"]
+        jgmenu_sel_fg = colors.dark["bg"]
+
+    set_saved_theme_name(current_theme_name)
+
+    # 2. Przełączenie motywu systemowego (GTK / GNOME / Firefox)
+    try:
+        subprocess.Popen(["gsettings", "set", "org.gnome.desktop.interface", "color-scheme", scheme])
+        subprocess.Popen(["gsettings", "set", "org.gnome.desktop.interface", "gtk-theme", gtk_theme])
+    except Exception:
+        pass
+
+    # 3. Aktualizacja pliku konfiguracyjnego jgmenu (dock.rc)
+    jgmenu_conf_path = os.path.expanduser('~/.config/jgmenu/dock.rc')
+    if os.path.exists(jgmenu_conf_path):
+        try:
+            with open(jgmenu_conf_path, "r") as f:
+                lines = f.readlines()
+            
+            new_lines = []
+            for line in lines:
+                if line.startswith("color_menu_bg"):
+                    new_lines.append(f"color_menu_bg = {jgmenu_bg} 100\n")
+                elif line.startswith("color_norm_fg"):
+                    new_lines.append(f"color_norm_fg = {jgmenu_fg} 100\n")
+                elif line.startswith("color_sel_bg"):
+                    new_lines.append(f"color_sel_bg = {t['active']} 100\n")
+                elif line.startswith("color_sel_fg"):
+                    new_lines.append(f"color_sel_fg = {jgmenu_sel_fg} 100\n")
+                else:
+                    new_lines.append(line)
+                    
+            with open(jgmenu_conf_path, "w") as f:
+                f.writelines(new_lines)
+        except Exception:
+            pass
+
+    # 4. Aktualizacja obiektów widżetów na żywo dla KAŻDEGO ekranu
+    for screen in qtile.screens:
+        if hasattr(screen, "top") and screen.top:
+            bar_obj = screen.top
+            bar_obj.background = t["bg"]
+            
+            for w in bar_obj.widgets:
+                # Dedykowane tło dla Systraya w trybie jasnym, zapewniające widoczność ikon
+                if isinstance(w, widget.Systray):
+                    w.background = "#2e3440" if current_theme_name == "light" else t["bg"]
+                else:
+                    w.background = t["bg"]
+                
+                # Przypisanie i odświeżenie właściwości konkretnych typów widżetów
+                if isinstance(w, widget.GroupBox):
+                    w.active = t["active"]
+                    w.inactive = t["inactive"]
+                    w.highlight_color = [t["bg"], t["bg"]]
+                    w.this_current_screen_border = t["active"]
+                    w.this_screen_border = t["active"]
+                elif isinstance(w, widget.TextBox):
+                    if w.text == "󰍜 Menu":
+                        w.foreground = t["active"]
+                    elif w.text in ["󰂄", "󰐥"]:
+                        w.foreground = t["fg_icon"]
+                elif isinstance(w, (widget.Clock, widget.Prompt)):
+                    w.foreground = t["fg"]
+                elif isinstance(w, (widget.KeyboardLayout, widget.QuickExit)):
+                    w.foreground = t["fg_icon"]
+                elif isinstance(w, widget.Sep):
+                    w.foreground = t["inactive"]
+                
+                # Przerysowanie pojedynczego widżetu
+                w.draw()
+
+            # Odświeżenie płótna paska
+            bar_obj.draw()
+
+    # 5. Aktualizacja ramki w aktywnym układzie okien
+    for layout_item in qtile.current_group.layouts:
+        if hasattr(layout_item, "border_focus"):
+            layout_item.border_focus = t["active"]
+        if hasattr(layout_item, "border_normal"):
+            layout_item.border_normal = t["inactive"]
+    qtile.current_group.layout_all()
+
 
 keys = [
     # Switch between windows (Focus)
@@ -71,10 +201,11 @@ keys = [
     Key([mod, "control"], "d", toggle_show_desktop, desc="Pokaż/Ukryj pulpit"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
 
-    # Skróty klawiszowe dla nowych aplikacji
+    # Skróty klawiszowe dla aplikacji
     Key([mod, "shift"], "c", lazy.spawn("code"), desc="Uruchom VS Code"),
     Key([mod, "shift"], "o", lazy.spawn("libreoffice"), desc="Uruchom LibreOffice"),
     Key([mod, "shift"], "v", lazy.spawn("vlc"), desc="Uruchom VLC"),
+    Key([mod, "shift"], "t", lazy.function(toggle_theme), desc="Przełącz motyw"),
 ]
 
 for vt in range(1, 8):
@@ -87,7 +218,7 @@ for vt in range(1, 8):
         )
     )
 
-# PULPITY (ZACHOWANO 1-4)
+# PULPITY (1-4)
 groups = [Group(i) for i in "1234"]
 
 for i in groups:
@@ -109,7 +240,11 @@ for i in groups:
     )
 
 layouts = [
-    layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
+    layout.Columns(
+        border_focus=current_theme["active"],
+        border_normal=current_theme["inactive"],
+        border_width=3
+    ),
     layout.Max(),
 ]
 
@@ -124,74 +259,79 @@ logo = os.path.join(os.path.dirname(__file__), "wallpapers", "miedzyzdroje.jpg")
 
 # --- GENEROWANIE PASKA DLA POSZCZEGÓLNYCH MONITORÓW ---
 def create_bar(is_primary=True):
+    # Początkowe tło dla systraya przy uruchamianiu
+    systray_bg = "#2e3440" if current_theme_name == "light" else current_theme["bg"]
+
     widgets = [
         # --- PRZYCISK MENU (JGMENU) ---
         widget.TextBox(
             text="󰍜 Menu", 
             font="JetBrainsMono Nerd Font",
             fontsize=16,
-            foreground="#89b4fa",
+            foreground=current_theme["active"],
             mouse_callbacks={'Button1': lazy.spawn('jgmenu --config-file=' + os.path.expanduser('~/.config/jgmenu/dock.rc'))},
             padding=8,
+            background=current_theme["bg"]
         ),
-        widget.Sep(linewidth=1, padding=8, foreground="#45475a"),
-        widget.Spacer(length=6),
+        widget.Sep(linewidth=1, padding=8, foreground=current_theme["inactive"], background=current_theme["bg"]),
+        widget.Spacer(length=6, background=current_theme["bg"]),
 
         # --- IKONY SZYBKIEGO URUCHAMIANIA (PODSTAWOWE) ---
-        widget.TextBox(text="󰈹", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#5865F2", mouse_callbacks={'Button1': lazy.spawn('librewolf')}, padding=4),
-        widget.TextBox(text="󰇮", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#35BFDE", mouse_callbacks={'Button1': lazy.spawn('thunderbird')}, padding=4),
-        widget.TextBox(text="󰉋", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#F1FA8C", mouse_callbacks={'Button1': lazy.spawn('thunar')}, padding=4),
-        widget.TextBox(text="󰨞", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#007ACC", mouse_callbacks={'Button1': lazy.spawn('code')}, padding=4),
-        widget.TextBox(text="󰏆", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#18A303", mouse_callbacks={'Button1': lazy.spawn('libreoffice')}, padding=4),
-        widget.TextBox(text="󰕼", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#FF8800", mouse_callbacks={'Button1': lazy.spawn('vlc')}, padding=4),
-        widget.TextBox(text="󰂿", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#A6E3A1", mouse_callbacks={'Button1': lazy.spawn('calibre')}, padding=4),
-        widget.TextBox(text="󰄄", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#FAB387", mouse_callbacks={'Button1': lazy.spawn('shotwell')}, padding=4),
-        widget.TextBox(text="󰎈", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#F38BA8", mouse_callbacks={'Button1': lazy.spawn('rhythmbox')}, padding=4),
+        widget.TextBox(text="󰈹", font="JetBrainsMono Nerd Font", fontsize=18, foreground=current_theme["blue"], background=current_theme["bg"], mouse_callbacks={'Button1': lazy.spawn('librewolf')}, padding=4),
+        widget.TextBox(text="󰇮", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#35BFDE", background=current_theme["bg"], mouse_callbacks={'Button1': lazy.spawn('thunderbird')}, padding=4),
+        widget.TextBox(text="󰉋", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#F1FA8C", background=current_theme["bg"], mouse_callbacks={'Button1': lazy.spawn('thunar')}, padding=4),
+        widget.TextBox(text="󰨞", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#007ACC", background=current_theme["bg"], mouse_callbacks={'Button1': lazy.spawn('code')}, padding=4),
+        widget.TextBox(text="󰏆", font="JetBrainsMono Nerd Font", fontsize=18, foreground=current_theme["green"], background=current_theme["bg"], mouse_callbacks={'Button1': lazy.spawn('libreoffice')}, padding=4),
+        widget.TextBox(text="󰕼", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#FF8800", background=current_theme["bg"], mouse_callbacks={'Button1': lazy.spawn('vlc')}, padding=4),
+        widget.TextBox(text="󰂿", font="JetBrainsMono Nerd Font", fontsize=18, foreground=current_theme["green"], background=current_theme["bg"], mouse_callbacks={'Button1': lazy.spawn('calibre')}, padding=4),
+        widget.TextBox(text="󰄄", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#FAB387", background=current_theme["bg"], mouse_callbacks={'Button1': lazy.spawn('shotwell')}, padding=4),
+        widget.TextBox(text="󰎈", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#F38BA8", background=current_theme["bg"], mouse_callbacks={'Button1': lazy.spawn('rhythmbox')}, padding=4),
 
-        widget.Sep(linewidth=1, padding=6, foreground="#45475a"),
+        widget.Sep(linewidth=1, padding=6, foreground=current_theme["inactive"], background=current_theme["bg"]),
 
         # --- NOWE IKONY FLATPAK ---
-        widget.TextBox(text="󰊻", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#74C7EC", mouse_callbacks={'Button1': lazy.spawn('flatpak run com.github.IsmaelMartinez.teams_for_linux')}, padding=4),
-        widget.TextBox(text="󰖣", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#A6E3A1", mouse_callbacks={'Button1': lazy.spawn('flatpak run com.ktechpit.whatsie')}, padding=4),
-        widget.TextBox(text="󰠃", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#F38BA8", mouse_callbacks={'Button1': lazy.spawn('flatpak run app.ytmdesktop.ytmdesktop')}, padding=4),
-        widget.TextBox(text="󰕍", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#FAB387", mouse_callbacks={'Button1': lazy.spawn('flatpak run com.github.unrud.VideoDownloader')}, padding=4),
-        widget.TextBox(text="󰖐", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#89B4FA", mouse_callbacks={'Button1': lazy.spawn('flatpak run io.github.amit9838.mousam')}, padding=4),
+        widget.TextBox(text="󰊻", font="JetBrainsMono Nerd Font", fontsize=18, foreground=current_theme["teams"], background=current_theme["bg"], mouse_callbacks={'Button1': lazy.spawn('flatpak run com.github.IsmaelMartinez.teams_for_linux')}, padding=4),
+        widget.TextBox(text="󰖣", font="JetBrainsMono Nerd Font", fontsize=18, foreground=current_theme["green"], background=current_theme["bg"], mouse_callbacks={'Button1': lazy.spawn('flatpak run com.ktechpit.whatsie')}, padding=4),
+        widget.TextBox(text="󰠃", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#F38BA8", background=current_theme["bg"], mouse_callbacks={'Button1': lazy.spawn('flatpak run app.ytmdesktop.ytmdesktop')}, padding=4),
+        widget.TextBox(text="󰕍", font="JetBrainsMono Nerd Font", fontsize=18, foreground="#FAB387", background=current_theme["bg"], mouse_callbacks={'Button1': lazy.spawn('flatpak run com.github.unrud.VideoDownloader')}, padding=4),
+        widget.TextBox(text="󰖐", font="JetBrainsMono Nerd Font", fontsize=18, foreground=current_theme["blue"], background=current_theme["bg"], mouse_callbacks={'Button1': lazy.spawn('flatpak run io.github.amit9838.mousam')}, padding=4),
 
-        widget.Sep(linewidth=1, padding=8, foreground="#45475a"),
+        widget.Sep(linewidth=1, padding=8, foreground=current_theme["inactive"], background=current_theme["bg"]),
 
         # --- PULPITY (1-4) ---
         widget.GroupBox(
             highlight_method='line',
-            active='#cdd6f4',
-            inactive='#6c7086',
-            highlight_color=['#1e1e2e', '#313244'],
-            this_current_screen_border='#89b4fa',
+            active=current_theme["active"],
+            inactive=current_theme["inactive"],
+            background=current_theme["bg"],
+            highlight_color=[current_theme["bg"], current_theme["bg"]],
+            this_current_screen_border=current_theme["active"],
             margin_x=0,
             padding_x=5,
         ),
 
-        widget.Sep(linewidth=1, padding=8, foreground="#45475a"),
-        widget.Prompt(),
+        widget.Sep(linewidth=1, padding=8, foreground=current_theme["inactive"], background=current_theme["bg"]),
+        widget.Prompt(background=current_theme["bg"], foreground=current_theme["fg"]),
 
         # --- ODSTĘP DO ŚRODKA ---
-        widget.Spacer(),
+        widget.Spacer(background=current_theme["bg"]),
 
         # --- ŚRODEK PASKA (ZEGAR) ---
-        widget.Clock(format="%Y-%m-%d %a %H:%M", foreground="#a6e3a1"),
+        widget.Clock(format="%Y-%m-%d %a %H:%M", foreground=current_theme["fg"], background=current_theme["bg"]),
 
         # --- ODSTĘP OD ŚRODKA DO PRAWEJ STRONY ---
-        widget.Spacer(),
+        widget.Spacer(background=current_theme["bg"]),
 
         # --- PRAWA STRONA PASKA ---
-        widget.KeyboardLayout(configured_keyboards=['pl'], foreground="#89b4fa"),
-        widget.Sep(linewidth=1, padding=8, foreground="#45475a"),
+        widget.KeyboardLayout(configured_keyboards=['pl'], foreground=current_theme["fg_icon"], background=current_theme["bg"]),
+        widget.Sep(linewidth=1, padding=8, foreground=current_theme["inactive"], background=current_theme["bg"]),
     ]
 
-    # Systray może wystąpić tylko JEDEN raz w całym systemie
+    # Systray trafia tylko na główny ekran
     if is_primary:
         widgets.extend([
-            widget.Systray(padding=4, icon_size=18),
-            widget.Sep(linewidth=1, padding=8, foreground="#45475a"),
+            widget.Systray(padding=4, icon_size=18, background=systray_bg),
+            widget.Sep(linewidth=1, padding=8, foreground=current_theme["inactive"], background=current_theme["bg"]),
         ])
 
     widgets.extend([
@@ -200,23 +340,25 @@ def create_bar(is_primary=True):
             text="󰂄",
             font="JetBrainsMono Nerd Font",
             fontsize=18,
-            foreground="#a6e3a1",
+            foreground=current_theme["fg_icon"],
+            background=current_theme["bg"],
             mouse_callbacks={'Button1': lazy.spawn('xfce4-power-manager-settings')},
             padding=4,
         ),
-        widget.Sep(linewidth=1, padding=8, foreground="#45475a"),
+        widget.Sep(linewidth=1, padding=8, foreground=current_theme["inactive"], background=current_theme["bg"]),
         
         # Przycisk wyłączenia
         widget.QuickExit(
             default_text='󰐥',
             command='systemctl poweroff',
-            foreground="#f38ba8",
+            foreground=current_theme["fg_icon"],
+            background=current_theme["bg"],
         ),
     ])
 
-    return bar.Bar(widgets, 30, background="#1e1e2e")
+    return bar.Bar(widgets, 30, background=current_theme["bg"])
 
-# Definicja osobnych obiektów Screen dla obu monitorów
+# Definicja ekranów
 screens = [
     Screen(
         top=create_bar(is_primary=True),
@@ -231,7 +373,7 @@ screens = [
 fake_screens: list[Screen] | None = None
 generate_screens: Callable[[list[Output]], list[Screen]] | None = None
 
-# Obsługa myszy (Mod + LewyKlik: przesuwanie, Mod + PrawyKlik: zmiana rozmiaru)
+# Obsługa myszy
 mouse = [
     Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
     Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
@@ -274,4 +416,3 @@ def autostart():
     home = os.path.expanduser('~/.config/qtile/autostart.sh')
     if os.path.exists(home):
         subprocess.Popen([home])
-

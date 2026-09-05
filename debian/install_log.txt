@@ -62,3 +62,351 @@ Podsumowanie:
 ✅ Skopiowano konfigurację Kitty.
 ✅ Instalacja Qtile zakończona pomyślnie.
 ✅ Instalacja zakończona pomyślnie!
+🔧 Aktualizacja pakietów...
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Pobr:1 http://security.debian.org/debian-security trixie-security InRelease [43,4 kB]
+Było:2 http://ftp.task.gda.pl/debian trixie InRelease
+Było:3 http://ftp.task.gda.pl/debian trixie-updates InRelease
+Pobr:4 https://download.docker.com/linux/debian trixie InRelease [32,5 kB]
+Pobr:5 https://packages.microsoft.com/repos/code stable InRelease [3 590 B]
+Pobr:6 http://security.debian.org/debian-security trixie-security/main Sources [226 kB]
+Pobr:7 https://packages.microsoft.com/repos/code stable/main arm64 Packages [29,9 kB]
+Pobr:8 https://repo.librewolf.net librewolf InRelease [5 649 B]
+Pobr:9 https://packages.microsoft.com/repos/code stable/main amd64 Packages [30,0 kB]
+Pobr:10 http://security.debian.org/debian-security trixie-security/main amd64 Packages [251 kB]
+Pobr:11 https://packages.microsoft.com/repos/code stable/main armhf Packages [29,8 kB]
+Pobrano 652 kB w 1s (443 kB/s)
+Czytanie list pakietów...
+Budowanie drzewa zależności...
+Odczyt informacji o stanie...
+2 pakiety mogą być zaktualizowane. Można je zobaczyć wykonując 'apt list --upgradable'.
+📦 Instalacja narzędzi interaktywnych...
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Czytanie list pakietów...
+Budowanie drzewa zależności...
+Odczyt informacji o stanie...
+dialog jest już w najnowszej wersji (1.3-20250116-1).
+Podsumowanie:
+  Aktualizowanych: 0, Instalowanych: 0, Usuwanych: 0, Nieaktualizowanych: 2
+🧩 Instalacja menedżera okien Qtile (przez Astral UV)...
+🖥️ Rejestracja wpisu sesji Qtile w LightDM...
+✅ Skopiowano konfigurację Qtile.
+✅ Skopiowano konfigurację jgmenu.
+✅ Skopiowano konfigurację Kitty.
+✅ Instalacja Qtile zakończona pomyślnie.
+🦊 Instalacja przeglądarki LibreWolf oraz klienta Thunderbird...
+Czytanie list pakietów...
+Budowanie drzewa zależności...
+Odczyt informacji o stanie...
+extrepo jest już w najnowszej wersji (0.14).
+Podsumowanie:
+  Aktualizowanych: 0, Instalowanych: 0, Usuwanych: 0, Nieaktualizowanych: 2
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Czytanie list pakietów...
+Budowanie drzewa zależności...
+Odczyt informacji o stanie...
+librewolf jest już w najnowszej wersji (155.0-1).
+xdg-utils jest już w najnowszej wersji (1.2.1-2).
+xdg-desktop-portal-gtk jest już w najnowszej wersji (1.15.3-1).
+xdg-desktop-portal-gtk oznaczono jako zainstalowany ręcznie.
+Aktualizowane:
+  thunderbird  thunderbird-l10n-pl
+
+Podsumowanie:
+  Aktualizowanych: 2, Instalowanych: 0, Usuwanych: 0, Nieaktualizowanych: 0
+  Do pobrania: 70,7 MB
+Zwalniane miejsce: 159 kB
+
+Pobr:1 http://security.debian.org/debian-security trixie-security/main amd64 thunderbird-l10n-pl all 1:140.15.0esr-1~deb13u1 [512 kB]
+Pobr:2 http://security.debian.org/debian-security trixie-security/main amd64 thunderbird amd64 1:140.15.0esr-1~deb13u1 [70,2 MB]
+apt-listchanges: Odczytywanie dzienników zmian...
+Pobrano 70,7 MB w 1min 55s (614 kB/s)
+(Odczytywanie bazy danych ... (Odczytywanie bazy danych ... 5%(Odczytywanie bazy danych ... 10%(Odczytywanie bazy danych ... 15%(Odczytywanie bazy danych ... 20%(Odczytywanie bazy danych ... 25%(Odczytywanie bazy danych ... 30%(Odczytywanie bazy danych ... 35%(Odczytywanie bazy danych ... 40%(Odczytywanie bazy danych ... 45%(Odczytywanie bazy danych ... 50%(Odczytywanie bazy danych ... 55%(Odczytywanie bazy danych ... 60%(Odczytywanie bazy danych ... 65%(Odczytywanie bazy danych ... 70%(Odczytywanie bazy danych ... 75%(Odczytywanie bazy danych ... 80%(Odczytywanie bazy danych ... 85%(Odczytywanie bazy danych ... 90%(Odczytywanie bazy danych ... 95%(Odczytywanie bazy danych ... 100%(Odczytywanie bazy danych ... 374301 plików i katalogów obecnie zainstalowanych.)
+Przygotowywanie do rozpakowania pakietu .../thunderbird-l10n-pl_1%3a140.15.0esr-1~deb13u1_all.deb ...
+Rozpakowywanie pakietu thunderbird-l10n-pl (1:140.15.0esr-1~deb13u1) nad (1:140.14.0esr-1~deb13u1) ...
+Przygotowywanie do rozpakowania pakietu .../thunderbird_1%3a140.15.0esr-1~deb13u1_amd64.deb ...
+Rozpakowywanie pakietu thunderbird (1:140.15.0esr-1~deb13u1) nad (1:140.14.0esr-1~deb13u1) ...
+Konfigurowanie pakietu thunderbird (1:140.15.0esr-1~deb13u1) ...
+Skipping profile in /etc/apparmor.d/disable: usr.bin.thunderbird
+Konfigurowanie pakietu thunderbird-l10n-pl (1:140.15.0esr-1~deb13u1) ...
+Przetwarzanie wyzwalaczy pakietu desktop-file-utils (0.28-1)...
+Przetwarzanie wyzwalaczy pakietu hicolor-icon-theme (0.18-2)...
+Przetwarzanie wyzwalaczy pakietu gnome-menus (3.36.0-3)...
+Przetwarzanie wyzwalaczy pakietu man-db (2.13.1-1)...
+Przetwarzanie wyzwalaczy pakietu mailcap (3.74)...
+✅ LibreWolf i Thunderbird zostały zainstalowane (Sync włączony, obsługa motywów skonfigurowana).
+🔄 Restart LightDM...
+🔧 Aktualizacja pakietów...
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Było:1 http://ftp.task.gda.pl/debian trixie InRelease
+Pobr:2 http://ftp.task.gda.pl/debian trixie-updates InRelease [47,3 kB]
+Pobr:3 http://security.debian.org/debian-security trixie-security InRelease [43,4 kB]
+Było:4 https://packages.microsoft.com/repos/code stable InRelease
+Pobr:5 https://download.docker.com/linux/debian trixie InRelease [32,5 kB]
+Pobr:6 https://repo.librewolf.net librewolf InRelease [5 649 B]
+Pobrano 129 kB w 1s (164 kB/s)
+Czytanie list pakietów...
+Budowanie drzewa zależności...
+Odczyt informacji o stanie...
+Wszystkie pakiety są aktualne.
+📦 Instalacja narzędzi interaktywnych...
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Czytanie list pakietów...
+Budowanie drzewa zależności...
+Odczyt informacji o stanie...
+dialog jest już w najnowszej wersji (1.3-20250116-1).
+Podsumowanie:
+  Aktualizowanych: 0, Instalowanych: 0, Usuwanych: 0, Nieaktualizowanych: 0
+🦊 Instalacja przeglądarki LibreWolf oraz klienta Thunderbird...
+Czytanie list pakietów...
+Budowanie drzewa zależności...
+Odczyt informacji o stanie...
+extrepo jest już w najnowszej wersji (0.14).
+Podsumowanie:
+  Aktualizowanych: 0, Instalowanych: 0, Usuwanych: 0, Nieaktualizowanych: 0
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Czytanie list pakietów...
+Budowanie drzewa zależności...
+Odczyt informacji o stanie...
+librewolf jest już w najnowszej wersji (155.0-1).
+xdg-utils jest już w najnowszej wersji (1.2.1-2).
+xdg-desktop-portal-gtk jest już w najnowszej wersji (1.15.3-1).
+thunderbird jest już w najnowszej wersji (1:140.15.0esr-1~deb13u1).
+thunderbird-l10n-pl jest już w najnowszej wersji (1:140.15.0esr-1~deb13u1).
+Podsumowanie:
+  Aktualizowanych: 0, Instalowanych: 0, Usuwanych: 0, Nieaktualizowanych: 0
+✅ LibreWolf i Thunderbird zostały zainstalowane (Sync włączony, dynamiczne strony skonfigurowane).
+🎯 Instalacja oprogramowania użytkowego (APT)...
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Czytanie list pakietów...
+Budowanie drzewa zależności...
+Odczyt informacji o stanie...
+flatpak jest już w najnowszej wersji (1.16.6-1~deb13u2).
+thunar jest już w najnowszej wersji (4.20.2-1+deb13u1).
+thunar-archive-plugin jest już w najnowszej wersji (0.5.3-1).
+file-roller jest już w najnowszej wersji (44.5-1).
+gvfs-backends jest już w najnowszej wersji (1.57.2-2+deb13u1).
+menulibre jest już w najnowszej wersji (2.2.2-2).
+vlc jest już w najnowszej wersji (3.0.23-0+deb13u1).
+calibre jest już w najnowszej wersji (8.5.0+ds-1+deb13u3).
+rhythmbox jest już w najnowszej wersji (3.4.8-1+b1).
+rhythmbox-plugins jest już w najnowszej wersji (3.4.8-1+b1).
+rhythmbox-plugin-alternative-toolbar jest już w najnowszej wersji (0.20.4-1).
+shotwell jest już w najnowszej wersji (0.32.10-1).
+libreoffice jest już w najnowszej wersji (4:25.2.3-2+deb13u6).
+libreoffice-l10n-pl jest już w najnowszej wersji (4:25.2.3-2+deb13u6).
+libreoffice-help-pl jest już w najnowszej wersji (4:25.2.3-2+deb13u6).
+hunspell-pl jest już w najnowszej wersji (1:25.2.3-1).
+hyphen-pl jest już w najnowszej wersji (1:3.0a-4.4).
+mythes-pl jest już w najnowszej wersji (1.5-4.3).
+libreoffice-base jest już w najnowszej wersji (4:25.2.3-2+deb13u6).
+libreoffice-java-common jest już w najnowszej wersji (4:25.2.3-2+deb13u6).
+default-jre jest już w najnowszej wersji (2:1.21-76).
+libreoffice-gtk3 jest już w najnowszej wersji (4:25.2.3-2+deb13u6).
+wxmaxima jest już w najnowszej wersji (24.02.1-1+b2).
+mc jest już w najnowszej wersji (3:4.8.33-1+deb13u1).
+htop jest już w najnowszej wersji (3.4.1-5).
+wget jest już w najnowszej wersji (1.25.0-2).
+curl jest już w najnowszej wersji (8.14.1-2+deb13u4).
+gnome-boxes jest już w najnowszej wersji (48.0-3+b1).
+filezilla jest już w najnowszej wersji (3.68.1-1).
+transmission-gtk jest już w najnowszej wersji (4.1.0~beta2+dfsg-3+deb13u1).
+gdebi-core jest już w najnowszej wersji (0.9.5.8).
+Podsumowanie:
+  Aktualizowanych: 0, Instalowanych: 0, Usuwanych: 0, Nieaktualizowanych: 0
+🌐 Instalacja WebApp Manager...
+--2026-09-05 10:03:16--  http://packages.linuxmint.com/pool/main/w/webapp-manager/webapp-manager_1.4.3_all.deb
+Translacja packages.linuxmint.com (packages.linuxmint.com)... 208.77.20.19, 208.77.20.11
+Łączenie się z packages.linuxmint.com (packages.linuxmint.com)|208.77.20.19|:80... połączono.
+Żądanie HTTP wysłano, oczekiwanie na odpowiedź... 200 OK
+Długość: 71144 (69K) [application/vnd.debian.binary-package]
+Zapis do: `/tmp/webapp-manager.deb'
+
+     0K .......... .......... .......... .......... .......... 71%  123K 0s
+    50K .......... .........                                  100%  303K=0,5s
+
+2026-09-05 10:03:16 (147 KB/s) - zapisano `/tmp/webapp-manager.deb' [71144/71144]
+
+Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree... Done
+Reading state information... 0% Reading state information... 0% Reading state information... Done
+Reading state information... 0%  Reading state information... 1%  Reading state information... 3%  Reading state information... 5%  Reading state information... 7%  Reading state information... 9%  Reading state information... 11% Reading state information... 13% Reading state information... 15% Reading state information... 17% Reading state information... 19% Reading state information... 21% Reading state information... 23% Reading state information... 25% Reading state information... 27% Reading state information... 29% Reading state information... 31% Reading state information... 33% Reading state information... 35% Reading state information... 37% Reading state information... 39% Reading state information... 41% Reading state information... 43% Reading state information... 45% Reading state information... 47% Reading state information... 49% Reading state information... 51% Reading state information... 53% Reading state information... 55% Reading state information... 57% Reading state information... 59% Reading state information... 61% Reading state information... 63% Reading state information... 65% Reading state information... 67% Reading state information... 69% Reading state information... 71% Reading state information... 73% Reading state information... 75% Reading state information... 77% Reading state information... 79% Reading state information... 81% Reading state information... 83% Reading state information... 85% Reading state information... 87% Reading state information... 89% Reading state information... 91% Reading state information... 93% Reading state information... 95% Reading state information... 97% Reading state information... 99% (Odczytywanie bazy danych ... 374301 plików i katalogów obecnie zainstalowanych.)
+Przygotowywanie do rozpakowania pakietu /tmp/webapp-manager.deb ...
+Rozpakowywanie pakietu webapp-manager (1.4.3) nad (1.4.3) ...
+Konfigurowanie pakietu webapp-manager (1.4.3) ...
+Przetwarzanie wyzwalaczy pakietu gnome-menus (3.36.0-3)...
+Przetwarzanie wyzwalaczy pakietu desktop-file-utils (0.28-1)...
+Przetwarzanie wyzwalaczy pakietu mailcap (3.74)...
+Przetwarzanie wyzwalaczy pakietu libglib2.0-0t64:amd64 (2.84.4-3~deb13u3)...
+Przetwarzanie wyzwalaczy pakietu hicolor-icon-theme (0.18-2)...
+Reading state information... Done
+✅ WebApp Manager zainstalowany.
+📦 Dodawanie repozytorium Flathub i instalacja aplikacji...
+Wyszukiwanie wyników…
+Pomijanie: Już zainstalowano com.github.IsmaelMartinez.teams_for_linux/x86_64/stable
+Pomijanie: Już zainstalowano com.ktechpit.whatsie/x86_64/stable
+Pomijanie: Już zainstalowano app.ytmdesktop.ytmdesktop/x86_64/stable
+Pomijanie: Już zainstalowano com.github.unrud.VideoDownloader/x86_64/stable
+Pomijanie: Już zainstalowano io.github.amit9838.mousam/x86_64/stable
+Pomijanie: Już zainstalowano io.missioncenter.MissionCenter/x86_64/stable
+Pomijanie: Już zainstalowano com.playonlinux.PlayOnLinux4/x86_64/stable
+🗂️ Zamykanie Rhythmbox i kopiowanie bazy oraz playlist...
+✅ Wszystkie aplikacje użytkownika zostały zainstalowane i skonfigurowane.
+🔄 Restart LightDM...
+🔧 Aktualizacja pakietów...
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Było:1 http://ftp.task.gda.pl/debian trixie InRelease
+Było:2 http://ftp.task.gda.pl/debian trixie-updates InRelease
+Było:3 http://security.debian.org/debian-security trixie-security InRelease
+Pobr:4 https://download.docker.com/linux/debian trixie InRelease [32,5 kB]
+Pobr:5 https://repo.librewolf.net librewolf InRelease [5 649 B]
+Było:6 https://packages.microsoft.com/repos/code stable InRelease
+Pobrano 38,1 kB w 1s (56,8 kB/s)
+Czytanie list pakietów...
+Budowanie drzewa zależności...
+Odczyt informacji o stanie...
+Wszystkie pakiety są aktualne.
+📦 Instalacja narzędzi interaktywnych...
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Czytanie list pakietów...
+Budowanie drzewa zależności...
+Odczyt informacji o stanie...
+dialog jest już w najnowszej wersji (1.3-20250116-1).
+Podsumowanie:
+  Aktualizowanych: 0, Instalowanych: 0, Usuwanych: 0, Nieaktualizowanych: 0
+🦊 Instalacja przeglądarki LibreWolf oraz klienta Thunderbird...
+Czytanie list pakietów...
+Budowanie drzewa zależności...
+Odczyt informacji o stanie...
+extrepo jest już w najnowszej wersji (0.14).
+Podsumowanie:
+  Aktualizowanych: 0, Instalowanych: 0, Usuwanych: 0, Nieaktualizowanych: 0
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Czytanie list pakietów...
+Budowanie drzewa zależności...
+Odczyt informacji o stanie...
+librewolf jest już w najnowszej wersji (155.0-1).
+xdg-utils jest już w najnowszej wersji (1.2.1-2).
+xdg-desktop-portal-gtk jest już w najnowszej wersji (1.15.3-1).
+thunderbird jest już w najnowszej wersji (1:140.15.0esr-1~deb13u1).
+thunderbird-l10n-pl jest już w najnowszej wersji (1:140.15.0esr-1~deb13u1).
+Podsumowanie:
+  Aktualizowanych: 0, Instalowanych: 0, Usuwanych: 0, Nieaktualizowanych: 0
+✅ LibreWolf i Thunderbird zostały zainstalowane (Sync włączony, pełna obsługa motywów skonfigurowana).
+🔄 Restart LightDM...
+🔧 Aktualizacja pakietów...
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Było:1 http://ftp.task.gda.pl/debian trixie InRelease
+Było:2 http://ftp.task.gda.pl/debian trixie-updates InRelease
+Było:3 http://security.debian.org/debian-security trixie-security InRelease
+Pobr:4 https://repo.librewolf.net librewolf InRelease [5 649 B]
+Pobr:5 https://download.docker.com/linux/debian trixie InRelease [32,5 kB]
+Było:6 https://packages.microsoft.com/repos/code stable InRelease
+Pobrano 38,1 kB w 1s (36,4 kB/s)
+Czytanie list pakietów...
+Budowanie drzewa zależności...
+Odczyt informacji o stanie...
+Wszystkie pakiety są aktualne.
+📦 Instalacja narzędzi interaktywnych...
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Czytanie list pakietów...
+Budowanie drzewa zależności...
+Odczyt informacji o stanie...
+dialog jest już w najnowszej wersji (1.3-20250116-1).
+Podsumowanie:
+  Aktualizowanych: 0, Instalowanych: 0, Usuwanych: 0, Nieaktualizowanych: 0
+🦊 Instalacja przeglądarki LibreWolf oraz klienta Thunderbird...
+Czytanie list pakietów...
+Budowanie drzewa zależności...
+Odczyt informacji o stanie...
+extrepo jest już w najnowszej wersji (0.14).
+Podsumowanie:
+  Aktualizowanych: 0, Instalowanych: 0, Usuwanych: 0, Nieaktualizowanych: 0
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Czytanie list pakietów...
+Budowanie drzewa zależności...
+Odczyt informacji o stanie...
+librewolf jest już w najnowszej wersji (155.0-1).
+xdg-utils jest już w najnowszej wersji (1.2.1-2).
+xdg-desktop-portal-gtk jest już w najnowszej wersji (1.15.3-1).
+thunderbird jest już w najnowszej wersji (1:140.15.0esr-1~deb13u1).
+thunderbird-l10n-pl jest już w najnowszej wersji (1:140.15.0esr-1~deb13u1).
+Podsumowanie:
+  Aktualizowanych: 0, Instalowanych: 0, Usuwanych: 0, Nieaktualizowanych: 0
+✅ LibreWolf i Thunderbird zostały zainstalowane (Sync włączony, dynamiczne strony skonfigurowane).
+🔄 Restart LightDM...
+🔧 Aktualizacja pakietów...
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Było:1 http://ftp.task.gda.pl/debian trixie InRelease
+Było:2 http://ftp.task.gda.pl/debian trixie-updates InRelease
+Było:3 http://security.debian.org/debian-security trixie-security InRelease
+Pobr:4 https://download.docker.com/linux/debian trixie InRelease [32,5 kB]
+Pobr:5 https://repo.librewolf.net librewolf InRelease [5 649 B]
+Było:6 https://packages.microsoft.com/repos/code stable InRelease
+Pobrano 38,1 kB w 1s (49,5 kB/s)
+Czytanie list pakietów...
+Budowanie drzewa zależności...
+Odczyt informacji o stanie...
+Wszystkie pakiety są aktualne.
+📦 Instalacja narzędzi interaktywnych...
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Czytanie list pakietów...
+Budowanie drzewa zależności...
+Odczyt informacji o stanie...
+dialog jest już w najnowszej wersji (1.3-20250116-1).
+Podsumowanie:
+  Aktualizowanych: 0, Instalowanych: 0, Usuwanych: 0, Nieaktualizowanych: 0
+🦊 Instalacja przeglądarki LibreWolf oraz klienta Thunderbird...
+Czytanie list pakietów...
+Budowanie drzewa zależności...
+Odczyt informacji o stanie...
+extrepo jest już w najnowszej wersji (0.14).
+Podsumowanie:
+  Aktualizowanych: 0, Instalowanych: 0, Usuwanych: 0, Nieaktualizowanych: 0
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Czytanie list pakietów...
+Budowanie drzewa zależności...
+Odczyt informacji o stanie...
+librewolf jest już w najnowszej wersji (155.0-1).
+xdg-utils jest już w najnowszej wersji (1.2.1-2).
+xdg-desktop-portal jest już w najnowszej wersji (1.20.3+ds-1).
+xdg-desktop-portal oznaczono jako zainstalowany ręcznie.
+xdg-desktop-portal-gtk jest już w najnowszej wersji (1.15.3-1).
+thunderbird jest już w najnowszej wersji (1:140.15.0esr-1~deb13u1).
+thunderbird-l10n-pl jest już w najnowszej wersji (1:140.15.0esr-1~deb13u1).
+Podsumowanie:
+  Aktualizowanych: 0, Instalowanych: 0, Usuwanych: 0, Nieaktualizowanych: 0
+✅ LibreWolf skonfigurowany pod kątem dynamicznej zmiany treści stron.
+🔄 Restart LightDM...

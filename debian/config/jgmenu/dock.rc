@@ -1,6 +1,12 @@
-osition_mode = fixed
+position_mode = fixed
 menu_anchor = top_left
 menu_valign = top
 menu_margin_x = 0
 menu_margin_y = 30
 stay_alive = 0
+
+# --- Poniższe linie są dynamicznie aktualizowane przez Qtile ---
+color_menu_bg = #1e1e2e 100
+color_norm_fg = #cdd6f4 100
+color_sel_bg = #89b4fa 100
+color_sel_fg = #1e1e2e 100
