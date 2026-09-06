@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Ustawienie zmiennej LOGFILE, jeśli nie została zdefiniowana wcześniej
+LOGFILE="${LOGFILE:-/tmp/gpu_config.log}"
+
 add_if_missing() {
   local line="$1"
   if grep -qxF "$line" "$BASHRC"; then
@@ -11,8 +14,19 @@ add_if_missing() {
 }
 
 configure_intel_gpu_support() {
-  echo "🎮 Konfiguracja akceleracji Intel GPU (VAAPI, Vulkan, OpenCL)..." | tee -a "$LOGFILE"
+  echo "🎮 Konfiguracja sterowników i bibliotek Intel GPU (Gen4 / GM965)..." | tee -a "$LOGFILE"
 
+  # Ustalenie ścieżki pliku .bashrc przed użyciem funkcji add_if_missing
+  REAL_USER="${SUDO_USER:-$(logname)}"
+  USER_HOME=$(eval echo "~$REAL_USER")
+  BASHRC="$USER_HOME/.bashrc"
+
+  if [ ! -f "$BASHRC" ]; then
+    touch "$BASHRC"
+    chown "$REAL_USER:$REAL_USER" "$BASHRC"
+  fi
+
+  # Kopia zapasowa listy repozytoriów
   sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
 
   sudo tee /etc/apt/sources.list > /dev/null <<EOF
@@ -27,34 +41,23 @@ deb-src http://ftp.task.gda.pl/debian/ trixie-updates main contrib non-free non-
 EOF
 
   sudo apt update | tee -a "$LOGFILE"
+  
+  # Usunięto niekompatybilne pakiety: vulkan, opencl, i965-va-driver
   sudo apt install -y \
-    i965-va-driver-shaders \
-    ocl-icd-libopencl1 \
-    clinfo \
-    mesa-vulkan-drivers \
     libgl1-mesa-dri \
     libglx-mesa0 \
     mesa-utils \
-    libva-drm2 \
-    libva-x11-2 \
-    libva-wayland2 \
-    intel-gpu-tools \
-    vulkan-tools | tee -a "$LOGFILE"
+    intel-gpu-tools | tee -a "$LOGFILE"
 
-  REAL_USER="${SUDO_USER:-$(logname)}"
-  BASHRC="/home/$REAL_USER/.bashrc"
+  # Zabezpieczenie przed błędnym uprawnieniem pliku .bashrc po użyciu sudo
+  chown "$REAL_USER:$REAL_USER" "$BASHRC"
 
-  if [ ! -f "$BASHRC" ]; then
-    touch "$BASHRC"
-    chown "$REAL_USER:$REAL_USER" "$BASHRC"
-  fi
-
-  add_if_missing "alias chrome-gpu='LIBVA_DRIVER_NAME=i965 google-chrome --use-gl=desktop --enable-zero-copy --ignore-gpu-blocklist --enable-gpu-rasterization --enable-native-gpu-memory-buffers --enable-features=VaapiVideoDecoder --ozone-platform=x11'"
+  # Wymuszenie stabilnego interfejsu 2D/3D (X11) dla Firefoksa i Chrome
   add_if_missing "export MOZ_ENABLE_WAYLAND=0"
-  add_if_missing "export MOZ_WEBRENDER=1"
-  add_if_missing "export MOZ_ACCELERATED=1"
-  add_if_missing "export LIBVA_DRIVER_NAME=i965"
-  add_if_missing "export VDPAU_DRIVER=i965"
+  add_if_missing "export LIBGL_ALWAYS_SOFTWARE=0"
+  
+  # Bezpieczny alias dla Chrome bez wymuszania niedostępnych funkcji GPU
+  add_if_missing "alias chrome-gpu='google-chrome --ignore-gpu-blocklist --enable-gpu-rasterization --ozone-platform=x11'"
 
-  echo "✅ Akceleracja GPU skonfigurowana." | tee -a "$LOGFILE"
+  echo "✅ Podstawowa akceleracja GPU została skonfigurowana." | tee -a "$LOGFILE"
 }
