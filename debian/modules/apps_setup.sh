@@ -9,7 +9,7 @@ install_user_apps() {
     menulibre vlc calibre rhythmbox rhythmbox-plugins rhythmbox-plugin-alternative-toolbar shotwell \
     libreoffice libreoffice-l10n-pl libreoffice-help-pl hunspell-pl hyphen-pl mythes-pl \
     libreoffice-base libreoffice-java-common default-jre libreoffice-gtk3 \
-    wxmaxima mc htop wget curl gnome-boxes \
+    wxmaxima mc htop wget curl gnome-boxes mpv \
     filezilla transmission-gtk gdebi-core 2>&1 | tee -a "$LOGFILE"
 }
 

@@ -18,7 +18,10 @@ configure_desktop_environment() {
     xfce4-netload-plugin \
     pasystray ufw gufw openssh-server openssh-sftp-server \
     arandr wget unzip feh \
-    build-essential python3-dev libffi-dev libpangocairo-1.0-0 2>&1 | tee -a "$LOGFILE"
+    build-essential python3-dev libffi-dev libpangocairo-1.0-0 \
+    ffmpeg gstreamer1.0-plugins-base gstreamer1.0-plugins-good \
+    gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly \ 
+    gstreamer1.0-libav 2>&1 | tee -a "$LOGFILE"
 
   REAL_USER="${SUDO_USER:-$(logname)}"
   REAL_HOME=$(eval echo "~$REAL_USER")
