@@ -210,6 +210,7 @@ keys = [
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
 
     # Skróty klawiszowe dla aplikacji
+    Key([mod, "shift"], "f", lazy.function("librewolf"), desc="Uruchom Librewolf"),
     Key([mod, "shift"], "c", lazy.spawn("code"), desc="Uruchom VS Code"),
     Key([mod, "shift"], "o", lazy.spawn("libreoffice"), desc="Uruchom LibreOffice"),
     Key([mod, "shift"], "v", lazy.spawn("vlc"), desc="Uruchom VLC"),
