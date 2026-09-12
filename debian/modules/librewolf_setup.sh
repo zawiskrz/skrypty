@@ -27,6 +27,11 @@ pref("layout.css.prefers-color-scheme.content-override", 3);
 // 2. Wymagane dla Dark Readera: Wyłączenie blokady RFP dla interfejsów systemowych
 pref("privacy.resistFingerprinting", false);
 pref("privacy.resistFingerprinting.blockAutoRefresh", false);
+
+// 3. Wymuszenie akceleracji sprzętowej GPU
+pref("layers.acceleration.force-enabled", true);
+pref("gfx.webrender.all", true);
+pref("hardware-video-decoding.force-enabled", true);
 EOF
 
   # 1. Globalna konfiguracja
@@ -51,5 +56,5 @@ EOF
     /usr/bin/xdg-mime default librewolf.desktop text/html
 EOF
 
-  echo "✅ LibreWolf skonfigurowany pod obsługę Dark Readera." | tee -a "$LOGFILE"
+  echo "✅ LibreWolf skonfigurowany pod obsługę Dark Readera oraz wymuszenie GPU." | tee -a "$LOGFILE"
 }
