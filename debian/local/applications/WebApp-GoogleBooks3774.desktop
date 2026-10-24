@@ -2,11 +2,11 @@
 Version=1.0
 Name=Google Books
 Comment=Aplikacja internetowa
-Exec=google-chrome-stable --app="https://play.google.com/books" --class=WebApp-GoogleBooks3774 --name=WebApp-GoogleBooks3774 --user-data-dir=/home/zawiskrz/.local/share/ice/profiles/GoogleBooks3774
+Exec=google-chrome-stable --app="https://play.google.com/books" --class=WebApp-GoogleBooks3774 --name=WebApp-GoogleBooks3774 --user-data-dir=/home/$USER/.local/share/ice/profiles/GoogleBooks3774
 Terminal=false
 X-MultipleArgs=false
 Type=Application
-Icon=/home/zawiskrz/.local/share/ice/icons/GoogleBooks.png
+Icon=/home/$USER/.local/share/ice/icons/GoogleBooks.png
 Categories=GTK;Office;
 MimeType=text/html;text/xml;application/xhtml_xml;
 StartupWMClass=WebApp-GoogleBooks3774

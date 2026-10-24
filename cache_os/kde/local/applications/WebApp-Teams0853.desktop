@@ -1,0 +1,19 @@
+[Desktop Entry]
+Version=1.0
+Name=Teams
+Comment=Teams
+Exec=microsoft-edge-stable --app="https://teams.live.com/v2/" --class=WebApp-Teams0853 --name=WebApp-Teams0853 --user-data-dir=__HOME__/.local/share/ice/profiles/Teams0853
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=__HOME__/.local/share/ice/icons/Teams.png
+Categories=GTK;WebApps;
+MimeType=text/html;text/xml;application/xhtml_xml;
+StartupWMClass=WebApp-Teams0853
+StartupNotify=true
+X-WebApp-Browser=Microsoft Edge
+X-WebApp-URL=https://teams.live.com/v2/
+X-WebApp-CustomParameters=
+X-WebApp-Navbar=false
+X-WebApp-PrivateWindow=false
+X-WebApp-Isolated=true

@@ -1,0 +1,9 @@
+[
+  {"providerId": "owm", "placeIdentifier": "759123", "placeAlias": "Skierniewice", "timezoneID": -1},
+  {"providerId": "owm", "placeIdentifier": "3083829", "placeAlias": "Szczecin", "timezoneID": -1},
+  {"providerId": "owm", "placeIdentifier": "3091961", "placeAlias": "Międzyzdroje", "timezoneID": -1},
+  {"providerId": "owm", "placeIdentifier": "7532210", "placeAlias": "Puławy", "timezoneID": -1},
+  {"providerId": "owm", "placeIdentifier": "3088171", "placeAlias": "Poznań", "timezoneID": -1},
+  {"providerId": "owm", "placeIdentifier": "756135", "placeAlias": "Warszawa", "timezoneID": -1},
+  {"providerId": "owm", "placeIdentifier": "3093133", "placeAlias": "Łódź", "timezoneID": -1}
+]

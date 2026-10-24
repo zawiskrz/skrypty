@@ -2,11 +2,11 @@
 Version=1.0
 Name=TVN24 GO
 Comment=Aplikacja internetowa
-Exec=google-chrome-stable --app="https://tvn24.pl/go/zaloguj-tv" --class=WebApp-TVNGO9326 --name=WebApp-TVNGO9326 --user-data-dir=/home/zawiskrz/.local/share/ice/profiles/TVNGO9326
+Exec=google-chrome-stable --app="https://tvn24.pl/go/zaloguj-tv" --class=WebApp-TVNGO9326 --name=WebApp-TVNGO9326 --user-data-dir=/home/$USER/.local/share/ice/profiles/TVNGO9326
 Terminal=false
 X-MultipleArgs=false
 Type=Application
-Icon=/home/zawiskrz/.local/share/ice/icons/TVNGO.png
+Icon=/home/$USER/.local/share/ice/icons/TVNGO.png
 Categories=GTK;AudioVideo;
 MimeType=text/html;text/xml;application/xhtml_xml;
 StartupWMClass=WebApp-TVNGO9326

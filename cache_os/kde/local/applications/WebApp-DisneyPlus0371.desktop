@@ -1,0 +1,20 @@
+[Desktop Entry]
+Version=1.0
+Name=DisneyPlus
+Comment=Aplikacja internetowa
+Exec=google-chrome-stable --app="https://www.disneyplus.com/pl-pl/home" --class=WebApp-DisneyPlus0371 --name=WebApp-DisneyPlus0371 --user-data-dir=__HOME__/.local/share/ice/profiles/DisneyPlus0371
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=__HOME__/.local/share/ice/icons/DisneyPlus.png
+Categories=GTK;AudioVideo;
+MimeType=text/html;text/xml;application/xhtml_xml;
+StartupWMClass=WebApp-DisneyPlus0371
+StartupNotify=true
+X-WebApp-Browser=Chrome
+X-WebApp-URL=https://www.disneyplus.com/pl-pl/home
+X-WebApp-CustomParameters=
+X-WebApp-Navbar=false
+X-WebApp-PrivateWindow=false
+X-WebApp-Isolated=true
+

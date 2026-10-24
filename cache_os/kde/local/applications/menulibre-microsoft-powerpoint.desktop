@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=Microsoft Powerpoint
+Icon=application-mspowerpoint
+Exec=flatpak run com.playonlinux.PlayOnLinux4 --run "Microsoft Powerpoint 2010" %F
+Actions=
+Categories=Office;

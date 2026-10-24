@@ -1,0 +1,20 @@
+[Desktop Entry]
+Version=1.0
+Name=Canal+
+Comment=Aplikacja internetowa
+Exec=google-chrome-stable --app="https://www.canalplus.com/pl/" --class=WebApp-Canal0859 --name=WebApp-Canal0859 --user-data-dir=__HOME__/.local/share/ice/profiles/Canal0859
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=__HOME__/.local/share/ice/icons/Canal.png
+Categories=GTK;AudioVideo;
+MimeType=text/html;text/xml;application/xhtml_xml;
+StartupWMClass=WebApp-Canal0859
+StartupNotify=true
+X-WebApp-Browser=Chrome
+X-WebApp-URL=https://www.canalplus.com/pl/
+X-WebApp-CustomParameters=
+X-WebApp-Navbar=false
+X-WebApp-PrivateWindow=false
+X-WebApp-Isolated=true
+

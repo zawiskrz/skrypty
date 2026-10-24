@@ -10,6 +10,7 @@ install_user_apps() {
     libreoffice libreoffice-l10n-pl libreoffice-help-pl hunspell-pl hyphen-pl mythes-pl \
     libreoffice-base libreoffice-java-common default-jre libreoffice-gtk3 \
     wxmaxima mc htop wget curl gnome-boxes mpv \
+    kdeconnect sshfs \
     filezilla transmission-gtk gdebi-core 2>&1 | tee -a "$LOGFILE"
 }
 
@@ -49,14 +50,42 @@ configure_apps() {
   REAL_USER="${SUDO_USER:-$(logname)}"
   REAL_HOME=$(eval echo "~$REAL_USER")
 
+  local base_dir="${SCRIPT_DIR:-.}"
+
   # Kopiowanie bazy danych/playlist Rhythmbox
-  if [ -d "local/rhythmbox" ]; then
-    echo "🗂️ Zamykanie Rhythmbox i kopiowanie bazy oraz playlist..." | tee -a "$LOGFILE"
+  local rhythmbox_dir="$base_dir/local/rhythmbox"
+  [ -d "$rhythmbox_dir" ] || rhythmbox_dir="local/rhythmbox"
+  if [ -d "$rhythmbox_dir" ]; then
+    echo "🗂️ Zamykanie Rhythmbox i kopiowanie playlist..." | tee -a "$LOGFILE"
     killall rhythmbox 2>/dev/null || true
-    
     mkdir -p "$REAL_HOME/.local/share/rhythmbox"
-    cp -rf local/rhythmbox/* "$REAL_HOME/.local/share/rhythmbox/"
+    cp -rf "$rhythmbox_dir"/* "$REAL_HOME/.local/share/rhythmbox/" 2>/dev/null || true
     chown -R "$REAL_USER:$REAL_USER" "$REAL_HOME/.local/share/rhythmbox"
+  fi
+
+  # Kopiowanie ikon WebApps (ICE)
+  local ice_icons_dir="$base_dir/local/ice/icons"
+  [ -d "$ice_icons_dir" ] || ice_icons_dir="local/ice/icons"
+  if [ -d "$ice_icons_dir" ]; then
+    echo "🎨 Kopiowanie ikon WebApp do ~/.local/share/ice/icons..." | tee -a "$LOGFILE"
+    mkdir -p "$REAL_HOME/.local/share/ice/icons"
+    cp -rf "$ice_icons_dir"/*.png "$REAL_HOME/.local/share/ice/icons/" 2>/dev/null || true
+    chown -R "$REAL_USER:$REAL_USER" "$REAL_HOME/.local/share/ice"
+  fi
+
+  # Kopiowanie i dopasowanie skrótów aplikacji użytkownika
+  local apps_dir="$base_dir/local/applications"
+  [ -d "$apps_dir" ] || apps_dir="local/applications"
+  if [ -d "$apps_dir" ]; then
+    echo "🖥️ Kopiowanie skrótów aplikacji do ~/.local/share/applications..." | tee -a "$LOGFILE"
+    mkdir -p "$REAL_HOME/.local/share/applications"
+    for df in "$apps_dir"/*.desktop; do
+      [ -f "$df" ] || continue
+      fname=$(basename "$df")
+      sed "s|/home/\$USER|$REAL_HOME|g; s|\$USER|$REAL_USER|g" "$df" > "$REAL_HOME/.local/share/applications/$fname"
+    done
+    chown -R "$REAL_USER:$REAL_USER" "$REAL_HOME/.local/share/applications"
+    update-desktop-database "$REAL_HOME/.local/share/applications" 2>/dev/null || true
   fi
 
   echo "✅ Wszystkie aplikacje użytkownika zostały zainstalowane i skonfigurowane." | tee -a "$LOGFILE"

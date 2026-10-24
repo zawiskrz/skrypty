@@ -1,0 +1,20 @@
+[Desktop Entry]
+Version=1.0
+Name=TVN24 GO
+Comment=Aplikacja internetowa
+Exec=google-chrome-stable --app="https://tvn24.pl/go/" --class=WebApp-TVNGO8744 --name=WebApp-TVNGO8744 --user-data-dir=__HOME__/.local/share/ice/profiles/TVNGO8744
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=__HOME__/.local/share/ice/icons/TVNGO.png
+Categories=GTK;AudioVideo;
+MimeType=text/html;text/xml;application/xhtml_xml;
+StartupWMClass=WebApp-TVNGO8744
+StartupNotify=true
+X-WebApp-Browser=Chrome
+X-WebApp-URL=https://tvn24.pl/go/
+X-WebApp-CustomParameters=
+X-WebApp-Navbar=false
+X-WebApp-PrivateWindow=false
+X-WebApp-Isolated=true
+

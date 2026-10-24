@@ -2,11 +2,11 @@
 Version=1.0
 Name=Player
 Comment=Aplikacja internetowa
-Exec=google-chrome-stable --app="https://player.pl/" --class=WebApp-Player6737 --name=WebApp-Player6737 --user-data-dir=/home/zawiskrz/.local/share/ice/profiles/Player6737
+Exec=google-chrome-stable --app="https://player.pl/" --class=WebApp-Player6737 --name=WebApp-Player6737 --user-data-dir=/home/$USER/.local/share/ice/profiles/Player6737
 Terminal=false
 X-MultipleArgs=false
 Type=Application
-Icon=/home/zawiskrz/.local/share/ice/icons/Player.png
+Icon=/home/$USER/.local/share/ice/icons/Player.png
 Categories=GTK;AudioVideo;
 MimeType=text/html;text/xml;application/xhtml_xml;
 StartupWMClass=WebApp-Player6737

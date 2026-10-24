@@ -1,0 +1,20 @@
+[Desktop Entry]
+Version=1.0
+Name=Max
+Comment=Aplikacja internetowa
+Exec=google-chrome-stable --app="https://play.max.com/" --class=WebApp-Max1606 --name=WebApp-Max1606 --user-data-dir=__HOME__/.local/share/ice/profiles/Max1606
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=__HOME__/.local/share/ice/icons/Max.png
+Categories=GTK;AudioVideo;
+MimeType=text/html;text/xml;application/xhtml_xml;
+StartupWMClass=WebApp-Max1606
+StartupNotify=true
+X-WebApp-Browser=Chrome
+X-WebApp-URL=https://play.max.com/
+X-WebApp-CustomParameters=
+X-WebApp-Navbar=false
+X-WebApp-PrivateWindow=false
+X-WebApp-Isolated=true
+

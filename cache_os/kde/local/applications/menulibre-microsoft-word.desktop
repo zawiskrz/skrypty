@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=Microsoft Word
+Icon=application-msword
+Exec=flatpak run com.playonlinux.PlayOnLinux4 --run "Microsoft Word 2010" %F
+Actions=
+Categories=Office;

@@ -2,11 +2,11 @@
 Version=1.0
 Name=Max
 Comment=Aplikacja internetowa
-Exec=google-chrome-stable --app="https://play.max.com/profile-picker" --class=WebApp-Max8994 --name=WebApp-Max8994 --user-data-dir=/home/zawiskrz/.local/share/ice/profiles/Max8994
+Exec=google-chrome-stable --app="https://play.max.com/profile-picker" --class=WebApp-Max8994 --name=WebApp-Max8994 --user-data-dir=/home/$USER/.local/share/ice/profiles/Max8994
 Terminal=false
 X-MultipleArgs=false
 Type=Application
-Icon=/home/zawiskrz/Obrazy/ikonki/channels4_profile.jpg
+Icon=/home/$USER/Obrazy/ikonki/channels4_profile.jpg
 Categories=GTK;AudioVideo;
 MimeType=text/html;text/xml;application/xhtml_xml;
 StartupWMClass=WebApp-Max8994

@@ -1,8 +1,8 @@
 [Desktop Entry]
 Name=Moje e-wydania
-Exec=env WINEPREFIX="/home/zawiskrz/.wine" wine-stable C:\\\\users\\\\zawiskrz\\\\AppData\\\\Roaming\\\\Microsoft\\\\Windows\\\\Start\\ Menu\\\\Programs\\\\e-Kiosk\\ Reader\\\\Moje\\ e-wydania.lnk
+Exec=env WINEPREFIX="/home/$USER/.wine" wine-stable C:\\\\users\\\\$USER\\\\AppData\\\\Roaming\\\\Microsoft\\\\Windows\\\\Start\\ Menu\\\\Programs\\\\e-Kiosk\\ Reader\\\\Moje\\ e-wydania.lnk
 Type=Application
 StartupNotify=true
-Path=/home/zawiskrz/.wine/dosdevices/c:/users/zawiskrz/AppData/Roaming/e-Kiosk Reader/Moje e-wydania/
+Path=/home/$USER/.wine/dosdevices/c:/users/$USER/AppData/Roaming/e-Kiosk Reader/Moje e-wydania/
 Icon=0E92_eGazeta.0
 StartupWMClass=moje e-wydania\

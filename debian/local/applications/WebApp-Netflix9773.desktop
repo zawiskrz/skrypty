@@ -2,11 +2,11 @@
 Version=1.0
 Name=Netflix
 Comment=Aplikacja internetowa
-Exec=google-chrome-stable --app="https://www.netflix.com/browse" --class=WebApp-Netflix9773 --name=WebApp-Netflix9773 --user-data-dir=/home/zawiskrz/.local/share/ice/profiles/Netflix9773
+Exec=google-chrome-stable --app="https://www.netflix.com/browse" --class=WebApp-Netflix9773 --name=WebApp-Netflix9773 --user-data-dir=/home/$USER/.local/share/ice/profiles/Netflix9773
 Terminal=false
 X-MultipleArgs=false
 Type=Application
-Icon=/home/zawiskrz/.local/share/ice/icons/Netflix.png
+Icon=/home/$USER/.local/share/ice/icons/Netflix.png
 Categories=GTK;AudioVideo;
 MimeType=text/html;text/xml;application/xhtml_xml;
 StartupWMClass=WebApp-Netflix9773

@@ -1,0 +1,20 @@
+[Desktop Entry]
+Version=1.0
+Name=PrimeVideo
+Comment=Aplikacja internetowa
+Exec=google-chrome-stable --app="https://www.primevideo.com/" --class=WebApp-PrimeVideo1394 --name=WebApp-PrimeVideo1394 --user-data-dir=__HOME__/.local/share/ice/profiles/PrimeVideo1394
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=__HOME__/.local/share/ice/icons/PrimeVideo.png
+Categories=GTK;AudioVideo;
+MimeType=text/html;text/xml;application/xhtml_xml;
+StartupWMClass=WebApp-PrimeVideo1394
+StartupNotify=true
+X-WebApp-Browser=Chrome
+X-WebApp-URL=https://www.primevideo.com/
+X-WebApp-CustomParameters=
+X-WebApp-Navbar=false
+X-WebApp-PrivateWindow=false
+X-WebApp-Isolated=true
+

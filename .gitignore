@@ -1,1 +1,16 @@
-.idea
+.idea/
+*.log
+install_log.txt
+*.conf
+__pycache__/
+*.pyc
+*.key
+*.pem
+*.pub
+*.bak
+*.tar.gz
+*.tar
+*backup*.tar*
+*backup*.zip
+id_*
+rhythmdb.xml

@@ -1,0 +1,19 @@
+[Desktop Entry]
+Version=1.0
+Name=Youtube
+Comment=Aplikacja internetowa
+Exec=sh -c 'XAPP_FORCE_GTKWINDOW_ICON="__HOME__/.local/share/ice/icons/Youtube.png" firefox --class WebApp-Youtube4271 --name WebApp-Youtube4271 --profile __HOME__/.local/share/ice/firefox/Youtube4271 --no-remote "https://www.youtube.com/"'
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=__HOME__/.local/share/ice/icons/Youtube.png
+Categories=GTK;AudioVideo;
+MimeType=text/html;text/xml;application/xhtml_xml;
+StartupWMClass=WebApp-Youtube4271
+StartupNotify=true
+X-WebApp-Browser=Firefox
+X-WebApp-URL=https://www.youtube.com/
+X-WebApp-CustomParameters=
+X-WebApp-Navbar=false
+X-WebApp-PrivateWindow=false
+X-WebApp-Isolated=true

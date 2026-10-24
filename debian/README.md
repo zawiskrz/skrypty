@@ -21,6 +21,9 @@ Ten zestaw konfiguracji automatyzuje instalację oraz modularną konfigurację z
 | `nvidia-driver`, `cuda-toolkit` | Własnościowe sterowniki graficzne oraz biblioteki CUDA |
 | `intel-media-va-driver` | Akceleracja sprzętowa dla zintegrowanych kart Intel |
 | `plymouth`, `cups`, `bluez`, `pulseaudio` | Wyciszenie rozruchu, obsługa drukarek, Bluetooth oraz dźwięku |
+| `openssh-server` | Serwer OpenSSH oraz generowanie klucza ed25519 dla GitHuba |
+| `kdeconnect`, `sshfs` | Integracja ze smartfonem oraz przeglądanie plików telefonu |
+| `backup` / `restore` | Prywatna kopia zapasowa na pendrive (klucze SSH, portfel, Wi-Fi, Git) |
 
 ---
 
